@@ -6,6 +6,12 @@ public class UIPanel : MonoBehaviour
     public Image mainCharacter;
     public Image contentBg;
     public Text contentText;
+    public Canvas canvas;
+
+    public void ShowCanvas(bool value)
+    {
+        canvas.enabled = value;
+    }
 
     public void ShowMainCharacter(bool value)
     {
@@ -25,5 +31,10 @@ public class UIPanel : MonoBehaviour
     public void SetContentText(string value)
     {
         contentText.text = value;
+    }
+
+    public void LoadCharacterSprite(Sprite character)
+    {
+        mainCharacter.sprite = character;
     }
 }
