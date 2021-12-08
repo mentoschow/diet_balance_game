@@ -9,7 +9,7 @@ public class UIManager : MonoBehaviour
     public AssetConfig characterSprite;
     public UIPanel UIPanel;
     public Canvas select;
-    public SelectCharacter selectCharacter;
+    public PlayerManager pm;
 
     [SerializeField]
     private int currentLine;  //current dialog
@@ -73,7 +73,7 @@ public class UIManager : MonoBehaviour
 
     void LoadCharacter(Sprite boy, Sprite girl)
     {
-        if (selectCharacter.isBoy == true)
+        if (pm.isboy == true)
         {
             UIPanel.LoadCharacterSprite(boy);
         }
