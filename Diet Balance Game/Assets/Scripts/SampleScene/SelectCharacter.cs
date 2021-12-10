@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class SelectCharacter : PlayerManager
 {
-    public Canvas select;
+    public bool next;
 
     public void SelectBoy()
     {
         isboy = true;
-        select.enabled = false;
+        next = true;
     }
 
     public void SelectGirl()
     {
         isboy = false;
-        select.enabled = false;
+        next = true;
     }
 }
