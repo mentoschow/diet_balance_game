@@ -18,14 +18,20 @@ public class AVGMachine : MonoBehaviour
     public UIPanel UIPanel;
     public PlayerManager pm;
     public Performance pf;
+    [Range(1,50)]
+    public float typingSpeed;
 
     [SerializeField]
-    private int currentLine;  //current dialog
+    private int currentLine;
+    private string targetString;
+    [SerializeField]
+    private float timer;
 
     void Start()
     {
         state = STATE.OFF;       
         justEnter = true;
+        typingSpeed = 20f;
     }
 
     void Update()
@@ -45,9 +51,11 @@ public class AVGMachine : MonoBehaviour
                 {
                     ShowUI();
                     LoadContent(dialog.contents[currentLine].showCharacter, dialog.contents[currentLine].dialogText);
+                    timer = 0;
                     justEnter = false;
                 }
                 checkTypingFinished();
+                UpdateContentString();
                 break;
             case STATE.PAUSED:
                 if (justEnter)
@@ -74,7 +82,7 @@ public class AVGMachine : MonoBehaviour
                 if (currentLine >= dialog.contents.Count)
                 {
                     GoToState(STATE.OFF);
-                    pf.next = true;  //need to be corrected
+                    pf.next = true;  //may need to be corrected
                 }
                 else
                 {
@@ -90,7 +98,10 @@ public class AVGMachine : MonoBehaviour
     {
         if (state == STATE.TYPING)
         {
-            GoToState(STATE.PAUSED);
+            if ((int)Mathf.Floor(timer * typingSpeed) >= targetString.Length)
+            {
+                GoToState(STATE.PAUSED);
+            }
         }
     }
 
@@ -122,8 +133,15 @@ public class AVGMachine : MonoBehaviour
 
     void LoadContent(bool characterDisplay, string text)
     {
-        UIPanel.SetContentText(text);
+        targetString = text;
         UIPanel.ShowMainCharacter(characterDisplay);
+    }
+
+    void UpdateContentString()
+    {
+        timer += Time.deltaTime;
+        string tempString = targetString.Substring(0, Mathf.Min((int)Mathf.Floor(timer * typingSpeed), targetString.Length));
+        UIPanel.SetContentText(tempString);
     }
 
     void LoadCharacter(Sprite boy, Sprite girl)

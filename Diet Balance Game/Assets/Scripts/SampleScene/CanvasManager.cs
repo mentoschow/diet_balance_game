@@ -4,31 +4,31 @@ using UnityEngine;
 
 public class CanvasManager : MonoBehaviour
 {
-    public Canvas sc_canvas;
+    public Canvas selectCharacter;
     public SelectCharacter sc;
-    public Canvas performance_canvas;
-    public Performance pf;
-    public Canvas fs_canvas;
+    public Canvas performance;
+    public Performance p;
+    public Canvas foodSelection;
+    public FoodSelection fs;
 
     void Start()
     {
-        sc_canvas.enabled = true;
-        performance_canvas.enabled = false;
-        fs_canvas.enabled = false;
+        selectCharacter.enabled = true;
+        performance.enabled = false;
+        foodSelection.enabled = false;
     }
 
     void Update()
     {
-        if (sc.next == true)
+        if (sc.next)
         {
-            sc_canvas.enabled = false;
-            performance_canvas.enabled = true;
+            selectCharacter.enabled = false;
+            performance.enabled = true;
         }
-        if (pf.next == true)
+        if (p.next)
         {
-            performance_canvas.enabled = false;
-            fs_canvas.enabled = true;
+            performance.enabled = false;
+            foodSelection.enabled = true;
         }
-
     }
 }

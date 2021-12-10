@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SelectCharacter : PlayerManager
 {
-    public bool next;
+    public bool next = false;
 
     public void SelectBoy()
     {

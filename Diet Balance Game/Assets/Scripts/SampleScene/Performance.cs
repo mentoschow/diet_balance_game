@@ -14,13 +14,16 @@ public class Performance : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.H))
+        if (!next)
         {
-            avg.startAVG();
-        }
-        if (Input.GetMouseButtonDown(0))
-        {
-            avg.userClicked();
+            if (Input.GetKeyDown(KeyCode.H))
+            {
+                avg.startAVG();
+            }
+            if (Input.GetMouseButtonDown(0))
+            {
+                avg.userClicked();
+            }
         }
     }
 }
