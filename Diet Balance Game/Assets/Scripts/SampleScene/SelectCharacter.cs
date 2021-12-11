@@ -8,13 +8,13 @@ public class SelectCharacter : PlayerManager
 
     public void SelectBoy()
     {
-        isboy = true;
+        hero.isboy = true;
         next = true;
     }
 
     public void SelectGirl()
     {
-        isboy = false;
+        hero.isboy = false;
         next = true;
     }
 }

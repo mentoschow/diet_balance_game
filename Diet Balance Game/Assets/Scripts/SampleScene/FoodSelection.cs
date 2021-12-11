@@ -14,6 +14,16 @@ public class FoodSelection : MonoBehaviour
     private GameObject drink;
     private GameObject others;
 
+    private GameObject FoodSelected1;
+    private GameObject FoodSelected2;
+    private GameObject FoodSelected3;
+    private GameObject FoodSelected4;
+
+    public string food1;
+    public string food2;
+    public string food3;
+    public string food4;
+
     void Start()
     {
         stapleFood = GameObject.Find("stapleFood");
@@ -21,6 +31,10 @@ public class FoodSelection : MonoBehaviour
         sideDish = GameObject.Find("sideDish");
         drink = GameObject.Find("drink");
         others = GameObject.Find("others");
+        FoodSelected1 = GameObject.Find("FoodSelected1");
+        FoodSelected2 = GameObject.Find("FoodSelected2");
+        FoodSelected3 = GameObject.Find("FoodSelected3");
+        FoodSelected4 = GameObject.Find("FoodSelected4");
         StapleFood();
     }
 
@@ -74,8 +88,29 @@ public class FoodSelection : MonoBehaviour
         others.SetActive(true);
     }
 
+    public void SelectFood1(GameObject obj)
+    {
+        FoodSelected1.GetComponent<Image>().sprite = obj.GetComponent<Image>().sprite;
+    }
+    public void SelectFood2(GameObject obj)
+    {
+        FoodSelected2.GetComponent<Image>().sprite = obj.GetComponent<Image>().sprite;
+    }
+    public void SelectFood3(GameObject obj)
+    {
+        FoodSelected3.GetComponent<Image>().sprite = obj.GetComponent<Image>().sprite;
+    }
+    public void SelectFood4(GameObject obj)
+    {
+        FoodSelected4.GetComponent<Image>().sprite = obj.GetComponent<Image>().sprite;
+    }
+
     public void NextScene()
     {
+        food1 = FoodSelected1.GetComponent<Image>().sprite.name;
+        food2 = FoodSelected2.GetComponent<Image>().sprite.name;
+        food3 = FoodSelected3.GetComponent<Image>().sprite.name;
+        food4 = FoodSelected4.GetComponent<Image>().sprite.name;
         next = true;
     }
 }
