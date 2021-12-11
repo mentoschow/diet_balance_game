@@ -2379,9 +2379,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 282091402ae81c44c89a4ac4f93dc5a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fs: {fileID: 0}
-  fd: {fileID: 0}
   next: 0
+  pm: {fileID: 2024530719}
 --- !u!114 &1201587433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4325,6 +4324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fs: {fileID: 1828566248}
   fd: {fileID: 11400000, guid: 8b5a11ea934f2b4409846ceb8affc871, type: 2}
+  isboy: 0
 --- !u!114 &2024530720
 MonoBehaviour:
   m_ObjectHideFlags: 0

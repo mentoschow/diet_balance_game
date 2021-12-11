@@ -6,6 +6,7 @@ public class PlayerManager : MonoBehaviour
 {
     public FoodSelection fs;
     public FoodData fd;
+    public bool isboy;
 
     private struct FOOD
     {
@@ -24,8 +25,7 @@ public class PlayerManager : MonoBehaviour
         public float c;
         public float d;
         public float e;
-        public string age;
-        public bool isboy;
+        public string age;    
     }
 
     private FOOD food1;

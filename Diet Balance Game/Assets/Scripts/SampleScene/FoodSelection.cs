@@ -28,7 +28,7 @@ public class FoodSelection : MonoBehaviour
 
     void Start()
     {
-        LoadCharacter(character.sprites[0], character.sprites[1]);
+        //LoadCharacter(character.sprites[0], character.sprites[1]);
         stapleFood = GameObject.Find("stapleFood");
         mainDish = GameObject.Find("mainDish");
         sideDish = GameObject.Find("sideDish");
@@ -119,7 +119,7 @@ public class FoodSelection : MonoBehaviour
 
     void LoadCharacter(Sprite boy, Sprite girl)
     {
-        if (pm.hero.isboy)
+        if (pm.isboy)
         {
             hero.sprite = boy;
         }
