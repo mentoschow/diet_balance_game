@@ -24,6 +24,7 @@ public class PlayerManager : MonoBehaviour
         public float c;
         public float d;
         public float e;
+        public string age;
         public bool isboy;
     }
 

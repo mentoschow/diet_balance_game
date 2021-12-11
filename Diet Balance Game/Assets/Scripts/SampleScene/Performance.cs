@@ -6,7 +6,7 @@ public class Performance : MonoBehaviour
 {
     public AVGMachine avg;
     public bool next;
-    public SelectCharacter sc;
+    public Age_input ai;
     private bool frist;
 
     void Start()
@@ -20,7 +20,7 @@ public class Performance : MonoBehaviour
     {
         if (!next)
         {
-            if (sc.next && frist)
+            if (ai.next && frist)
             {
                 avg.startAVG();
                 frist = false;
