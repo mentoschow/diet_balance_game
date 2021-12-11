@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class BattleManager : MonoBehaviour
 {
-    public EnemyManager em;
-    public PlayerManager pm;
+    public EnemyManager em;  //enemy data
+    public PlayerManager pm;  //player data
     public FoodSelection fs;
     public AssetConfig enemy_sprite;
     public AssetConfig character;
