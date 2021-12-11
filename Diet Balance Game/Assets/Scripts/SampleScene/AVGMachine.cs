@@ -42,7 +42,7 @@ public class AVGMachine : MonoBehaviour
                 if (justEnter)
                 {
                     Init();
-                    LoadCharacter(characterSprite.boy, characterSprite.girl);
+                    LoadCharacter(characterSprite.sprites[0], characterSprite.sprites[1]);
                     justEnter = false;
                 }
                 break;

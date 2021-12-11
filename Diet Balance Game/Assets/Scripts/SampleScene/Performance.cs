@@ -6,19 +6,24 @@ public class Performance : MonoBehaviour
 {
     public AVGMachine avg;
     public bool next;
+    public SelectCharacter sc;
+    private bool frist;
 
     void Start()
     {
         next = false;
+        frist = true;
+
     }
 
     void Update()
     {
         if (!next)
         {
-            if (Input.GetKeyDown(KeyCode.H))
+            if (sc.next && frist)
             {
                 avg.startAVG();
+                frist = false;
             }
             if (Input.GetMouseButtonDown(0))
             {
