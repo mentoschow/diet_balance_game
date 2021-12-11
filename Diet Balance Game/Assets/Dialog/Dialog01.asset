@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Dialog01
   m_EditorClassIdentifier: 
   contents:
-  - dialogText: 123
-    showCharacter: 1
-  - dialogText: 312
-    showCharacter: 1
-  - dialogText: 233
+  - dialogText: How are you?
     showCharacter: 0
+  - dialogText: I'm fine.
+    showCharacter: 1
+  - dialogText: Thank you.
+    showCharacter: 1

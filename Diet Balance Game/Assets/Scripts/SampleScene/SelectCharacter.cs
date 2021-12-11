@@ -2,20 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SelectCharacter : MonoBehaviour
+public class SelectCharacter : PlayerManager
 {
-    public bool isBoy;
-    public Canvas select;
+    public bool next = false;
 
     public void SelectBoy()
     {
-        isBoy = true;
-        select.enabled = false;
+        hero.isboy = true;
+        next = true;
     }
 
     public void SelectGirl()
     {
-        isBoy = false;
-        select.enabled = false;
+        hero.isboy = false;
+        next = true;
     }
 }

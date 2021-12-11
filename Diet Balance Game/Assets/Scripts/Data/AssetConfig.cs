@@ -5,6 +5,5 @@ using UnityEngine;
 [CreateAssetMenu]
 public class AssetConfig : ScriptableObject
 {
-    public Sprite boy;
-    public Sprite girl;
+    public List<Sprite> sprites;
 }

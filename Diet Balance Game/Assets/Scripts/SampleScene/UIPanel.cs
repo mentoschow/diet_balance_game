@@ -6,12 +6,6 @@ public class UIPanel : MonoBehaviour
     public Image mainCharacter;
     public Image contentBg;
     public Text contentText;
-    public Canvas canvas;
-
-    public void ShowCanvas(bool value)
-    {
-        canvas.enabled = value;
-    }
 
     public void ShowMainCharacter(bool value)
     {
