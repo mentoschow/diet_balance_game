@@ -11,10 +11,12 @@ public class BattleManager : MonoBehaviour
     public AssetConfig enemy_sprite;
     public AssetConfig character;
     public Image hero;
+    public Image enemy;
 
     void Start()
     {
         LoadCharacter(character.sprites[0], character.sprites[1]);
+        LoadEnemy(enemy_sprite.sprites[0]);
     }
 
     void Update()
@@ -42,8 +44,8 @@ public class BattleManager : MonoBehaviour
         }
     }
 
-    void LoadEnemy()
+    void LoadEnemy(Sprite tempSprite)
     {
-
+        enemy.sprite = tempSprite;
     }
 }
