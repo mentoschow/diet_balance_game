@@ -50,18 +50,18 @@ public class FoodSelection : MonoBehaviour
     {
         stapleFood.SetActive(true);
         mainDish.SetActive(false);
-        sideDish.SetActive(false);
-        drink.SetActive(false);
-        others.SetActive(false);
+        //sideDish.SetActive(false);
+        //drink.SetActive(false);
+        //others.SetActive(false);
     }
 
     public void MainDish()
     {
         stapleFood.SetActive(false);
         mainDish.SetActive(true);
-        sideDish.SetActive(false);
-        drink.SetActive(false);
-        others.SetActive(false);
+        //sideDish.SetActive(false);
+        //drink.SetActive(false);
+        //others.SetActive(false);
     }
 
     public void SideDish()
