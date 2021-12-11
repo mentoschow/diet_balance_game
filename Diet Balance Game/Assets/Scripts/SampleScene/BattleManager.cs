@@ -15,8 +15,8 @@ public class BattleManager : MonoBehaviour
 
     void Start()
     {
-        LoadCharacter(character.sprites[0], character.sprites[1]);
-        LoadEnemy(enemy_sprite.sprites[0]);
+        //LoadCharacter(character.sprites[0], character.sprites[1]);
+        //LoadEnemy(enemy_sprite.sprites[0]);
     }
 
     void Update()
@@ -34,7 +34,7 @@ public class BattleManager : MonoBehaviour
 
     void LoadCharacter(Sprite boy, Sprite girl)
     {
-        if (pm.hero.isboy)
+        if (pm.isboy)
         {
             hero.sprite = boy;
         }

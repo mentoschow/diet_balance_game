@@ -42,7 +42,7 @@ public class AVGMachine : MonoBehaviour
                 if (justEnter)
                 {
                     Init();
-                    LoadCharacter(characterSprite.sprites[0], characterSprite.sprites[1]);
+                    //LoadCharacter(characterSprite.sprites[0], characterSprite.sprites[1]);
                     justEnter = false;
                 }
                 break;
@@ -50,6 +50,7 @@ public class AVGMachine : MonoBehaviour
                 if (justEnter)
                 {
                     ShowUI();
+                    LoadCharacter(characterSprite.sprites[0], characterSprite.sprites[1]);
                     LoadContent(dialog.contents[currentLine].showCharacter, dialog.contents[currentLine].dialogText);
                     timer = 0;
                     justEnter = false;
@@ -146,7 +147,7 @@ public class AVGMachine : MonoBehaviour
 
     void LoadCharacter(Sprite boy, Sprite girl)
     {
-        if (pm.hero.isboy)
+        if (pm.isboy)
         {
             UIPanel.LoadCharacterSprite(boy);
         }

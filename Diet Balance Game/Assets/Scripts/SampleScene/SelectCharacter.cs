@@ -2,19 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SelectCharacter : PlayerManager
+public class SelectCharacter : MonoBehaviour
 {
     public bool next = false;
+    public PlayerManager pm;
 
     public void SelectBoy()
     {
-        hero.isboy = true;
+        pm.isboy = true;
         next = true;
     }
 
     public void SelectGirl()
     {
-        hero.isboy = false;
+        pm.isboy = false;
         next = true;
     }
 }
