@@ -146,7 +146,7 @@ public class AVGMachine : MonoBehaviour
 
     void LoadCharacter(Sprite boy, Sprite girl)
     {
-        if (pm.hero.isboy == true)
+        if (pm.hero.isboy)
         {
             UIPanel.LoadCharacterSprite(boy);
         }

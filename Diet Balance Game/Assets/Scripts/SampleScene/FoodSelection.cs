@@ -6,7 +6,9 @@ using UnityEngine.UI;
 public class FoodSelection : MonoBehaviour
 {
     public PlayerManager pm;
+    public AssetConfig character;
     public bool next;
+    public Image hero;
 
     private GameObject stapleFood;
     private GameObject mainDish;
@@ -26,6 +28,7 @@ public class FoodSelection : MonoBehaviour
 
     void Start()
     {
+        LoadCharacter(character.sprites[0], character.sprites[1]);
         stapleFood = GameObject.Find("stapleFood");
         mainDish = GameObject.Find("mainDish");
         sideDish = GameObject.Find("sideDish");
@@ -108,9 +111,21 @@ public class FoodSelection : MonoBehaviour
     public void NextScene()
     {
         food1 = FoodSelected1.GetComponent<Image>().sprite.name;
-        food2 = FoodSelected2.GetComponent<Image>().sprite.name;
-        food3 = FoodSelected3.GetComponent<Image>().sprite.name;
-        food4 = FoodSelected4.GetComponent<Image>().sprite.name;
+        //food2 = FoodSelected2.GetComponent<Image>().sprite.name;
+        //food3 = FoodSelected3.GetComponent<Image>().sprite.name;
+        //food4 = FoodSelected4.GetComponent<Image>().sprite.name;
         next = true;
+    }
+
+    void LoadCharacter(Sprite boy, Sprite girl)
+    {
+        if (pm.hero.isboy)
+        {
+            hero.sprite = boy;
+        }
+        else
+        {
+            hero.sprite = girl;
+        }
     }
 }

@@ -2309,6 +2309,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a12e83f59cf9d7e4eab7f0e64f29941b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  em: {fileID: 2024530717}
+  pm: {fileID: 2024530719}
+  fs: {fileID: 1828566248}
+  enemy_sprite: {fileID: 11400000, guid: 711249b2523c12a4a8f964b4252f0c11, type: 2}
 --- !u!1 &1335872810
 GameObject:
   m_ObjectHideFlags: 0
@@ -3686,6 +3690,7 @@ GameObject:
   - component: {fileID: 2024530718}
   - component: {fileID: 2024530719}
   - component: {fileID: 2024530720}
+  - component: {fileID: 2024530717}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3693,6 +3698,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &2024530717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024530716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41e364b9671376d42b5a4a343fa33b23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyData: {fileID: 11400000, guid: 24683d824ea596f40bfdd3d977a43ec9, type: 2}
 --- !u!4 &2024530718
 Transform:
   m_ObjectHideFlags: 0
