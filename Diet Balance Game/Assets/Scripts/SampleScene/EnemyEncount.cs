@@ -19,7 +19,6 @@ public class EnemyEncount : MonoBehaviour
     //csvファイル読み込み関数
     static void csvReader()
     {
-        Debug.Log("CSV READER START");
         csvFile = Resources.Load("CSV/enemy_data") as TextAsset;
         StringReader reader = new StringReader(csvFile.text);
         //csvの最終行まで読み込む
@@ -30,21 +29,29 @@ public class EnemyEncount : MonoBehaviour
         }
     }
 
-    
+    void saveInfo(int enem_id)
+    {
+        em.enemy.enemID = int.Parse(enemyData[enem_id][0]);
+        em.enemy.name = enemyData[enem_id][1];
+        em.enemy.enemImgAddress = enemyData[enem_id][2];
+        em.enemy.energy = int.Parse(enemyData[enem_id][3]);
+        em.enemy.carb = float.Parse(enemyData[enem_id][4]);
+        em.enemy.lipid = float.Parse(enemyData[enem_id][5]);
+        em.enemy.protein = float.Parse(enemyData[enem_id][6]);
+        em.enemy.vitamin = float.Parse(enemyData[enem_id][7]);
+        em.enemy.mineral = float.Parse(enemyData[enem_id][8]);
+    }
 
-    //static int enem_id = 1;     //キャラ選択によって変更？またはランダム？
 
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("EnemyEncount START");
         //csvファイル読み込み
         csvReader();
 
         Random.InitState(System.DateTime.Now.Millisecond);  //時間による乱数初期化
         int enem_id = 1;//Random.Range(1, 5);
 
-        Debug.Log("DATA FIND: " + enemyData[1][0]);
         //IDから敵の情報読み込み
         int enemyID = int.Parse(enemyData[enem_id][0]);
         string name = enemyData[enem_id][1];
@@ -55,16 +62,8 @@ public class EnemyEncount : MonoBehaviour
         float protein = float.Parse(enemyData[enem_id][6]);
         float vitamin = float.Parse(enemyData[enem_id][7]);
         float mineral = float.Parse(enemyData[enem_id][8]);
-        //em.enemy.enemID = int.Parse(enemyData[enem_id][0]);
-        //em.enemy.name = enemyData[enem_id][1];
-        //em.enemy.enemImgAddress = enemyData[enem_id][2];
-        //em.enemy.energy = int.Parse(enemyData[enem_id][3]);
-        //em.enemy.carb = float.Parse(enemyData[enem_id][4]);
-        //em.enemy.lipid = float.Parse(enemyData[enem_id][5]);
-        //em.enemy.protein = float.Parse(enemyData[enem_id][6]);
-        //em.enemy.vitamin = float.Parse(enemyData[enem_id][7]);
-        //em.enemy.mineral = float.Parse(enemyData[enem_id][8]);
-
+        //構造体への保存
+        //saveInfo(enem_id);
         //敵画像の表示
         EnemImg.sprite = Resources.Load<Sprite>(address);
 

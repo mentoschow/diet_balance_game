@@ -15,8 +15,9 @@ public class BattleManager : MonoBehaviour
 
     void Start()
     {
-        //LoadCharacter(character.sprites[0], character.sprites[1]);
-        //LoadEnemy(enemy_sprite.sprites[0]);
+        LoadCharacter(character.sprites[0], character.sprites[1]);
+        LoadEnemy(em.enemy.enemImgAddress);
+        Debug.Log(em.enemy.name);
     }
 
     void Update()
@@ -44,8 +45,9 @@ public class BattleManager : MonoBehaviour
         }
     }
 
-    void LoadEnemy(Sprite tempSprite)
+    void LoadEnemy(string enemAddress)
     {
-        enemy.sprite = tempSprite;
+        Debug.Log("enemAddress: "+enemAddress);
+        enemy.sprite = Resources.Load<Sprite>(enemAddress);
     }
 }
