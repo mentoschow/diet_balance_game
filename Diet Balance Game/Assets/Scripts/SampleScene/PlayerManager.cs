@@ -11,11 +11,12 @@ public class PlayerManager : MonoBehaviour
     private struct FOOD
     {
         public string name;
-        public float a;
-        public float b;
-        public float c;
-        public float d;
-        public float e;
+        public int energy;
+        public float carb;
+        public float lipid;
+        public float protein;
+        public float vitamin;
+        public float mineral;
     }
 
     public struct HERO
@@ -63,21 +64,21 @@ public class PlayerManager : MonoBehaviour
             if (name == fd.food[i].name)
             {
                 food.name = fd.food[i].name;
-                food.a = fd.food[i].a;
-                food.b = fd.food[i].b;
-                food.c = fd.food[i].c;
-                food.d = fd.food[i].d;
-                food.e = fd.food[i].e;
+                food.carb = fd.food[i].carb;
+                food.lipid = fd.food[i].lipid;
+                food.protein = fd.food[i].protein;
+                food.vitamin = fd.food[i].vitamin;
+                food.mineral = fd.food[i].mineral;
             }
         }
     }
 
     void UpdateHero(FOOD food1, FOOD food2, FOOD food3, FOOD food4)
     {
-        hero.a = hero.a + food1.a + food2.a + food3.a + food4.a;
-        hero.b = hero.b + food1.b + food2.b + food3.b + food4.b;
-        hero.c = hero.c + food1.c + food2.c + food3.c + food4.c;
-        hero.d = hero.d + food1.d + food2.d + food3.d + food4.d;
-        hero.e = hero.e + food1.e + food2.e + food3.e + food4.e;
+        hero.a = hero.a + food1.carb + food2.carb + food3.carb + food4.carb;
+        hero.b = hero.b + food1.lipid + food2.lipid + food3.lipid + food4.lipid;
+        hero.c = hero.c + food1.protein + food2.protein + food3.protein + food4.protein;
+        hero.d = hero.d + food1.vitamin + food2.vitamin + food3.vitamin + food4.vitamin;
+        hero.e = hero.e + food1.mineral + food2.mineral + food3.mineral + food4.mineral;
     }
 }

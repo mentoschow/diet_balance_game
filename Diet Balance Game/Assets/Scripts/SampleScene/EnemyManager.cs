@@ -8,12 +8,15 @@ public class EnemyManager : MonoBehaviour
 
     public struct ENEMY
     {
+        public int enemID;
         public string name;
-        public float a;
-        public float b;
-        public float c;
-        public float d;
-        public float e;
+        public string enemImgAddress;   //敵の画像のアドレス保存用
+        public int energy;
+        public float carb;
+        public float lipid;
+        public float protein;
+        public float vitamin;
+        public float mineral;
     }
 
     public ENEMY enemy;
@@ -21,6 +24,7 @@ public class EnemyManager : MonoBehaviour
     void Start()
     {
         UpdateEnemy();
+        //GameObject enemy_img = new GameObject("EnemyImg");
     }
 
     void Update()
@@ -31,10 +35,11 @@ public class EnemyManager : MonoBehaviour
     void UpdateEnemy()
     {
         enemy.name = enemyData.food[0].name;
-        enemy.a = enemyData.food[0].a;
-        enemy.b = enemyData.food[0].b;
-        enemy.c = enemyData.food[0].c;
-        enemy.d = enemyData.food[0].d;
-        enemy.e = enemyData.food[0].e;
+        enemy.energy = enemyData.food[0].energy;
+        enemy.carb = enemyData.food[0].carb;
+        enemy.lipid = enemyData.food[0].lipid;
+        enemy.protein = enemyData.food[0].protein;
+        enemy.vitamin = enemyData.food[0].vitamin;
+        enemy.mineral = enemyData.food[0].mineral;
     }
 }
