@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     public FoodSelection fs;
-    public FoodData fd;
+    public Sheet1 fd;
     public bool isboy;
 
     private struct FOOD
@@ -59,16 +59,16 @@ public class PlayerManager : MonoBehaviour
 
     void GetFoodData(string name, FOOD food)
     {
-        for (int i = 0; i < fd.food.Count; i++)
+        for (int i = 0; i < fd.dataList.Count; i++)
         {
-            if (name == fd.food[i].name)
+            if (name == fd.dataList[i].Name)
             {
-                food.name = fd.food[i].name;
-                food.carb = fd.food[i].carb;
-                food.lipid = fd.food[i].lipid;
-                food.protein = fd.food[i].protein;
-                food.vitamin = fd.food[i].vitamin;
-                food.mineral = fd.food[i].mineral;
+                food.name = fd.dataList[i].Name;
+                food.carb = fd.dataList[i].Carb;
+                food.lipid = fd.dataList[i].Lipid;
+                food.protein = fd.dataList[i].Protein;
+                food.vitamin = fd.dataList[i].Vitamin;
+                food.mineral = fd.dataList[i].Mineral;
             }
         }
     }
