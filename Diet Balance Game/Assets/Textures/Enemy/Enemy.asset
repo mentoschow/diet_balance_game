@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: Enemy
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 21300000, guid: 050087e0ccf8c79408081cd6f72df8e4, type: 3}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: fd5de7cb6693ec2458c87ed48e73afa4, type: 3}

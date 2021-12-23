@@ -9,7 +9,38 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 939463f382f2c9745a2e7fdc80da744c, type: 3}
+  m_Script: {fileID: 11500000, guid: 24dce9899e229ad468fa2a7dde6b4673, type: 3}
   m_Name: FoodData
   m_EditorClassIdentifier: 
-  food: []
+  SheetName: Assets/Textures/Food/FoodData.xlsx
+  WorksheetName: Sheet1
+  dataArray:
+  - name: hamburger
+    energy: 0
+    carb: 0
+    lipid: 0
+    protein: 0
+    vitamin: 0
+    mineral: 0
+  - name: juice
+    energy: 0
+    carb: 0
+    lipid: 0
+    protein: 0
+    vitamin: 0
+    mineral: 0
+  dataList:
+  - name: hamburger
+    energy: 0
+    carb: 0
+    lipid: 0
+    protein: 0
+    vitamin: 0
+    mineral: 0
+  - name: juice
+    energy: 0
+    carb: 0
+    lipid: 0
+    protein: 0
+    vitamin: 0
+    mineral: 0

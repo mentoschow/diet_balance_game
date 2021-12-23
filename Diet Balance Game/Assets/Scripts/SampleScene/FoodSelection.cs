@@ -43,7 +43,7 @@ public class FoodSelection : MonoBehaviour
 
     void Update()
     {
-        
+        LoadCharacter(character.sprites[0], character.sprites[1]);
     }
 
     public void StapleFood()

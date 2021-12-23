@@ -1,0 +1,5 @@
+ID,name,filename,energy,carb,lipid,protein,vitamin,mineral
+1,cold,EnemImg/enem_cold,500,10,10,10,5,1000
+2,busy,EnemImg/enem_busy,,,,,,
+3,fat,EnemImg/enem_fat,,,,,,
+4,roughskin,EnemImg/enem_roughskin,,,,,,
