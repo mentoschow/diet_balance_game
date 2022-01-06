@@ -4,7 +4,7 @@ using UnityEngine;
 using System.IO;
 using UnityEngine.UI;    //UIの追加
 
-public class EnemyEncount : MonoBehaviour
+public class PlayerStatus : MonoBehaviour
 {
     public bool next;           //シーン遷移用のブール変数
     public Performance p;

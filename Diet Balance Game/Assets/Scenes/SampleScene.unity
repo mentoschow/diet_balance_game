@@ -2780,7 +2780,7 @@ GameObject:
   - component: {fileID: 1398074816}
   - component: {fileID: 1398074822}
   m_Layer: 5
-  m_Name: EnemyEncount
+  m_Name: PlayerStatus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4322,8 +4322,8 @@ MonoBehaviour:
   ai: {fileID: 1063400337}
   performance: {fileID: 1827770760}
   p: {fileID: 1827770764}
-  enemyEncount: {fileID: 1398074820}
-  ee: {fileID: 1398074822}
+  playerStatus: {fileID: 1398074820}
+  ps: {fileID: 1398074822}
   foodSelection: {fileID: 1828566246}
   fs: {fileID: 1828566248}
   Battle: {fileID: 1222209097}
