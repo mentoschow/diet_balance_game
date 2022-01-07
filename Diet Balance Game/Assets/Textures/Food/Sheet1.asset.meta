@@ -1,6 +1,17 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
 guid: cbe03dc8d32b16f49a1f5cba26e9245b
 NativeFormatImporter:
+=======
+<<<<<<< Updated upstream:Diet Balance Game/Assets/Textures/PlayerStatus/popupimg.meta
+guid: a2408a0f3b4adb441a8296316339b705
+folderAsset: yes
+DefaultImporter:
+=======
+guid: 8d45ecdb712fb21408c6798b77329230
+NativeFormatImporter:
+>>>>>>> Stashed changes:Diet Balance Game/Assets/Textures/Food/Sheet1.asset.meta
+>>>>>>> Stashed changes
   externalObjects: {}
   mainObjectFileID: 11400000
   userData: 
