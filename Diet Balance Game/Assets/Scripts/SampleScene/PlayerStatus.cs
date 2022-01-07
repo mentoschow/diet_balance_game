@@ -7,10 +7,14 @@ using UnityEngine.UI;    //UIの追加
 public class PlayerStatus : MonoBehaviour
 {
     public bool next;           //シーン遷移用のブール変数
+    public PlayerManager pm;
     public Performance p;
+    public AssetConfig character;
+    public AssetConfig popup;
 
     static TextAsset csvFile;   //csvファイルを変数として扱う
-    [SerializeField] Image EnemImg = null;      //Image UIの追加
+    [SerializeField] Image PlayerImg = null;      //Image UIの追加
+    [SerializeField] Image PopImg = null;      //Image UIの追加
 
     //敵の情報保存用変数
     static List<string[]> enemyData = new List<string[]>();     //csvファイルから読み込んだ情報を格納する配列
@@ -50,7 +54,9 @@ public class PlayerStatus : MonoBehaviour
         csvReader();
 
         Random.InitState(System.DateTime.Now.Millisecond);  //時間による乱数初期化
-        int enem_id = 1;//Random.Range(1, 5);
+        
+        pm.hero.statusid = Random.Range(0, 4);
+        int enem_id = pm.hero.statusid;
 
         //IDから敵の情報読み込み
         int enemyID = int.Parse(enemyData[enem_id][0]);
@@ -65,13 +71,31 @@ public class PlayerStatus : MonoBehaviour
         //構造体への保存
         //saveInfo(enem_id);
         //敵画像の表示
-        EnemImg.sprite = Resources.Load<Sprite>(address);
+        //PlayerImg.sprite = Resources.Load<Sprite>(address);
+
+        
+        
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        int status = pm.hero.statusid;      //プレイヤーのステータスID
+        
+        //プレイヤー画像の表示
+        if (pm.isboy == true)
+        {
+            PlayerImg.sprite = character.sprites[status * 2];
+        }
+        else
+        {
+            PlayerImg.sprite = character.sprites[status + (status * 2)];
+        }
+
+        //Pop画像の表示
+        PopImg.sprite = popup.sprites[status];
+
         if (p.next)
         {
             if(Input.GetMouseButtonDown(0))
