@@ -8,13 +8,18 @@ public class EnemyEncount : MonoBehaviour
 {
     public bool next;           //シーン遷移用のブール変数
     public PlayerManager pm;
-    public Performance p;
+    public FoodSelection fs;
+    public AssetConfig enem;
+    [SerializeField] Image EnemImg = null;      //敵画像
 
     static TextAsset csvFile;   //csvファイルを変数として扱う
 
     //敵の情報保存用変数
     static List<string[]> enemyData = new List<string[]>();     //csvファイルから読み込んだ情報を格納する配列
     public EnemyManager em;      //敵のパラメーター保存
+
+    int normal_enem;    //normal用の敵乱数生成変数
+
 
     //csvファイル読み込み関数
     static void csvReader()
@@ -61,12 +66,27 @@ public class EnemyEncount : MonoBehaviour
         float mineral = float.Parse(enemyData[enem_id][8]);
         //構造体への保存
         //saveInfo(enem_id);d
+
+        //normal用の敵乱数生成
+        normal_enem = Random.Range(1, 4);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (p.next)
+        int status = pm.hero.statusid;
+        //敵画像の表示
+        if (status == 0)
+        {
+            //normalの敵がいないため，ランダム選択
+            EnemImg.sprite = enem.sprites[normal_enem];
+        }
+        else
+        {
+            EnemImg.sprite = enem.sprites[status];
+        }
+
+        if (fs.next)
         {
             if (Input.GetMouseButtonDown(0))
             {
