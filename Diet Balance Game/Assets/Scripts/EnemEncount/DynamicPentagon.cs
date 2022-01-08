@@ -20,13 +20,13 @@ public class DynamicPentagon : Graphic
 
     protected virtual void Update()
     {
-#if UNITY_EDITOR
+//#if UNITY_EDITOR
         yRate = rectTransform.rect.height / rectTransform.rect.width;
         maxRadius = rectTransform.rect.width / 2.0f;
         deltaTheta = 360.0f / getVertexCount();
 
         this.UpdateGeometry();
-#endif
+//#endif
     }
 
     public void SetUp()

@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class EnemImgMng : MonoBehaviour
 {
+    public bool end_enem_down = false;           //シーン遷移用のブール変数
+
     public FoodSelection fs;
 
     //始点，終点
     Vector3 startPos;
     Vector3 endPos;
+
+    //現在の位置
+    Vector3 present_pos;
 
     // スピード
     public float speed = 1.0F;
@@ -20,21 +25,29 @@ public class EnemImgMng : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        startPos = new Vector3(640, 1500, 0);
+        startPos = new Vector3(640, 2000, 0);
         endPos = new Vector3(640, 360, 0);
+        present_pos = startPos;
         distance_two = Vector3.Distance(startPos, endPos);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (fs.next)
+        //Debug.Log(transform.position);
+        if (fs.next && end_enem_down == false)
         {
             // 現在の位置
-            float present_Location = (Time.time * speed * 70) / distance_two;
-            //Debug.Log(present_Location);
+            float present_Location = (Time.time * speed) * 100 / distance_two;
+            
             // オブジェクトの移動
             transform.position = Vector3.Lerp(startPos, endPos, present_Location);
+            present_pos = Vector3.Lerp(startPos, endPos, present_Location);
+            
+            if (present_pos == endPos)
+            {
+                end_enem_down = true;
+            }
         }
         
     }

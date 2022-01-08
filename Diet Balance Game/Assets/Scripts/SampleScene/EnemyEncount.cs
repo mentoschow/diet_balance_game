@@ -50,6 +50,10 @@ public class EnemyEncount : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //normal用の敵乱数生成
+        normal_enem = Random.Range(1, 5);
+        Debug.Log(normal_enem);
+
         //csvファイル読み込み
         csvReader();
 
@@ -67,14 +71,14 @@ public class EnemyEncount : MonoBehaviour
         //構造体への保存
         //saveInfo(enem_id);d
 
-        //normal用の敵乱数生成
-        normal_enem = Random.Range(1, 4);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         int status = pm.hero.statusid;
+        
         //敵画像の表示
         if (status == 0)
         {
