@@ -4,7 +4,25 @@ using UnityEngine;
 
 public class StatusParameter02 : DynamicPentagon
 {
+    public bool end_flag = false;
     public EnemImgMng EIM;
+    public StatusParameter01 SP01;
+
+    float speed;
+
+    float carb;
+    float lipid;
+    float protein;
+    float vitamin;
+    float mineral;
+
+    float carb_sndmax;
+    float lipid_sndmax;
+    float protein_sndmax;
+    float vitamin_sndmax;
+    float mineral_sndmax;
+
+    int flag_counter = 0;
 
     protected override void Awake()
     {
@@ -42,33 +60,94 @@ public class StatusParameter02 : DynamicPentagon
 
     void Start()
     {
+        carb = 0;
+        lipid = 0;
+        protein = 0;
+        vitamin = 0;
+        mineral = 0;
+
         m_ParameterList = new List<Parameter>
         {
-            new Parameter( "炭水化物", 0),
-            new Parameter( "脂質", 0),
-            new Parameter( "タンパク質", 0),
-            new Parameter( "ビタミン", 0),
-            new Parameter( "ミネラル", 0),
+            new Parameter( "炭水化物", carb),
+            new Parameter( "脂質", lipid),
+            new Parameter( "タンパク質", protein),
+            new Parameter( "ビタミン", vitamin),
+            new Parameter( "ミネラル", mineral),
         };
+
+        //1回目の食事で得た栄養素(最低値0，最大値1で正規化)
+        carb_sndmax = 1.1f;
+        lipid_sndmax = 0.9f;
+        protein_sndmax = 1.4f;
+        vitamin_sndmax = 0.7f;
+        mineral_sndmax = 1.3f;
     }
 
     float counter = 0;
 
     protected override void Update()
     {
-        if (EIM.end_enem_down == true && counter < 1.5f)
+        if (EIM.end_enem_down == true && end_flag == false && SP01.end_flag == true)
         {
-            counter += 0.01f;
+            speed += 0.001f;
+            if (carb < carb_sndmax)
+            {
+                carb += speed;
+            }
+            else
+            {
+                flag_counter++;
+            }
+
+            if (lipid < lipid_sndmax)
+            {
+                lipid += speed;
+            }
+            else
+            {
+                flag_counter++;
+            }
+            if (protein < protein_sndmax)
+            {
+                protein += speed;
+            }
+            else
+            {
+                flag_counter++;
+            }
+
+            if (vitamin < vitamin_sndmax)
+            {
+                vitamin += speed;
+            }
+            else
+            {
+                flag_counter++;
+            }
+
+            if (mineral < mineral_sndmax)
+            {
+                mineral += speed;
+            }
+            else
+            {
+                flag_counter++;
+            }
+
+            if (flag_counter == 5)
+            {
+                end_flag = true;
+            }
         }
 
         //値の更新
         m_ParameterList = new List<Parameter>
         {
-            new Parameter( "炭水化物", counter),
-            new Parameter( "脂質", counter),
-            new Parameter( "タンパク質", counter),
-            new Parameter( "ビタミン", counter),
-            new Parameter( "ミネラル", counter),
+            new Parameter( "炭水化物", carb),
+            new Parameter( "脂質", lipid),
+            new Parameter( "タンパク質", protein),
+            new Parameter( "ビタミン", vitamin),
+            new Parameter( "ミネラル", mineral),
         };
 
         SetUp();
