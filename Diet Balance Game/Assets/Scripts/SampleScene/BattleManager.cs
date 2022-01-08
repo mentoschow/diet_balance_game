@@ -7,7 +7,7 @@ public class BattleManager : MonoBehaviour
 {
     public EnemyManager em;  //enemy data
     public PlayerManager pm;  //player data
-    public FoodSelection fs;
+    public EnemyEncount ee;
     public AssetConfig enemy_sprite;
     public AssetConfig character;
     public Image hero;
@@ -22,7 +22,7 @@ public class BattleManager : MonoBehaviour
 
     void Update()
     {
-        if (fs.next)
+        if (ee.next)
         {
             LoadCharacter(character.sprites[0], character.sprites[1]); 
             LoadEnemy(em.enemy.enemImgAddress);

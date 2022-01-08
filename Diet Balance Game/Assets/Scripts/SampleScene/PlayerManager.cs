@@ -26,7 +26,8 @@ public class PlayerManager : MonoBehaviour
         public float c;
         public float d;
         public float e;
-        public string age;    
+        public string age;
+        public int statusid;       //normal:0, cold:1, busy:2, fat:3, roughskin:4
     }
 
     private FOOD food1;

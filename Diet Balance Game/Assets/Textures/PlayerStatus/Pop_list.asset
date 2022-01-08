@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df24fc2e82fa05e4c82708e89946ae21, type: 3}
+  m_Name: Pop_list
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: 66e491934c7c89041aa4792e27e60b17, type: 3}
+  - {fileID: 21300000, guid: 3273a6432dd32d449b1202c39e9905ce, type: 3}
+  - {fileID: 21300000, guid: 25694807bc3c5fa499f7a960c691516a, type: 3}
+  - {fileID: 21300000, guid: f25ec3f089fbd284d913100f954f0aa3, type: 3}
+  - {fileID: 21300000, guid: f89e04f774038c8478e1a12970d60f9c, type: 3}

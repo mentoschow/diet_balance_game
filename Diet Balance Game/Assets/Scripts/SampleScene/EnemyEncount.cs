@@ -7,14 +7,19 @@ using UnityEngine.UI;    //UIの追加
 public class EnemyEncount : MonoBehaviour
 {
     public bool next;           //シーン遷移用のブール変数
-    public Performance p;
+    public PlayerManager pm;
+    public FoodSelection fs;
+    public AssetConfig enem;
+    [SerializeField] Image EnemImg = null;      //敵画像
 
     static TextAsset csvFile;   //csvファイルを変数として扱う
-    [SerializeField] Image EnemImg = null;      //Image UIの追加
 
     //敵の情報保存用変数
     static List<string[]> enemyData = new List<string[]>();     //csvファイルから読み込んだ情報を格納する配列
     public EnemyManager em;      //敵のパラメーター保存
+
+    int normal_enem;    //normal用の敵乱数生成変数
+
 
     //csvファイル読み込み関数
     static void csvReader()
@@ -22,7 +27,7 @@ public class EnemyEncount : MonoBehaviour
         csvFile = Resources.Load("CSV/enemy_data") as TextAsset;
         StringReader reader = new StringReader(csvFile.text);
         //csvの最終行まで読み込む
-        while(reader.Peek() != -1)
+        while (reader.Peek() != -1)
         {
             string line = reader.ReadLine();    //一行ずつ読み込む
             enemyData.Add(line.Split(','));     //コンマ区切りでListに格納
@@ -42,16 +47,17 @@ public class EnemyEncount : MonoBehaviour
         em.enemy.mineral = float.Parse(enemyData[enem_id][8]);
     }
 
-
     // Start is called before the first frame update
     void Start()
     {
+        //normal用の敵乱数生成
+        normal_enem = Random.Range(1, 5);
+        Debug.Log(normal_enem);
+
         //csvファイル読み込み
         csvReader();
 
-        Random.InitState(System.DateTime.Now.Millisecond);  //時間による乱数初期化
-        int enem_id = 1;//Random.Range(1, 5);
-
+        int enem_id = pm.hero.statusid;
         //IDから敵の情報読み込み
         int enemyID = int.Parse(enemyData[enem_id][0]);
         string name = enemyData[enem_id][1];
@@ -63,22 +69,33 @@ public class EnemyEncount : MonoBehaviour
         float vitamin = float.Parse(enemyData[enem_id][7]);
         float mineral = float.Parse(enemyData[enem_id][8]);
         //構造体への保存
-        //saveInfo(enem_id);
-        //敵画像の表示
-        EnemImg.sprite = Resources.Load<Sprite>(address);
+        //saveInfo(enem_id);d
 
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (p.next)
+        int status = pm.hero.statusid;
+        
+        //敵画像の表示
+        if (status == 0)
         {
-            if(Input.GetMouseButtonDown(0))
+            //normalの敵がいないため，ランダム選択
+            EnemImg.sprite = enem.sprites[normal_enem];
+        }
+        else
+        {
+            EnemImg.sprite = enem.sprites[status];
+        }
+
+        if (fs.next)
+        {
+            if (Input.GetMouseButtonDown(0))
             {
                 next = true;
             }
         }
-        
     }
 }
