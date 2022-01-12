@@ -20,6 +20,8 @@ public class EnemyEncount : MonoBehaviour
 
     int normal_enem;    //normal用の敵乱数生成変数
 
+    //ボタンの情報取得用
+    public BattleButton battleB;
 
     //csvファイル読み込み関数
     static void csvReader()
@@ -92,7 +94,7 @@ public class EnemyEncount : MonoBehaviour
 
         if (fs.next)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (battleB.next == true)
             {
                 next = true;
             }

@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StatusParameter01 : DynamicPentagon
+public class StatusParameter03 : DynamicPentagon
 {
     public bool end_flag = false;
     public EnemImgMng EIM;
+    public StatusParameter02 SP02;
 
     float speed;
 
@@ -15,11 +16,11 @@ public class StatusParameter01 : DynamicPentagon
     float vitamin;
     float mineral;
 
-    float carb_fstmax;
-    float lipid_fstmax;
-    float protein_fstmax;
-    float vitamin_fstmax;
-    float mineral_fstmax;
+    float carb_trdmax;
+    float lipid_trdmax;
+    float protein_trdmax;
+    float vitamin_trdmax;
+    float mineral_trdmax;
 
     int flag_counter = 0;
 
@@ -49,7 +50,7 @@ public class StatusParameter01 : DynamicPentagon
         }
         public string parameterName;
 
-        [Range(0.0f, 0.5f)]
+        [Range(0.0f, 1.5f)]
         public float value;
     }
 
@@ -75,22 +76,19 @@ public class StatusParameter01 : DynamicPentagon
         };
 
         //1回目の食事で得た栄養素(最低値0，最大値1で正規化)
-        carb_fstmax = 0.2f;
-        lipid_fstmax = 0.5f;
-        protein_fstmax = 0.4f;
-        vitamin_fstmax = 0.5f;
-        mineral_fstmax = 0.3f;
+        carb_trdmax = 1.5f;
+        lipid_trdmax = 1.5f;
+        protein_trdmax = 1.5f;
+        vitamin_trdmax = 1.5f;
+        mineral_trdmax = 1.5f;
     }
-
-    
 
     protected override void Update()
     {
-        if (EIM.end_enem_down == true && end_flag == false)
+        if (EIM.end_enem_down == true && end_flag == false && SP02.end_flag == true)
         {
             speed = Time.deltaTime;
-            
-            if (carb < carb_fstmax)
+            if (carb < carb_trdmax)
             {
                 carb += speed;
             }
@@ -99,7 +97,7 @@ public class StatusParameter01 : DynamicPentagon
                 flag_counter++;
             }
 
-            if(lipid < lipid_fstmax)
+            if (lipid < lipid_trdmax)
             {
                 lipid += speed;
             }
@@ -107,8 +105,7 @@ public class StatusParameter01 : DynamicPentagon
             {
                 flag_counter++;
             }
-
-            if (protein < protein_fstmax)
+            if (protein < protein_trdmax)
             {
                 protein += speed;
             }
@@ -117,7 +114,7 @@ public class StatusParameter01 : DynamicPentagon
                 flag_counter++;
             }
 
-            if (vitamin < vitamin_fstmax)
+            if (vitamin < vitamin_trdmax)
             {
                 vitamin += speed;
             }
@@ -126,7 +123,7 @@ public class StatusParameter01 : DynamicPentagon
                 flag_counter++;
             }
 
-            if (mineral < mineral_fstmax)
+            if (mineral < mineral_trdmax)
             {
                 mineral += speed;
             }
@@ -136,7 +133,7 @@ public class StatusParameter01 : DynamicPentagon
             }
 
             //次のパラメータ表示に進むか
-            if(flag_counter == 5)
+            if (flag_counter == 5)
             {
                 end_flag = true;
             }
@@ -145,7 +142,7 @@ public class StatusParameter01 : DynamicPentagon
                 flag_counter = 0;
             }
         }
-        
+
         //値の更新
         m_ParameterList = new List<Parameter>
         {

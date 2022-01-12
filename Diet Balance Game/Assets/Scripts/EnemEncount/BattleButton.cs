@@ -6,6 +6,9 @@ using UnityEngine.EventSystems;
 
 public class BattleButton : MonoBehaviour
 {
+    public bool next = false;
+
+    public StatusParameter03 SP03;
     Button NextButton;
     Animator ButtonAnime;
 
@@ -18,9 +21,14 @@ public class BattleButton : MonoBehaviour
         ButtonAnime.SetTrigger("Highlighted");
     }
 
-    // Update is called once per frame
-    void Update()
+    // ボタンが押された場合、今回呼び出される関数
+    public void OnClick()
     {
-       
+        if(SP03.end_flag == true)
+        {
+            next = true;
+            Debug.Log("押された!");  // ログを出力
+        }
+        
     }
 }

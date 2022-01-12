@@ -26,7 +26,7 @@ public class BattleManager : MonoBehaviour
         {
             LoadCharacter(character.sprites[0], character.sprites[1]); 
             LoadEnemy(em.enemy.enemImgAddress);
-            Debug.Log(em.enemy.name);
+            //Debug.Log(em.enemy.name);
         }
     }
 
@@ -49,7 +49,7 @@ public class BattleManager : MonoBehaviour
 
     void LoadEnemy(string enemAddress)
     {
-        Debug.Log("enemAddress: "+enemAddress);
+        //Debug.Log("enemAddress: "+enemAddress);
         enemy.sprite = Resources.Load<Sprite>(enemAddress);
     }
 }

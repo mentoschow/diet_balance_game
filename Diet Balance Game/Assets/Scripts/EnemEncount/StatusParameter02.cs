@@ -50,7 +50,7 @@ public class StatusParameter02 : DynamicPentagon
         }
         public string parameterName;
 
-        [Range(0.0f, 1.5f)]
+        [Range(0.0f, 1.0f)]
         public float value;
     }
 
@@ -68,22 +68,20 @@ public class StatusParameter02 : DynamicPentagon
 
         m_ParameterList = new List<Parameter>
         {
+            new Parameter( "ビタミン", vitamin),
             new Parameter( "炭水化物", carb),
             new Parameter( "脂質", lipid),
             new Parameter( "タンパク質", protein),
-            new Parameter( "ビタミン", vitamin),
             new Parameter( "ミネラル", mineral),
         };
 
         //1回目の食事で得た栄養素(最低値0，最大値1で正規化)
-        carb_sndmax = 1.1f;
+        carb_sndmax = 1.0f;
         lipid_sndmax = 0.9f;
-        protein_sndmax = 1.4f;
+        protein_sndmax = 1.0f;
         vitamin_sndmax = 0.7f;
-        mineral_sndmax = 1.3f;
+        mineral_sndmax = 1.0f;
     }
-
-    float counter = 0;
 
     protected override void Update()
     {
@@ -148,10 +146,10 @@ public class StatusParameter02 : DynamicPentagon
         //値の更新
         m_ParameterList = new List<Parameter>
         {
+            new Parameter( "ビタミン", vitamin),
             new Parameter( "炭水化物", carb),
             new Parameter( "脂質", lipid),
             new Parameter( "タンパク質", protein),
-            new Parameter( "ビタミン", vitamin),
             new Parameter( "ミネラル", mineral),
         };
 
