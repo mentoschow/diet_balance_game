@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5745503783514241016
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5745503783514241018}
+  - component: {fileID: 5745503783514241019}
+  - component: {fileID: 5745503783514240964}
+  - component: {fileID: 5745503783514241017}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5745503783514241018
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5745503783514241016}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5745503783514241019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5745503783514241016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d6c2570a721bd540b85e3db2e221fdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fs: {fileID: 0}
+  fd: {fileID: 11400000, guid: 65586acbec2e0b34e8c92d90ec795d1b, type: 2}
+  isboy: 0
+--- !u!114 &5745503783514240964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5745503783514241016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98fa1fdeba57cbe4ea8f4a1bd07036e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectCharacter: {fileID: 0}
+  sc: {fileID: 0}
+  age_input: {fileID: 0}
+  ai: {fileID: 0}
+  performance: {fileID: 0}
+  p: {fileID: 0}
+  playerStatus: {fileID: 0}
+  ps: {fileID: 0}
+  foodSelection: {fileID: 0}
+  fs: {fileID: 0}
+  enemyEncount: {fileID: 0}
+  ee: {fileID: 0}
+  Battle: {fileID: 0}
+  bm: {fileID: 0}
+--- !u!114 &5745503783514241017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5745503783514241016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41e364b9671376d42b5a4a343fa33b23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyData: {fileID: 11400000, guid: 24683d824ea596f40bfdd3d977a43ec9, type: 2}
