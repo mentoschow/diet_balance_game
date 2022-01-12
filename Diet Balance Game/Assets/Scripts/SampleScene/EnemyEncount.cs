@@ -38,15 +38,13 @@ public class EnemyEncount : MonoBehaviour
 
     void saveInfo(int enem_id)
     {
-        em.enemy.enemID = int.Parse(enemyData[enem_id][0]);
-        em.enemy.name = enemyData[enem_id][1];
-        em.enemy.enemImgAddress = enemyData[enem_id][2];
-        em.enemy.energy = int.Parse(enemyData[enem_id][3]);
-        em.enemy.carb = float.Parse(enemyData[enem_id][4]);
-        em.enemy.lipid = float.Parse(enemyData[enem_id][5]);
-        em.enemy.protein = float.Parse(enemyData[enem_id][6]);
-        em.enemy.vitamin = float.Parse(enemyData[enem_id][7]);
-        em.enemy.mineral = float.Parse(enemyData[enem_id][8]);
+        em.enemy.enemID = enem_id;
+        em.enemy.energy = int.Parse(enemyData[enem_id][1]);
+        em.enemy.carb = float.Parse(enemyData[enem_id][2]);
+        em.enemy.lipid = float.Parse(enemyData[enem_id][3]);
+        em.enemy.protein = float.Parse(enemyData[enem_id][4]);
+        em.enemy.vitamin = float.Parse(enemyData[enem_id][5]);
+        em.enemy.mineral = float.Parse(enemyData[enem_id][6]);
     }
 
     // Start is called before the first frame update
@@ -54,26 +52,18 @@ public class EnemyEncount : MonoBehaviour
     {
         //normal—p‚Ì“G—”¶¬
         normal_enem = Random.Range(1, 5);
-        Debug.Log(normal_enem);
 
         //csvƒtƒ@ƒCƒ‹“Ç‚İ‚İ
         csvReader();
 
-        int enem_id = pm.hero.statusid;
-        //ID‚©‚ç“G‚Ìî•ñ“Ç‚İ‚İ
-        int enemyID = int.Parse(enemyData[enem_id][0]);
-        string name = enemyData[enem_id][1];
-        string address = enemyData[enem_id][2];
-        int energy = int.Parse(enemyData[enem_id][3]);
-        float carb = float.Parse(enemyData[enem_id][4]);
-        float lipid = float.Parse(enemyData[enem_id][5]);
-        float protein = float.Parse(enemyData[enem_id][6]);
-        float vitamin = float.Parse(enemyData[enem_id][7]);
-        float mineral = float.Parse(enemyData[enem_id][8]);
-        //\‘¢‘Ì‚Ö‚Ì•Û‘¶
-        //saveInfo(enem_id);d
-
+        int enem_id = normal_enem;
+        if (pm.hero.statusid != 0)
+        {
+            enem_id = pm.hero.statusid;
+        }
         
+        //\‘¢‘Ì‚Ö“Gî•ñ‚Ì•Û‘¶
+        saveInfo(enem_id); 
     }
 
     // Update is called once per frame
