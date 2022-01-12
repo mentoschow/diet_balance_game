@@ -1298,7 +1298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   next: 0
   pm: {fileID: 2024530719}
-  fs: {fileID: 0}
+  fs: {fileID: 1123962593}
   enem: {fileID: 11400000, guid: 711249b2523c12a4a8f964b4252f0c11, type: 2}
   EnemImg: {fileID: 2068714930}
   em: {fileID: 2024530717}
@@ -3503,7 +3503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d6c2570a721bd540b85e3db2e221fdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fs: {fileID: 0}
+  fs: {fileID: 1123962593}
   fd: {fileID: 11400000, guid: 65586acbec2e0b34e8c92d90ec795d1b, type: 2}
   isboy: 0
 --- !u!114 &2024530720
@@ -3669,7 +3669,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   end_enem_down: 0
-  fs: {fileID: 0}
+  fs: {fileID: 1123962593}
   Pentagon: {fileID: 1889700352}
   speed: 300
 --- !u!222 &2068714932
