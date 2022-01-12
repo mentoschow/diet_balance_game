@@ -16,16 +16,18 @@ public class EnemImgMng : MonoBehaviour
     Vector3 present_pos;
 
     // スピード
-    public float speed = 100.0F;
+    public float speed = 1.0F;
 
     //二点間の距離
     private float distance_two;
+
+    float time_counter = 0;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        startPos = new Vector3(640, 2000, 0);
+        startPos = new Vector3(640, 980, 0);
         endPos = new Vector3(640, 360, 0);
         present_pos = startPos;
         distance_two = Vector3.Distance(startPos, endPos);
@@ -37,8 +39,9 @@ public class EnemImgMng : MonoBehaviour
         //Debug.Log(transform.position);
         if (fs.next && end_enem_down == false)
         {
+            time_counter += Time.deltaTime;
             // 現在の位置
-            float present_Location = (Time.deltaTime * speed) / distance_two;
+            float present_Location = time_counter * speed / distance_two;
             
             // オブジェクトの移動
             transform.position = Vector3.Lerp(startPos, endPos, present_Location);

@@ -89,7 +89,7 @@ public class StatusParameter02 : DynamicPentagon
     {
         if (EIM.end_enem_down == true && end_flag == false && SP01.end_flag == true)
         {
-            speed += 0.001f;
+            speed = Time.deltaTime;
             if (carb < carb_sndmax)
             {
                 carb += speed;
@@ -134,9 +134,14 @@ public class StatusParameter02 : DynamicPentagon
                 flag_counter++;
             }
 
+            //次のパラメータ表示に進むか
             if (flag_counter == 5)
             {
                 end_flag = true;
+            }
+            else
+            {
+                flag_counter = 0;
             }
         }
 

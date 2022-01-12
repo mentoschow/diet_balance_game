@@ -88,12 +88,13 @@ public class StatusParameter01 : DynamicPentagon
     {
         if (EIM.end_enem_down == true && end_flag == false)
         {
-            speed += 0.001f;
+            speed = Time.deltaTime;
+            
             if (carb < carb_fstmax)
             {
                 carb += speed;
             }
-            else if(carb == carb_fstmax)
+            else
             {
                 flag_counter++;
             }
@@ -102,7 +103,7 @@ public class StatusParameter01 : DynamicPentagon
             {
                 lipid += speed;
             }
-            else if(lipid == lipid_fstmax)
+            else
             {
                 flag_counter++;
             }
@@ -111,7 +112,7 @@ public class StatusParameter01 : DynamicPentagon
             {
                 protein += speed;
             }
-            else if (protein == protein_fstmax)
+            else
             {
                 flag_counter++;
             }
@@ -120,7 +121,7 @@ public class StatusParameter01 : DynamicPentagon
             {
                 vitamin += speed;
             }
-            else if (vitamin == vitamin_fstmax)
+            else
             {
                 flag_counter++;
             }
@@ -129,14 +130,19 @@ public class StatusParameter01 : DynamicPentagon
             {
                 mineral += speed;
             }
-            else if (mineral == mineral_fstmax)
+            else
             {
                 flag_counter++;
             }
+
+            //次のパラメータ表示に進むか
             if(flag_counter == 5)
             {
                 end_flag = true;
-                Debug.Log("SP01 True");
+            }
+            else
+            {
+                flag_counter = 0;
             }
         }
         
