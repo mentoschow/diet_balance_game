@@ -16,7 +16,7 @@ public class EnemImgMng : MonoBehaviour
     Vector3 present_pos;
 
     // スピード
-    public float speed = 1.0F;
+    public float speed = 100.0F;
 
     //二点間の距離
     private float distance_two;
@@ -38,7 +38,7 @@ public class EnemImgMng : MonoBehaviour
         if (fs.next && end_enem_down == false)
         {
             // 現在の位置
-            float present_Location = (Time.time * speed) * 100 / distance_two;
+            float present_Location = (Time.deltaTime * speed) / distance_two;
             
             // オブジェクトの移動
             transform.position = Vector3.Lerp(startPos, endPos, present_Location);
