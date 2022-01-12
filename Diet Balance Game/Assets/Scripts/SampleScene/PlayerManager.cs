@@ -21,11 +21,11 @@ public class PlayerManager : MonoBehaviour
 
     public struct HERO
     {
-        public float a;
-        public float b;
-        public float c;
-        public float d;
-        public float e;
+        public float carb;
+        public float lipid;
+        public float protein;
+        public float vitamin;
+        public float mineral;
         public string age;
         public int statusid;       //normal:0, cold:1, busy:2, fat:3, roughskin:4
     }
@@ -48,11 +48,8 @@ public class PlayerManager : MonoBehaviour
     {
         if (fs.next && first)
         {
-            GetFoodData(fs.food1, food1);
-            GetFoodData(fs.food2, food2);
-            GetFoodData(fs.food3, food3);
-            GetFoodData(fs.food4, food4);
-            UpdateHero(food1, food2, food3, food4);
+            
+            
             first = false;
         }
     }
@@ -72,14 +69,5 @@ public class PlayerManager : MonoBehaviour
                 food.mineral = fd.dataList[i].Mineral;
             }
         }
-    }
-
-    void UpdateHero(FOOD food1, FOOD food2, FOOD food3, FOOD food4)
-    {
-        hero.a = hero.a + food1.carb + food2.carb + food3.carb + food4.carb;
-        hero.b = hero.b + food1.lipid + food2.lipid + food3.lipid + food4.lipid;
-        hero.c = hero.c + food1.protein + food2.protein + food3.protein + food4.protein;
-        hero.d = hero.d + food1.vitamin + food2.vitamin + food3.vitamin + food4.vitamin;
-        hero.e = hero.e + food1.mineral + food2.mineral + food3.mineral + food4.mineral;
     }
 }
