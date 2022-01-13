@@ -20,6 +20,8 @@ public class CanvasManager : MonoBehaviour
     public EnemyEncount ee;
     public Canvas Battle;
     public BattleManager bm;
+    public Canvas canvasResult;
+    public Result result;
 
     public Canvas foodbook;
 
@@ -33,6 +35,7 @@ public class CanvasManager : MonoBehaviour
         foodSelection.enabled = false;
         enemyEncount.enabled = false;
         Battle.enabled = false;
+        canvasResult.enabled = false;
 
         foodbook.enabled = false;
     }
@@ -83,6 +86,11 @@ public class CanvasManager : MonoBehaviour
         {
             enemyEncount.enabled = false;
             Battle.enabled = true;
+        }
+        if (bm.next)
+        {
+            Battle.enabled = false;
+            canvasResult.enabled = true;
         }
     }
 }
