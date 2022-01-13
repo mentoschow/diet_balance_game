@@ -52,7 +52,6 @@ public class EnemyEncount : MonoBehaviour
     {
         //normal用の敵乱数生成
         normal_enem = Random.Range(1, 5);
- 
         //csvファイル読み込み
         csvReader();
     }
@@ -61,9 +60,9 @@ public class EnemyEncount : MonoBehaviour
     void Update()
     {
         int status = pm.hero.statusid;
-
+        
         int enem_id = normal_enem;
-        if (normal_enem != 0)
+        if (status != 0)
         {
             enem_id = pm.hero.statusid;
         }

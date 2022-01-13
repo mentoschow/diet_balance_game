@@ -22,6 +22,8 @@ public class CanvasManager : MonoBehaviour
     public BattleManager bm;
     public Canvas canvasResult;
     public Result result;
+    public Canvas daydisplay;
+    public DayDisplay dd;
 
     public Canvas foodbook;
 
@@ -36,6 +38,7 @@ public class CanvasManager : MonoBehaviour
         enemyEncount.enabled = false;
         Battle.enabled = false;
         canvasResult.enabled = false;
+        daydisplay.enabled = false;
 
         foodbook.enabled = false;
     }
@@ -91,6 +94,23 @@ public class CanvasManager : MonoBehaviour
         {
             Battle.enabled = false;
             canvasResult.enabled = true;
+        }
+        if (result.next)
+        {
+            canvasResult.enabled = false;
+            daydisplay.enabled = true;
+        }
+        if (dd.next)
+        {
+            daydisplay.enabled = false;
+            playerStatus.enabled = true;
+
+            ps.next = false;
+            fs.next = false;
+            ee.next = false;
+            bm.next = false;
+            //result.next = false;
+            dd.next = false;
         }
     }
 }

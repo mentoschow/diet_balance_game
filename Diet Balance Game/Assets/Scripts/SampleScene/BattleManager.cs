@@ -30,30 +30,33 @@ public class BattleManager : MonoBehaviour
 
     void Update()
     {
-        if (ee.next)
+        if (ee.next == true && next == false)
         {
             LoadCharacter(pm.hero.statusid); 
             LoadEnemy(em.enemy.enemID);
-            //Debug.Log(em.enemy.name);
+            
+
+            if (battle_button_flag)
+            {
+                battle_result = Battle();
+                next = true;
+                Debug.Log("Battle" + battle_result);
+            }
+
+            if (goaway_button_flag)
+            {
+
+            }
         }
 
-        if (battle_button_flag)
-        {
-            battle_result = Battle();
-            next = true;
-        }
-
-        if (goaway_button_flag)
-        {
-
-        }
+        
     }
 
     bool Battle()
     {
         bool bool_result = false;
 
-        int probability = 50;
+        int probability = 80;
         int random_prob = 0;
 
         //ID‚©‚ç“G‚Ìî•ñ“Ç‚İ‚İ
@@ -77,6 +80,8 @@ public class BattleManager : MonoBehaviour
         {
             bool_result = false;
         }
+
+        Debug.Log(probability + ", " + random_prob);
 
         return bool_result;
     }
