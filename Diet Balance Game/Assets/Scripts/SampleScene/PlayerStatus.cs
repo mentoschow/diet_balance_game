@@ -8,7 +8,7 @@ public class PlayerStatus : MonoBehaviour
 {
     public bool next;           //シーン遷移用のブール変数
     public PlayerManager pm;
-    public Performance p;
+    public Score score;
     public AssetConfig character;
     public AssetConfig popup;
     public AssetConfig word;
@@ -21,9 +21,6 @@ public class PlayerStatus : MonoBehaviour
     [SerializeField] Image Word3;       //文字3
 
     int status;
-
-    
-
 
     // Start is called before the first frame update
     void Start()
@@ -84,7 +81,7 @@ public class PlayerStatus : MonoBehaviour
             Word3.sprite = word.sprites[11];
         }
 
-        if (p.next)
+        if (score.next)
         {
             if(Input.GetMouseButtonDown(0))
             {
