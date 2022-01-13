@@ -39,12 +39,12 @@ public class EnemyEncount : MonoBehaviour
     void saveInfo(int enem_id)
     {
         em.enemy.enemID = enem_id;
-        em.enemy.energy = int.Parse(enemyData[enem_id][1]);
-        em.enemy.carb = float.Parse(enemyData[enem_id][2]);
-        em.enemy.lipid = float.Parse(enemyData[enem_id][3]);
-        em.enemy.protein = float.Parse(enemyData[enem_id][4]);
-        em.enemy.vitamin = float.Parse(enemyData[enem_id][5]);
-        em.enemy.mineral = float.Parse(enemyData[enem_id][6]);
+        //em.enemy.energy = int.Parse(enemyData[enem_id][1]);
+        //em.enemy.carb = float.Parse(enemyData[enem_id][2]);
+        //em.enemy.lipid = float.Parse(enemyData[enem_id][3]);
+        //em.enemy.protein = float.Parse(enemyData[enem_id][4]);
+        //em.enemy.vitamin = float.Parse(enemyData[enem_id][5]);
+        //em.enemy.mineral = float.Parse(enemyData[enem_id][6]);
     }
 
     // Start is called before the first frame update
@@ -52,25 +52,25 @@ public class EnemyEncount : MonoBehaviour
     {
         //normal—p‚Ì“G—”¶¬
         normal_enem = Random.Range(1, 5);
-
+ 
         //csvƒtƒ@ƒCƒ‹“Ç‚İ‚İ
         csvReader();
-
-        int enem_id = normal_enem;
-        if (pm.hero.statusid != 0)
-        {
-            enem_id = pm.hero.statusid;
-        }
-        
-        //\‘¢‘Ì‚Ö“Gî•ñ‚Ì•Û‘¶
-        saveInfo(enem_id); 
     }
 
     // Update is called once per frame
     void Update()
     {
         int status = pm.hero.statusid;
-        
+
+        int enem_id = normal_enem;
+        if (normal_enem != 0)
+        {
+            enem_id = pm.hero.statusid;
+        }
+        //\‘¢‘Ì‚Ö“Gî•ñ‚Ì•Û‘¶
+        saveInfo(enem_id);
+
+
         //“G‰æ‘œ‚Ì•\¦
         if (status == 0)
         {

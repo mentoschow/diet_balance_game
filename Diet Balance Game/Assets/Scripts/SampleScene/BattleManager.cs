@@ -28,7 +28,7 @@ public class BattleManager : MonoBehaviour
     {
         if (ee.next)
         {
-            LoadCharacter(em.enemy.enemID); 
+            LoadCharacter(pm.hero.statusid); 
             LoadEnemy(em.enemy.enemID);
             //Debug.Log(em.enemy.name);
         }

@@ -10,6 +10,8 @@ public class CanvasManager : MonoBehaviour
     public Age_input ai;
     public Canvas performance;
     public Performance p;
+    public Canvas Score;
+    public Score score;
     public Canvas playerStatus;
     public PlayerStatus ps;
     public Canvas foodSelection;
@@ -19,15 +21,20 @@ public class CanvasManager : MonoBehaviour
     public Canvas Battle;
     public BattleManager bm;
 
+    public Canvas foodbook;
+
     void Start()
     {
         selectCharacter.enabled = true;
         age_input.enabled = false;
         performance.enabled = false;
+        Score.enabled = false;
         playerStatus.enabled = false;
         foodSelection.enabled = false;
         enemyEncount.enabled = false;
         Battle.enabled = false;
+
+        foodbook.enabled = false;
     }
 
     void Update()
@@ -46,6 +53,20 @@ public class CanvasManager : MonoBehaviour
         if (p.next)
         {
             performance.enabled = false;
+            if (score.foodbookFlag)
+            {
+                Score.enabled = false;
+                foodbook.enabled = true;
+            }
+            else
+            {
+                foodbook.enabled = false;
+                Score.enabled = true;
+            }    
+        }
+        if (score.next)
+        {
+            Score.enabled = false;
             playerStatus.enabled = true;
         }
         if (ps.next)
