@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df24fc2e82fa05e4c82708e89946ae21, type: 3}
+  m_Name: foodTextures
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: 5a3c56d2962fc1449bcde9dd94ce374b, type: 3}
+  - {fileID: 21300000, guid: 238f12da642dfde47868db3f04b49431, type: 3}
+  - {fileID: 21300000, guid: 7abf62a56039a8945bf674d6fa34929f, type: 3}
+  - {fileID: 21300000, guid: 39e1d79eeaab64745b3f208d5dc808a7, type: 3}
+  - {fileID: 21300000, guid: 9229e5b46bc5e7b4382ab8bfcac9c0dc, type: 3}
+  - {fileID: 21300000, guid: bc707eb8cd181a446b63fe6a11db71a4, type: 3}
+  - {fileID: 21300000, guid: 43844cff4e3970345b9d31a877671fdb, type: 3}
+  - {fileID: 21300000, guid: 56496dc32c3490d4b8e245d4992d8ad2, type: 3}
+  - {fileID: 21300000, guid: 18e0085c01e75fc4497739a5007bfe19, type: 3}
+  - {fileID: 21300000, guid: 06ee78c46b9e16c44a149a4be2e73a65, type: 3}
+  - {fileID: 21300000, guid: d823a22a8fa2663479f7715d9d1383f1, type: 3}
+  - {fileID: 21300000, guid: dc418f76f1173eb4da0664e26283306e, type: 3}
+  - {fileID: 21300000, guid: 7acb0acfd6476d540a03a4dbeba5f587, type: 3}

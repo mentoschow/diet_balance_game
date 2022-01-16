@@ -7,6 +7,7 @@ public class FoodSelection : MonoBehaviour
 {
     public PlayerManager pm;
     public AssetConfig character;
+    public AssetConfig FoodImage;
     public bool next;
     public Image hero;
     public GameObject comfirm;
@@ -16,15 +17,19 @@ public class FoodSelection : MonoBehaviour
     public GameObject menu3;
     public Image turn;
     public AssetConfig turn_sprite;
+    public List<Image> comfirmImage;
+    public int comfirmEncount;
+    public int comfirmEncount_temp;
 
-    public Toggle food1;
+    public List<Toggle> food;
 
     [SerializeField]
     private int turnEncount;
     [SerializeField]
     private int menuEncount;
+    [SerializeField]
+    private int selectedEncount;
 
-    
 
     void Start()
     {
@@ -62,7 +67,11 @@ public class FoodSelection : MonoBehaviour
         menuEncount = 1;
         comfirm.SetActive(false);
         filter.SetActive(false);
-        food1.isOn = false;
+        for(int i = 0; i < food.Count; i++)
+        {
+            food[i].isOn = false;
+        }
+        selectedEncount = 0;
     }
 
     void LoadCharacter(Sprite boy, Sprite girl)
@@ -94,6 +103,19 @@ public class FoodSelection : MonoBehaviour
 
     public void StartComfirm()  // to comfirm
     {
+        comfirmEncount_temp = 0;
+        for(int i = 0; i < 3; i++)
+        {
+            for (comfirmEncount = comfirmEncount_temp; comfirmEncount < food.Count; comfirmEncount++)
+            {
+                if (food[comfirmEncount].isOn == true)
+                {
+                    comfirmImage[i].sprite = FoodImage.sprites[comfirmEncount];
+                    comfirmEncount_temp = comfirmEncount + 1;
+                    break;
+                }
+            }
+        }
         filter.SetActive(true);
         comfirm.SetActive(true);
     }
@@ -128,4 +150,31 @@ public class FoodSelection : MonoBehaviour
                 break;
         }
     }
+
+    public void SelectedEncount(Toggle toggle)
+    {
+        if (toggle.isOn == false)
+        {
+            selectedEncount--;
+        }
+        if (toggle.isOn == true)
+        {
+            if (selectedEncount < 3)
+            {
+                selectedEncount++;
+            }
+            else
+            {
+                print("can not select.");
+                toggle.isOn = false;
+                selectedEncount = 3;
+            }
+        }      
+    }
+
+    public void RecordFoodData()
+    {
+
+    }
+
 }
