@@ -36,4 +36,8 @@ public class Sheet1Data
   float mineral;
   public float Mineral { get {return mineral; } set { mineral = value;} }
   
+  [SerializeField]
+  int id;
+  public int ID { get {return id; } set { id = value;} }
+  
 }

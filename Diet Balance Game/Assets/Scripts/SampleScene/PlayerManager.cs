@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     public FoodSelection fs;
-    public Sheet1 fd;
+    public Sheet1 FoodData;
     public bool isboy;
 
     private struct FOOD
@@ -17,6 +17,7 @@ public class PlayerManager : MonoBehaviour
         public float protein;
         public float vitamin;
         public float mineral;
+        public int ID;
     }
 
     public struct HERO
@@ -29,15 +30,15 @@ public class PlayerManager : MonoBehaviour
         public string age;
         public int statusid;       //normal:0, cold:1, busy:2, fat:3, roughskin:4
     }
-
-    private FOOD food1;
-    private FOOD food2;
-    private FOOD food3;
-    private FOOD food4;
-
+    
     public HERO hero;
 
     private bool first;
+
+    void Awake()
+    {
+        
+    }
 
     void Start()
     {
@@ -55,19 +56,16 @@ public class PlayerManager : MonoBehaviour
     }
 
 
-    void GetFoodData(string name, FOOD food)
+    void GetFoodData(FOOD food)
     {
-        for (int i = 0; i < fd.dataList.Count; i++)
+        for (int i = 0; i < FoodData.dataList.Count; i++)
         {
-            if (name == fd.dataList[i].Name)
-            {
-                food.name = fd.dataList[i].Name;
-                food.carb = fd.dataList[i].Carb;
-                food.lipid = fd.dataList[i].Lipid;
-                food.protein = fd.dataList[i].Protein;
-                food.vitamin = fd.dataList[i].Vitamin;
-                food.mineral = fd.dataList[i].Mineral;
-            }
+            food.name = FoodData.dataList[i].Name;
+            food.carb = FoodData.dataList[i].Carb;
+            food.lipid = FoodData.dataList[i].Lipid;
+            food.protein = FoodData.dataList[i].Protein;
+            food.vitamin = FoodData.dataList[i].Vitamin;
+            food.mineral = FoodData.dataList[i].Mineral;
         }
     }
 }

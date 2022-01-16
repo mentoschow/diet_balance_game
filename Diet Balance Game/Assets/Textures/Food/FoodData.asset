@@ -15,32 +15,212 @@ MonoBehaviour:
   SheetName: Assets/Textures/Food/FoodData.xlsx
   WorksheetName: Sheet1
   dataArray:
+  - name: crepe
+    energy: 566
+    carb: 6.45
+    lipid: 39.76
+    protein: 45.52
+    vitamin: 13.75537
+    mineral: 838.1267
+    id: 1
+  - name: ramen
+    energy: 470
+    carb: 21.06
+    lipid: 8.64
+    protein: 73.17
+    vitamin: 18.78446
+    mineral: 3831.1475
+    id: 2
+  - name: salad
+    energy: 10
+    carb: 0.48
+    lipid: 0.07
+    protein: 2.28
+    vitamin: 6.52631
+    mineral: 162.88191
+    id: 3
+  - name: zaru_udon
+    energy: 289
+    carb: 8.64
+    lipid: 0.97
+    protein: 59.17
+    vitamin: 5.54277
+    mineral: 1893.1649
+    id: 4
+  - name: zaru_soba
+    energy: 366
+    carb: 16.19
+    lipid: 1.85
+    protein: 70.94
+    vitamin: 7.42288
+    mineral: 636.94336
+    id: 5
+  - name: egg
+    energy: 91
+    carb: 7.38
+    lipid: 6.18
+    protein: 0.18
+    vitamin: 1.60735
+    mineral: 252.628
+    id: 6
   - name: hamburger
-    energy: 0
-    carb: 0
-    lipid: 0
-    protein: 0
-    vitamin: 0
-    mineral: 0
-  - name: juice
-    energy: 0
-    carb: 0
-    lipid: 0
-    protein: 0
-    vitamin: 0
-    mineral: 0
+    energy: 422
+    carb: 20.8
+    lipid: 19.08
+    protein: 39.7
+    vitamin: 16.67413
+    mineral: 1448.2687
+    id: 7
+  - name: pizza
+    energy: 872
+    carb: 39.73
+    lipid: 35.72
+    protein: 97.9
+    vitamin: 64.74287
+    mineral: 4233.9116
+    id: 8
+  - name: orange_juice
+    energy: 214
+    carb: 2.61
+    lipid: 0.52
+    protein: 55.33
+    vitamin: 154.97256
+    mineral: 826.07043
+    id: 9
+  - name: beef_bowl
+    energy: 771
+    carb: 18.03
+    lipid: 23.87
+    protein: 112.7
+    vitamin: 8.23985
+    mineral: 1646.8007
+    id: 10
+  - name: yakiniku
+    energy: 615
+    carb: 47.25
+    lipid: 43.75
+    protein: 1.25
+    vitamin: 8.5152
+    mineral: 545.08
+    id: 11
+  - name: tempura
+    energy: 167
+    carb: 11.53
+    lipid: 9.32
+    protein: 8.46
+    vitamin: 9.6239
+    mineral: 555.92523
+    id: 12
+  - name: pork_soup
+    energy: 121
+    carb: 5.54
+    lipid: 8.4
+    protein: 5.26
+    vitamin: 4.90832
+    mineral: 993.8262
+    id: 13
   dataList:
+  - name: crepe
+    energy: 566
+    carb: 6.45
+    lipid: 39.76
+    protein: 45.52
+    vitamin: 13.75537
+    mineral: 838.1267
+    id: 1
+  - name: ramen
+    energy: 470
+    carb: 21.06
+    lipid: 8.64
+    protein: 73.17
+    vitamin: 18.78446
+    mineral: 3831.1475
+    id: 2
+  - name: salad
+    energy: 10
+    carb: 0.48
+    lipid: 0.07
+    protein: 2.28
+    vitamin: 6.52631
+    mineral: 162.88191
+    id: 3
+  - name: zaru_udon
+    energy: 289
+    carb: 8.64
+    lipid: 0.97
+    protein: 59.17
+    vitamin: 5.54277
+    mineral: 1893.1649
+    id: 4
+  - name: zaru_soba
+    energy: 366
+    carb: 16.19
+    lipid: 1.85
+    protein: 70.94
+    vitamin: 7.42288
+    mineral: 636.94336
+    id: 5
+  - name: egg
+    energy: 91
+    carb: 7.38
+    lipid: 6.18
+    protein: 0.18
+    vitamin: 1.60735
+    mineral: 252.628
+    id: 6
   - name: hamburger
-    energy: 0
-    carb: 0
-    lipid: 0
-    protein: 0
-    vitamin: 0
-    mineral: 0
-  - name: juice
-    energy: 0
-    carb: 0
-    lipid: 0
-    protein: 0
-    vitamin: 0
-    mineral: 0
+    energy: 422
+    carb: 20.8
+    lipid: 19.08
+    protein: 39.7
+    vitamin: 16.67413
+    mineral: 1448.2687
+    id: 7
+  - name: pizza
+    energy: 872
+    carb: 39.73
+    lipid: 35.72
+    protein: 97.9
+    vitamin: 64.74287
+    mineral: 4233.9116
+    id: 8
+  - name: orange_juice
+    energy: 214
+    carb: 2.61
+    lipid: 0.52
+    protein: 55.33
+    vitamin: 154.97256
+    mineral: 826.07043
+    id: 9
+  - name: beef_bowl
+    energy: 771
+    carb: 18.03
+    lipid: 23.87
+    protein: 112.7
+    vitamin: 8.23985
+    mineral: 1646.8007
+    id: 10
+  - name: yakiniku
+    energy: 615
+    carb: 47.25
+    lipid: 43.75
+    protein: 1.25
+    vitamin: 8.5152
+    mineral: 545.08
+    id: 11
+  - name: tempura
+    energy: 167
+    carb: 11.53
+    lipid: 9.32
+    protein: 8.46
+    vitamin: 9.6239
+    mineral: 555.92523
+    id: 12
+  - name: pork_soup
+    energy: 121
+    carb: 5.54
+    lipid: 8.4
+    protein: 5.26
+    vitamin: 4.90832
+    mineral: 993.8262
+    id: 13
