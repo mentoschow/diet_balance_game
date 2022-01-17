@@ -29,6 +29,7 @@ public class PlayerManager : MonoBehaviour
         public float mineral;
         public string age;
         public int statusid;       //normal:0, cold:1, busy:2, fat:3, roughskin:4
+        public int day;            //ƒNƒŠƒA‚µ‚½“ú”‚ğ•Û‘¶
     }
     
     public HERO hero;

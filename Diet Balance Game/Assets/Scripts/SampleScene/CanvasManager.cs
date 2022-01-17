@@ -109,7 +109,7 @@ public class CanvasManager : MonoBehaviour
             fs.next = false;
             ee.next = false;
             bm.next = false;
-            //result.next = false;
+            result.next = false;
             dd.next = false;
         }
     }

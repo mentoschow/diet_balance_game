@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fs: {fileID: 0}
-  fd: {fileID: 11400000, guid: 65586acbec2e0b34e8c92d90ec795d1b, type: 2}
+  FoodData: {fileID: 11400000, guid: 597f0b12b19e1dc4c8bc0774bd290788, type: 2}
   isboy: 0
 --- !u!114 &5208545335542563881
 MonoBehaviour:
@@ -66,6 +66,8 @@ MonoBehaviour:
   ai: {fileID: 0}
   performance: {fileID: 0}
   p: {fileID: 0}
+  Score: {fileID: 0}
+  score: {fileID: 0}
   playerStatus: {fileID: 0}
   ps: {fileID: 0}
   foodSelection: {fileID: 0}
@@ -74,6 +76,11 @@ MonoBehaviour:
   ee: {fileID: 0}
   Battle: {fileID: 0}
   bm: {fileID: 0}
+  canvasResult: {fileID: 0}
+  result: {fileID: 0}
+  daydisplay: {fileID: 0}
+  dd: {fileID: 0}
+  foodbook: {fileID: 0}
 --- !u!114 &5208545335542563860
 MonoBehaviour:
   m_ObjectHideFlags: 0

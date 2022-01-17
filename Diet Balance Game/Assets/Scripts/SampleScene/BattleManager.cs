@@ -41,6 +41,7 @@ public class BattleManager : MonoBehaviour
                 battle_result = Battle();
                 next = true;
                 Debug.Log("Battle" + battle_result);
+                battle_button_flag = false;
             }
 
             if (goaway_button_flag)

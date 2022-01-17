@@ -26,14 +26,15 @@ public class PlayerStatus : MonoBehaviour
     void Start()
     {
         Random.InitState(System.DateTime.Now.Millisecond);  //時間による乱数初期化
-        pm.hero.statusid = Random.Range(0, 5);
-        status = pm.hero.statusid;      //プレイヤーのステータスID
+        pm.hero.statusid = Random.Range(0, 5);              //初日（一日目）のステータス 
         Debug.Log("PS" + status);
     }
 
     // Update is called once per frame
     void Update()
     {
+        status = pm.hero.statusid;      //プレイヤーのステータスID
+
         //プレイヤー画像の表示
         if (pm.isboy == true)
         {

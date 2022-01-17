@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: ResultText
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 21300000, guid: 885a2aec34b397146a006bf8133d66c3, type: 3}
-  - {fileID: 21300000, guid: 4e7f0f7aa175db844aae199ffc0600b4, type: 3}
+  - {fileID: 21300000, guid: abfad48b0cf286b49ae18ea285ae984f, type: 3}
+  - {fileID: 21300000, guid: 8110d0205b2833c4eacd15a0b115848c, type: 3}
+  - {fileID: 21300000, guid: 3ab35614de842d84e9d9534f6442c8a5, type: 3}
+  - {fileID: 21300000, guid: caa7b25f7a754284d88aaf6d75067792, type: 3}
