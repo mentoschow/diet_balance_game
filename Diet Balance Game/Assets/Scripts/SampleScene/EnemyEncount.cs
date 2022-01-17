@@ -86,6 +86,7 @@ public class EnemyEncount : MonoBehaviour
             if (battleB.next == true)
             {
                 next = true;
+                battleB.next = false;
             }
         }
     }

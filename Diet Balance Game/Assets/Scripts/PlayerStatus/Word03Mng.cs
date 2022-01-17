@@ -17,7 +17,7 @@ public class Word03Mng : MonoBehaviour
     void Update()
     {
         int status = pm.hero.statusid;      //プレイヤーのステータスID
-
+        
         if (status == 0 || status == 1 || status == 3)
         {
             this.gameObject.SetActive(false);
@@ -25,6 +25,7 @@ public class Word03Mng : MonoBehaviour
         }
         else
         {
+            this.gameObject.SetActive(true);
             word3.position = new Vector3(850, 170, 0);
         }
     }
