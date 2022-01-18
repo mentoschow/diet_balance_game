@@ -8,6 +8,7 @@ public class FoodSelection : MonoBehaviour
     public PlayerManager pm;
     public AssetConfig character;
     public AssetConfig FoodImage;
+    public Sheet1 FoodData;
     public bool next;
     public Image hero;
     public GameObject comfirm;
@@ -29,7 +30,8 @@ public class FoodSelection : MonoBehaviour
     private int menuEncount;
     [SerializeField]
     private int selectedEncount;
-
+    [SerializeField]
+    private int[] selectedFood;
 
     void Start()
     {
@@ -111,6 +113,8 @@ public class FoodSelection : MonoBehaviour
                 if (food[comfirmEncount].isOn == true)
                 {
                     comfirmImage[i].sprite = FoodImage.sprites[comfirmEncount];
+                    selectedFood[i] = comfirmEncount;  //record the number of food.
+                    Debug.Log(selectedFood[i]);
                     comfirmEncount_temp = comfirmEncount + 1;
                     break;
                 }
@@ -132,20 +136,18 @@ public class FoodSelection : MonoBehaviour
         {
             case 1:
                 turnEncount++;
-                menuEncount = 1;
-                //do record
+                RecordFoodData(selectedFood[0], selectedFood[1], selectedFood[2], ref pm.selectedFoodData1);  //do recording              
                 Initialized();
                 break;
             case 2:
                 turnEncount++;
-                menuEncount = 1;
-                //do record
+                RecordFoodData(selectedFood[0], selectedFood[1], selectedFood[2], ref pm.selectedFoodData2);  //do recording
                 Initialized();
                 break;
             case 3:
                 turnEncount = 1;
-                menuEncount = 1;
-                //do record
+                RecordFoodData(selectedFood[0], selectedFood[1], selectedFood[2], ref pm.selectedFoodData3);  //do recording
+                Initialized();
                 next = true;
                 break;
         }
@@ -172,9 +174,14 @@ public class FoodSelection : MonoBehaviour
         }      
     }
 
-    public void RecordFoodData()
+    public void RecordFoodData(int a, int b, int c, ref PlayerManager.FOOD food)
     {
-
+        food.energy = FoodData.dataArray[a].Energy + FoodData.dataArray[b].Energy + FoodData.dataArray[c].Energy;
+        food.carb = FoodData.dataArray[a].Carb + FoodData.dataArray[b].Carb + FoodData.dataArray[c].Carb;
+        food.lipid = FoodData.dataArray[a].Lipid + FoodData.dataArray[b].Lipid + FoodData.dataArray[c].Lipid;
+        food.protein = FoodData.dataArray[a].Protein + FoodData.dataArray[b].Protein + FoodData.dataArray[c].Protein;
+        food.vitamin = FoodData.dataArray[a].Vitamin + FoodData.dataArray[b].Vitamin + FoodData.dataArray[c].Vitamin;
+        food.mineral = FoodData.dataArray[a].Mineral + FoodData.dataArray[b].Mineral + FoodData.dataArray[c].Mineral;
     }
 
 }
