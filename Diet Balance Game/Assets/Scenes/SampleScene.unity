@@ -1270,6 +1270,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a12e83f59cf9d7e4eab7f0e64f29941b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1235512964 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6306804766486584429, guid: 28dadd532b0c02e429388de395ad1e46, type: 3}
+  m_PrefabInstance: {fileID: 6306804767207783404}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dca4ae9f45db40428065159bea6a1cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1268613923 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7210513195830086675, guid: 6d4590a852a3a3e42801e49281775f21, type: 3}
@@ -2561,10 +2572,18 @@ PrefabInstance:
       propertyPath: pm
       value: 
       objectReference: {fileID: 2024530719}
+    - target: {fileID: 6306804766012970407, guid: 28dadd532b0c02e429388de395ad1e46, type: 3}
+      propertyPath: b_pp
+      value: 
+      objectReference: {fileID: 1235512964}
     - target: {fileID: 6306804766012970410, guid: 28dadd532b0c02e429388de395ad1e46, type: 3}
       propertyPath: m_Name
       value: Battle
       objectReference: {fileID: 0}
+    - target: {fileID: 6306804766486584429, guid: 28dadd532b0c02e429388de395ad1e46, type: 3}
+      propertyPath: bm
+      value: 
+      objectReference: {fileID: 1222209099}
     - target: {fileID: 6306804766486584429, guid: 28dadd532b0c02e429388de395ad1e46, type: 3}
       propertyPath: ee
       value: 
@@ -2684,10 +2703,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8419920877857085031, guid: 2c640b0737c655948af3aa19d88d7f00, type: 3}
-      propertyPath: fs
-      value: 
-      objectReference: {fileID: 1123962593}
     - target: {fileID: 8419920879020309252, guid: 2c640b0737c655948af3aa19d88d7f00, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2784,6 +2799,10 @@ PrefabInstance:
       propertyPath: pm
       value: 
       objectReference: {fileID: 2024530719}
+    - target: {fileID: 8419920879020309275, guid: 2c640b0737c655948af3aa19d88d7f00, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8419920879020309279, guid: 2c640b0737c655948af3aa19d88d7f00, type: 3}
       propertyPath: m_Name
       value: EnemyEncount

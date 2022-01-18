@@ -7,7 +7,7 @@ public class EnemImgMng : MonoBehaviour
 {
     public bool end_enem_down = false;           //シーン遷移用のブール変数
 
-    public FoodSelection fs;
+    public EnemyEncount ee;
     [SerializeField] Image Pentagon = null;      //五角形画像
 
     //始点，終点
@@ -41,7 +41,7 @@ public class EnemImgMng : MonoBehaviour
     void Update()
     {
         //Debug.Log(transform.position);
-        if (fs.next && end_enem_down == false)
+        if (ee.run_update && end_enem_down == false)
         {
             time_counter += Time.deltaTime;
             // 現在の位置
@@ -58,5 +58,18 @@ public class EnemImgMng : MonoBehaviour
             }
         }
         
+    }
+
+    public void Initilized_EnemImgMng()
+    {
+        time_counter = 0;
+
+        present_pos = startPos;
+        distance_two = Vector3.Distance(startPos, endPos);
+
+        end_enem_down = false;
+        Pentagon.enabled = false;
+
+        Debug.Log(present_pos);
     }
 }
