@@ -8,10 +8,11 @@ public class PlayerManager : MonoBehaviour
     public Sheet1 FoodData;
     public bool isboy;
 
-    private struct FOOD
+    [System.Serializable]
+    public struct FOOD
     {
         public string name;
-        public int energy;
+        public float energy;
         public float carb;
         public float lipid;
         public float protein;
@@ -20,6 +21,7 @@ public class PlayerManager : MonoBehaviour
         public int ID;
     }
 
+    [System.Serializable]
     public struct HERO
     {
         public float carb;
@@ -34,12 +36,11 @@ public class PlayerManager : MonoBehaviour
     
     public HERO hero;
 
-    private bool first;
+    public FOOD selectedFoodData1;  //food data that selected in turn 1.(food1 + food2 + food3)
+    public FOOD selectedFoodData2;  //food data that selected in turn 2.(food1 + food2 + food3)
+    public FOOD selectedFoodData3;  //food data that selected in turn 3.(food1 + food2 + food3)
 
-    void Awake()
-    {
-        
-    }
+    private bool first;
 
     void Start()
     {
@@ -49,24 +50,9 @@ public class PlayerManager : MonoBehaviour
     void Update()
     {
         if (fs.next && first)
-        {
-            
-            
+        {            
             first = false;
         }
     }
-
-
-    void GetFoodData(FOOD food)
-    {
-        for (int i = 0; i < FoodData.dataList.Count; i++)
-        {
-            food.name = FoodData.dataList[i].Name;
-            food.carb = FoodData.dataList[i].Carb;
-            food.lipid = FoodData.dataList[i].Lipid;
-            food.protein = FoodData.dataList[i].Protein;
-            food.vitamin = FoodData.dataList[i].Vitamin;
-            food.mineral = FoodData.dataList[i].Mineral;
-        }
-    }
+    
 }
