@@ -7,6 +7,8 @@ using UnityEngine.UI;    //UIの追加
 public class EnemyEncount : MonoBehaviour
 {
     public bool next;           //シーン遷移用のブール変数
+    public bool run_update;     //アニメーション関連のフラグ
+
     public PlayerManager pm;
     public FoodSelection fs;
     public AssetConfig enem;
@@ -21,7 +23,15 @@ public class EnemyEncount : MonoBehaviour
     int normal_enem;    //normal用の敵乱数生成変数
 
     //ボタンの情報取得用
-    public BattleButton battleB;
+    GameObject childButton;
+    Button NextButton;
+    Animator ButtonAnime;
+
+    public EnemImgMng EIM;
+    public StatusParameter01 SP01;
+    public StatusParameter02 SP02;
+    public StatusParameter03 SP03;
+
 
     //csvファイル読み込み関数
     static void csvReader()
@@ -36,20 +46,28 @@ public class EnemyEncount : MonoBehaviour
         }
     }
 
+    //敵情報をEnemyManagerの構造体へ保存
     void saveInfo(int enem_id)
     {
-        em.enemy.enemID = enem_id;
-        //em.enemy.energy = int.Parse(enemyData[enem_id][1]);
-        //em.enemy.carb = float.Parse(enemyData[enem_id][2]);
-        //em.enemy.lipid = float.Parse(enemyData[enem_id][3]);
-        //em.enemy.protein = float.Parse(enemyData[enem_id][4]);
-        //em.enemy.vitamin = float.Parse(enemyData[enem_id][5]);
-        //em.enemy.mineral = float.Parse(enemyData[enem_id][6]);
+        em.enemy.enemID = enem_id;     
+        em.enemy.energy = int.Parse(enemyData[enem_id][1]);
+        em.enemy.carb = float.Parse(enemyData[enem_id][2]);
+        em.enemy.lipid = float.Parse(enemyData[enem_id][3]);
+        em.enemy.protein = float.Parse(enemyData[enem_id][4]);
+        em.enemy.vitamin = float.Parse(enemyData[enem_id][5]);
+        em.enemy.mineral = float.Parse(enemyData[enem_id][6]);
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        run_update = false;
+
+        childButton = transform.Find("NextButton").gameObject;
+        NextButton = childButton.gameObject.GetComponent<Button>();
+        ButtonAnime = childButton.gameObject.GetComponent<Animator>();
+        childButton.SetActive(false);
+
         //normal用の敵乱数生成
         normal_enem = Random.Range(1, 5);
         //csvファイル読み込み
@@ -69,6 +87,11 @@ public class EnemyEncount : MonoBehaviour
         //構造体へ敵情報の保存
         saveInfo(enem_id);
 
+        //アニメーション動作開始
+        if (fs.next && next == false)
+        {
+            run_update = true;
+        }
 
         //敵画像の表示
         if (status == 0)
@@ -81,13 +104,28 @@ public class EnemyEncount : MonoBehaviour
             EnemImg.sprite = enem.sprites[status];
         }
 
-        if (fs.next)
+        //ボタンの表示
+        if (fs.next && SP03.end_flag == true)
         {
-            if (battleB.next == true)
+            childButton.SetActive(true);
+            if (Input.GetMouseButtonDown(0))
             {
                 next = true;
-                battleB.next = false;
+                Initilized_EEParam();
             }
         }
+    }
+
+    void Initilized_EEParam()
+    {
+        run_update = false;
+
+        childButton.SetActive(false);
+        EIM.Initilized_EnemImgMng();
+        SP01.InitializedSP01();
+        SP02.InitializedSP02();
+        SP03.InitializedSP03();
+
+        Debug.Log("EE Initilized");
     }
 }

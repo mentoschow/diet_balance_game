@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class BattleManager : MonoBehaviour
 {
     public bool next = false;
+    public bool run_animation;
+
     public bool battle_result = false; //WIN:true, LOSE:false
 
     public bool battle_button_flag = false;
@@ -14,6 +16,7 @@ public class BattleManager : MonoBehaviour
     public EnemyManager em;  //enemy data
     public PlayerManager pm;  //player data
     public EnemyEncount ee;
+    public BattlePP b_pp;
 
     public AssetConfig enem;
     public AssetConfig character;
@@ -23,6 +26,7 @@ public class BattleManager : MonoBehaviour
 
     void Start()
     {
+        run_animation = false;
         //LoadCharacter(character.sprites[0], character.sprites[1]);  //LoadCharacter and LoadEnemy should be runed in Update because the character would be changed in SelectCharacter.
         //LoadEnemy(em.enemy.enemImgAddress);
         //Debug.Log(em.enemy.name);
@@ -32,6 +36,8 @@ public class BattleManager : MonoBehaviour
     {
         if (ee.next == true && next == false)
         {
+            run_animation = true;
+
             LoadCharacter(pm.hero.statusid); 
             LoadEnemy(em.enemy.enemID);
             
@@ -76,10 +82,12 @@ public class BattleManager : MonoBehaviour
         if (random_prob < probability)
         {
             bool_result = true;
+            Initilized_BattleMng();
         }
         else
         {
             bool_result = false;
+            Initilized_BattleMng();
         }
 
         Debug.Log(probability + ", " + random_prob);
@@ -104,5 +112,12 @@ public class BattleManager : MonoBehaviour
     {
         //Debug.Log("enemAddress: "+enemAddress);
         enemy.sprite = enem.sprites[status];
+    }
+
+    void Initilized_BattleMng()
+    {
+        run_animation = false;
+
+        b_pp.Initialized_BPP();
     }
 }

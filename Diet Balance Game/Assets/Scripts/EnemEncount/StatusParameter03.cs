@@ -155,4 +155,25 @@ public class StatusParameter03 : DynamicPentagon
 
         SetUp();
     }
+
+    public void InitializedSP03()
+    {
+        carb = 0;
+        lipid = 0;
+        protein = 0;
+        vitamin = 0;
+        mineral = 0;
+
+        flag_counter = 0;
+        end_flag = false;
+
+        m_ParameterList = new List<Parameter>
+        {
+            new Parameter( "ビタミン", vitamin),
+            new Parameter( "炭水化物", carb),
+            new Parameter( "脂質", lipid),
+            new Parameter( "タンパク質", protein),
+            new Parameter( "ミネラル", mineral),
+        };
+    }
 }

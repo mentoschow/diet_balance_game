@@ -5,6 +5,7 @@ using UnityEngine;
 public class BattlePP : DynamicPentagon
 {
     public EnemyEncount ee;
+    public BattleManager bm;
     float speed;
 
     float carb;
@@ -80,7 +81,7 @@ public class BattlePP : DynamicPentagon
 
     protected override void Update()
     {
-        if (ee.next)
+        if (ee.next && bm.run_animation)
         {
             speed = Time.deltaTime;
             if (carb < carb_max)
@@ -121,5 +122,23 @@ public class BattlePP : DynamicPentagon
         };
 
         SetUp();
+    }
+
+    public void Initialized_BPP()
+    {
+        carb = 0;
+        lipid = 0;
+        protein = 0;
+        vitamin = 0;
+        mineral = 0;
+
+        m_ParameterList = new List<Parameter>
+        {
+            new Parameter( "ビタミン", vitamin),
+            new Parameter( "炭水化物", carb),
+            new Parameter( "脂質", lipid),
+            new Parameter( "タンパク質", protein),
+            new Parameter( "ミネラル", mineral),
+        };
     }
 }
