@@ -12,8 +12,6 @@ public class Age_input : MonoBehaviour
     public InputField inputField;
     private Text txt;
 
-    
-
     public void Input_Age()
     {
         pm.hero.age = inputField.text;

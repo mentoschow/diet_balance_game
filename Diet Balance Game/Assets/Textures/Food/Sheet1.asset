@@ -15,7 +15,7 @@ MonoBehaviour:
   SheetName: Assets/Textures/Food/FoodData.xlsx
   WorksheetName: Sheet1
   dataArray:
-  - name: crepes
+  - name: crepe
     energy: 566
     carb: 6.45
     lipid: 39.76
@@ -23,7 +23,7 @@ MonoBehaviour:
     vitamin: 13.75537
     mineral: 838.1267
     id: 1
-  - name: Chunky_ramen
+  - name: ramen
     energy: 470
     carb: 21.06
     lipid: 8.64
@@ -31,7 +31,7 @@ MonoBehaviour:
     vitamin: 18.78446
     mineral: 3831.1475
     id: 2
-  - name: Salad
+  - name: salad
     energy: 10
     carb: 0.48
     lipid: 0.07
@@ -39,7 +39,7 @@ MonoBehaviour:
     vitamin: 6.52631
     mineral: 162.88191
     id: 3
-  - name: Zaru_udon
+  - name: zaru_udon
     energy: 289
     carb: 8.64
     lipid: 0.97
@@ -47,7 +47,7 @@ MonoBehaviour:
     vitamin: 5.54277
     mineral: 1893.1649
     id: 4
-  - name: Zaru_soba
+  - name: zaru_soba
     energy: 366
     carb: 16.19
     lipid: 1.85
@@ -55,7 +55,7 @@ MonoBehaviour:
     vitamin: 7.42288
     mineral: 636.94336
     id: 5
-  - name: Boiled eggs
+  - name: egg
     energy: 91
     carb: 7.38
     lipid: 6.18
@@ -63,7 +63,7 @@ MonoBehaviour:
     vitamin: 1.60735
     mineral: 252.628
     id: 6
-  - name: Humburger
+  - name: hamburger
     energy: 422
     carb: 20.8
     lipid: 19.08
@@ -79,7 +79,7 @@ MonoBehaviour:
     vitamin: 64.74287
     mineral: 4233.9116
     id: 8
-  - name: Fruit juices
+  - name: orange_juice
     energy: 214
     carb: 2.61
     lipid: 0.52
@@ -87,7 +87,7 @@ MonoBehaviour:
     vitamin: 154.97256
     mineral: 826.07043
     id: 9
-  - name: Gyudon
+  - name: beef_bowl
     energy: 771
     carb: 18.03
     lipid: 23.87
@@ -95,7 +95,7 @@ MonoBehaviour:
     vitamin: 8.23985
     mineral: 1646.8007
     id: 10
-  - name: Grilled meat
+  - name: yakiniku
     energy: 615
     carb: 47.25
     lipid: 43.75
@@ -103,7 +103,7 @@ MonoBehaviour:
     vitamin: 8.5152
     mineral: 545.08
     id: 11
-  - name: Tempra
+  - name: tempura
     energy: 167
     carb: 11.53
     lipid: 9.32
@@ -111,7 +111,7 @@ MonoBehaviour:
     vitamin: 9.6239
     mineral: 555.92523
     id: 12
-  - name: Tonjiru
+  - name: pork_soup
     energy: 121
     carb: 5.54
     lipid: 8.4
@@ -119,144 +119,8 @@ MonoBehaviour:
     vitamin: 4.90832
     mineral: 993.8262
     id: 13
-  - name: beer
-    energy: 142
-    carb: 1.06
-    lipid: 0
-    protein: 10.97
-    vitamin: 3.38832
-    mineral: 219.52354
-    id: 14
-  - name: Carbonara
-    energy: 779
-    carb: 26.32
-    lipid: 39.49
-    protein: 72.38
-    vitamin: 13.84167
-    mineral: 2341.454
-    id: 15
-  - name: Curry_rice
-    energy: 859
-    carb: 21.03
-    lipid: 26.51
-    protein: 129.17
-    vitamin: 38.01207
-    mineral: 2750.7222
-    id: 16
-  - name: Grilled chicken
-    energy: 99
-    carb: 7.53
-    lipid: 6.3
-    protein: 1.73
-    vitamin: 4.74198
-    mineral: 422.43954
-    id: 17
-  - name: Grilled fish
-    energy: 461
-    carb: 69.21
-    lipid: 17.61
-    protein: 0.4
-    vitamin: 27.39077
-    mineral: 4436.0703
-    id: 18
-  - name: Grilled rice
-    energy: 708
-    carb: 18.97
-    lipid: 24.05
-    protein: 97.64
-    vitamin: 13.3857
-    mineral: 2213.0942
-    id: 19
-  - name: Gyoza
-    energy: 394
-    carb: 14.2
-    lipid: 16.2
-    protein: 47.6
-    vitamin: 14.406
-    mineral: 1582
-    id: 20
-  - name: Hamburger steak
-    energy: 335
-    carb: 19.95
-    lipid: 20.1
-    protein: 18.45
-    vitamin: 4.9664
-    mineral: 1334.7495
-    id: 21
-  - name: Kimchi
-    energy: 69
-    carb: 4.2
-    lipid: 0.45
-    protein: 11.85
-    vitamin: 39.399
-    mineral: 1996.7
-    id: 22
-  - name: Mandarin Orange
-    energy: 34
-    carb: 0.53
-    lipid: 0.08
-    protein: 8.63
-    vitamin: 25.6658
-    mineral: 143.47
-    id: 23
-  - name: Neapolitan
-    energy: 590
-    carb: 19.17
-    lipid: 20.01
-    protein: 78.72
-    vitamin: 24.56275
-    mineral: 2314.4268
-    id: 24
-  - name: rice
-    energy: 269
-    carb: 4
-    lipid: 0.48
-    protein: 59.36
-    vitamin: 0.8056
-    mineral: 120.2896
-    id: 25
-  - name: Sakura mochi
-    energy: 96
-    carb: 1.8
-    lipid: 0.16
-    protein: 21.72
-    vitamin: 0.1016
-    mineral: 56.87
-    id: 26
-  - name: Shortcake
-    energy: 366
-    carb: 4.59
-    lipid: 25.3
-    protein: 29.05
-    vitamin: 11.15459
-    mineral: 270.66522
-    id: 27
-  - name: Soup
-    energy: 56
-    carb: 3.98
-    lipid: 1.69
-    protein: 6.34
-    vitamin: 1.98078
-    mineral: 899.95056
-    id: 28
-  - name: steak
-    energy: 355
-    carb: 18
-    lipid: 28.51
-    protein: 0.56
-    vitamin: 7.33219
-    mineral: 1018.27075
-    id: 29
-  - name: Strawberry
-    energy: 21
-    carb: 0.55
-    lipid: 0.06
-    protein: 5.19
-    vitamin: 38.606
-    mineral: 141.3661
-    id: 30
   dataList:
-  - name: crepes
+  - name: crepe
     energy: 566
     carb: 6.45
     lipid: 39.76
@@ -264,7 +128,7 @@ MonoBehaviour:
     vitamin: 13.75537
     mineral: 838.1267
     id: 1
-  - name: Chunky_ramen
+  - name: ramen
     energy: 470
     carb: 21.06
     lipid: 8.64
@@ -272,7 +136,7 @@ MonoBehaviour:
     vitamin: 18.78446
     mineral: 3831.1475
     id: 2
-  - name: Salad
+  - name: salad
     energy: 10
     carb: 0.48
     lipid: 0.07
@@ -280,7 +144,7 @@ MonoBehaviour:
     vitamin: 6.52631
     mineral: 162.88191
     id: 3
-  - name: Zaru_udon
+  - name: zaru_udon
     energy: 289
     carb: 8.64
     lipid: 0.97
@@ -288,7 +152,7 @@ MonoBehaviour:
     vitamin: 5.54277
     mineral: 1893.1649
     id: 4
-  - name: Zaru_soba
+  - name: zaru_soba
     energy: 366
     carb: 16.19
     lipid: 1.85
@@ -296,7 +160,7 @@ MonoBehaviour:
     vitamin: 7.42288
     mineral: 636.94336
     id: 5
-  - name: Boiled eggs
+  - name: egg
     energy: 91
     carb: 7.38
     lipid: 6.18
@@ -304,7 +168,7 @@ MonoBehaviour:
     vitamin: 1.60735
     mineral: 252.628
     id: 6
-  - name: Humburger
+  - name: hamburger
     energy: 422
     carb: 20.8
     lipid: 19.08
@@ -320,7 +184,7 @@ MonoBehaviour:
     vitamin: 64.74287
     mineral: 4233.9116
     id: 8
-  - name: Fruit juices
+  - name: orange_juice
     energy: 214
     carb: 2.61
     lipid: 0.52
@@ -328,7 +192,7 @@ MonoBehaviour:
     vitamin: 154.97256
     mineral: 826.07043
     id: 9
-  - name: Gyudon
+  - name: beef_bowl
     energy: 771
     carb: 18.03
     lipid: 23.87
@@ -336,7 +200,7 @@ MonoBehaviour:
     vitamin: 8.23985
     mineral: 1646.8007
     id: 10
-  - name: Grilled meat
+  - name: yakiniku
     energy: 615
     carb: 47.25
     lipid: 43.75
@@ -344,7 +208,7 @@ MonoBehaviour:
     vitamin: 8.5152
     mineral: 545.08
     id: 11
-  - name: Tempra
+  - name: tempura
     energy: 167
     carb: 11.53
     lipid: 9.32
@@ -352,7 +216,7 @@ MonoBehaviour:
     vitamin: 9.6239
     mineral: 555.92523
     id: 12
-  - name: Tonjiru
+  - name: pork_soup
     energy: 121
     carb: 5.54
     lipid: 8.4
@@ -360,139 +224,3 @@ MonoBehaviour:
     vitamin: 4.90832
     mineral: 993.8262
     id: 13
-  - name: beer
-    energy: 142
-    carb: 1.06
-    lipid: 0
-    protein: 10.97
-    vitamin: 3.38832
-    mineral: 219.52354
-    id: 14
-  - name: Carbonara
-    energy: 779
-    carb: 26.32
-    lipid: 39.49
-    protein: 72.38
-    vitamin: 13.84167
-    mineral: 2341.454
-    id: 15
-  - name: Curry_rice
-    energy: 859
-    carb: 21.03
-    lipid: 26.51
-    protein: 129.17
-    vitamin: 38.01207
-    mineral: 2750.7222
-    id: 16
-  - name: Grilled chicken
-    energy: 99
-    carb: 7.53
-    lipid: 6.3
-    protein: 1.73
-    vitamin: 4.74198
-    mineral: 422.43954
-    id: 17
-  - name: Grilled fish
-    energy: 461
-    carb: 69.21
-    lipid: 17.61
-    protein: 0.4
-    vitamin: 27.39077
-    mineral: 4436.0703
-    id: 18
-  - name: Grilled rice
-    energy: 708
-    carb: 18.97
-    lipid: 24.05
-    protein: 97.64
-    vitamin: 13.3857
-    mineral: 2213.0942
-    id: 19
-  - name: Gyoza
-    energy: 394
-    carb: 14.2
-    lipid: 16.2
-    protein: 47.6
-    vitamin: 14.406
-    mineral: 1582
-    id: 20
-  - name: Hamburger steak
-    energy: 335
-    carb: 19.95
-    lipid: 20.1
-    protein: 18.45
-    vitamin: 4.9664
-    mineral: 1334.7495
-    id: 21
-  - name: Kimchi
-    energy: 69
-    carb: 4.2
-    lipid: 0.45
-    protein: 11.85
-    vitamin: 39.399
-    mineral: 1996.7
-    id: 22
-  - name: Mandarin Orange
-    energy: 34
-    carb: 0.53
-    lipid: 0.08
-    protein: 8.63
-    vitamin: 25.6658
-    mineral: 143.47
-    id: 23
-  - name: Neapolitan
-    energy: 590
-    carb: 19.17
-    lipid: 20.01
-    protein: 78.72
-    vitamin: 24.56275
-    mineral: 2314.4268
-    id: 24
-  - name: rice
-    energy: 269
-    carb: 4
-    lipid: 0.48
-    protein: 59.36
-    vitamin: 0.8056
-    mineral: 120.2896
-    id: 25
-  - name: Sakura mochi
-    energy: 96
-    carb: 1.8
-    lipid: 0.16
-    protein: 21.72
-    vitamin: 0.1016
-    mineral: 56.87
-    id: 26
-  - name: Shortcake
-    energy: 366
-    carb: 4.59
-    lipid: 25.3
-    protein: 29.05
-    vitamin: 11.15459
-    mineral: 270.66522
-    id: 27
-  - name: Soup
-    energy: 56
-    carb: 3.98
-    lipid: 1.69
-    protein: 6.34
-    vitamin: 1.98078
-    mineral: 899.95056
-    id: 28
-  - name: steak
-    energy: 355
-    carb: 18
-    lipid: 28.51
-    protein: 0.56
-    vitamin: 7.33219
-    mineral: 1018.27075
-    id: 29
-  - name: Strawberry
-    energy: 21
-    carb: 0.55
-    lipid: 0.06
-    protein: 5.19
-    vitamin: 38.606
-    mineral: 141.3661
-    id: 30
