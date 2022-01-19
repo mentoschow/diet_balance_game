@@ -23,20 +23,20 @@ public class FoodSelection : MonoBehaviour
     public int comfirmEncount_temp;
 
     public List<Toggle> food;
+    public List<Image> foodTex;
 
-    [SerializeField]
-    private int turnEncount;
-    [SerializeField]
-    private int menuEncount;
-    [SerializeField]
-    private int selectedEncount;
-    [SerializeField]
-    private int[] selectedFood;
+    [SerializeField] private int turnEncount;
+    [SerializeField] private int menuEncount;
+    [SerializeField] private int selectedEncount;
+    [SerializeField] private int[] selectedFood = new int[3];
+    [SerializeField] private int[] randomNum = new int[18];
+    private int tempNum;
+    private int tempSort;
 
     void Start()
     {
         turnEncount = 1;
-        Initialized();
+        Initialized();       
     }
 
     void Update()
@@ -74,6 +74,8 @@ public class FoodSelection : MonoBehaviour
             food[i].isOn = false;
         }
         selectedEncount = 0;
+        GetRandomNumbers();
+        LoadFoodTexture();
     }
 
     void LoadCharacter(Sprite boy, Sprite girl)
@@ -91,6 +93,14 @@ public class FoodSelection : MonoBehaviour
     void LoadTurnImage(int turnEncount)
     {
         turn.sprite = turn_sprite.sprites[turnEncount - 1];
+    }
+
+    void LoadFoodTexture()
+    {
+        for(int i = 0; i < 18; i++)
+        {
+            foodTex[i].sprite = FoodImage.sprites[randomNum[i]];
+        }
     }
 
     public void NextMenu()
@@ -112,8 +122,8 @@ public class FoodSelection : MonoBehaviour
             {
                 if (food[comfirmEncount].isOn == true)
                 {
-                    comfirmImage[i].sprite = FoodImage.sprites[comfirmEncount];
-                    selectedFood[i] = comfirmEncount;  //record the number of food.
+                    comfirmImage[i].sprite = FoodImage.sprites[randomNum[comfirmEncount]];
+                    selectedFood[i] = randomNum[comfirmEncount];  //record the number of food.
                     Debug.Log(selectedFood[i]);
                     comfirmEncount_temp = comfirmEncount + 1;
                     break;
@@ -183,5 +193,36 @@ public class FoodSelection : MonoBehaviour
         food.vitamin = FoodData.dataArray[a].Vitamin + FoodData.dataArray[b].Vitamin + FoodData.dataArray[c].Vitamin;
         food.mineral = FoodData.dataArray[a].Mineral + FoodData.dataArray[b].Mineral + FoodData.dataArray[c].Mineral;
     }
+
+    private void GetRandomNumbers()
+    {
+        for(int i = 0; i < 18; i++)
+        {
+            cc: tempNum = Random.Range(0, 30);
+            //IsRepeat
+            for(int j = 0; j < i; j++)
+            {
+                if(tempNum == randomNum[j])
+                {
+                    goto cc;
+                }
+            }
+            randomNum[i] = tempNum;
+        }
+        //Sort
+        for(int m = 0; m < 18; m++)
+        {
+            for(int n = m + 1; n < 18; n++)
+            {
+                if (randomNum[m] > randomNum[n])
+                {
+                    tempSort = randomNum[m];
+                    randomNum[m] = randomNum[n];
+                    randomNum[n] = tempSort;
+                }
+            }
+        }
+    }
+
 
 }
