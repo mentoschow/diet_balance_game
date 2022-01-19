@@ -9,12 +9,10 @@ public class PlayerStatus : MonoBehaviour
     public bool next;           //シーン遷移用のブール変数
     public PlayerManager pm;
     public Score score;
-    public AssetConfig backimg;
     public AssetConfig character;
     public AssetConfig popup;
     public AssetConfig word;
 
-    Image Background = null;                      //背景画像
     [SerializeField] Image PlayerImg = null;      //プレイヤー画像
     [SerializeField] Image PopImg = null;         //吹き出し画像 
 
@@ -27,9 +25,9 @@ public class PlayerStatus : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Background = this.gameObject.GetComponent<Image>();
         Random.InitState(System.DateTime.Now.Millisecond);  //時間による乱数初期化
         pm.hero.statusid = Random.Range(0, 5);              //初日（一日目）のステータス 
+        Debug.Log("PS" + status);
     }
 
     // Update is called once per frame
@@ -47,8 +45,6 @@ public class PlayerStatus : MonoBehaviour
             PlayerImg.sprite = character.sprites[status * 2 + 1];
         }
 
-        //背景画像の表示
-        Background.sprite = backimg.sprites[status];
         //Pop画像の表示
         PopImg.sprite = popup.sprites[status];
 
