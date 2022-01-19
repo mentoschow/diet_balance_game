@@ -8,9 +8,13 @@ public class FoodSelection : MonoBehaviour
     public PlayerManager pm;
     public AssetConfig character;
     public AssetConfig FoodImage;
+    public AssetConfig status_bg_tex;
+    public AssetConfig status_word_tex;
     public Sheet1 FoodData;
     public bool next;
     public Image hero;
+    public Image status_bg;
+    public List<Image> status_word;
     public GameObject comfirm;
     public GameObject filter;
     public GameObject menu1;
@@ -43,6 +47,7 @@ public class FoodSelection : MonoBehaviour
     {
         LoadCharacter(character.sprites[0], character.sprites[1]);
         LoadTurnImage(turnEncount);
+        LoadStatusTextures();
         switch (menuEncount)
         {
             case 1:
@@ -103,6 +108,39 @@ public class FoodSelection : MonoBehaviour
         }
     }
 
+    void LoadStatusTextures()
+    {
+        status_bg.sprite = status_bg_tex.sprites[pm.hero.statusid];
+        switch (pm.hero.statusid)
+        {
+            case 0:
+                status_word[0].sprite = status_word_tex.sprites[0];
+                status_word[1].sprite = status_word_tex.sprites[1];
+                status_word[2].color = new Color(0, 0, 0, 0);
+                break;
+            case 1:
+                status_word[0].sprite = status_word_tex.sprites[2];
+                status_word[1].sprite = status_word_tex.sprites[3];
+                status_word[2].color = new Color(0, 0, 0, 0);
+                break;
+            case 2:
+                status_word[0].sprite = status_word_tex.sprites[4];
+                status_word[1].sprite = status_word_tex.sprites[5];
+                status_word[2].sprite = status_word_tex.sprites[6];
+                break;
+            case 3:
+                status_word[0].sprite = status_word_tex.sprites[7];
+                status_word[1].sprite = status_word_tex.sprites[8];
+                status_word[2].color = new Color(0, 0, 0, 0);
+                break;
+            case 4:
+                status_word[0].sprite = status_word_tex.sprites[9];
+                status_word[1].sprite = status_word_tex.sprites[10];
+                status_word[2].sprite = status_word_tex.sprites[11];
+                break;
+        }
+    }
+
     public void NextMenu()
     {
         menuEncount++;
@@ -116,20 +154,62 @@ public class FoodSelection : MonoBehaviour
     public void StartComfirm()  // to comfirm
     {
         comfirmEncount_temp = 0;
-        for(int i = 0; i < 3; i++)
+        switch (selectedEncount)
         {
-            for (comfirmEncount = comfirmEncount_temp; comfirmEncount < food.Count; comfirmEncount++)
-            {
-                if (food[comfirmEncount].isOn == true)
+            case 0:
+                selectedFood[0] = 30;
+                selectedFood[1] = 30;
+                selectedFood[2] = 30;
+                break;
+            case 1:
+                for (comfirmEncount = comfirmEncount_temp; comfirmEncount < food.Count; comfirmEncount++)
                 {
-                    comfirmImage[i].sprite = FoodImage.sprites[randomNum[comfirmEncount]];
-                    selectedFood[i] = randomNum[comfirmEncount];  //record the number of food.
-                    Debug.Log(selectedFood[i]);
-                    comfirmEncount_temp = comfirmEncount + 1;
-                    break;
+                    if (food[comfirmEncount].isOn == true)
+                    {
+                        comfirmImage[0].sprite = FoodImage.sprites[randomNum[comfirmEncount]];
+                        selectedFood[0] = randomNum[comfirmEncount];  //record the number of food.
+                        comfirmEncount_temp = comfirmEncount + 1;
+                        break;
+                    }
                 }
-            }
-        }
+                selectedFood[1] = 30;
+                selectedFood[2] = 30;
+                comfirmImage[1].sprite = FoodImage.sprites[30];
+                comfirmImage[2].sprite = FoodImage.sprites[30];
+                break;
+            case 2:
+                for (int i = 0; i < 2; i++)
+                {
+                    for (comfirmEncount = comfirmEncount_temp; comfirmEncount < food.Count; comfirmEncount++)
+                    {
+                        if (food[comfirmEncount].isOn == true)
+                        {
+                            comfirmImage[i].sprite = FoodImage.sprites[randomNum[comfirmEncount]];
+                            selectedFood[i] = randomNum[comfirmEncount];  //record the number of food.
+                            comfirmEncount_temp = comfirmEncount + 1;
+                            break;
+                        }
+                    }
+                }
+                selectedFood[2] = 30;
+                comfirmImage[2].sprite = FoodImage.sprites[30];
+                break;
+            case 3:
+                for (int i = 0; i < 3; i++)
+                {
+                    for (comfirmEncount = comfirmEncount_temp; comfirmEncount < food.Count; comfirmEncount++)
+                    {
+                        if (food[comfirmEncount].isOn == true)
+                        {
+                            comfirmImage[i].sprite = FoodImage.sprites[randomNum[comfirmEncount]];
+                            selectedFood[i] = randomNum[comfirmEncount];  //record the number of food.
+                            comfirmEncount_temp = comfirmEncount + 1;
+                            break;
+                        }
+                    }
+                }
+                break;
+        }       
         filter.SetActive(true);
         comfirm.SetActive(true);
     }
@@ -223,6 +303,4 @@ public class FoodSelection : MonoBehaviour
             }
         }
     }
-
-
 }
