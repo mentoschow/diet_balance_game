@@ -24,6 +24,7 @@ public class PlayerManager : MonoBehaviour
     [System.Serializable]
     public struct HERO
     {
+        public float energy;
         public float carb;
         public float lipid;
         public float protein;
@@ -35,6 +36,8 @@ public class PlayerManager : MonoBehaviour
     }
     
     public HERO hero;
+
+    public HERO baseNut;            //base nutrition that defined by Player's age and gender
 
     public FOOD selectedFoodData1;  //food data that selected in turn 1.(food1 + food2 + food3)
     public FOOD selectedFoodData2;  //food data that selected in turn 2.(food1 + food2 + food3)
