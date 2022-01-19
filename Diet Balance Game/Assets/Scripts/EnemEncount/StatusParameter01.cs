@@ -6,6 +6,7 @@ public class StatusParameter01 : DynamicPentagon
 {
     public bool end_flag = false;
     public EnemImgMng EIM;
+    public EnemyEncount ee;
 
     float speed;
 
@@ -15,11 +16,11 @@ public class StatusParameter01 : DynamicPentagon
     float vitamin;
     float mineral;
 
-    float carb_fstmax;
-    float lipid_fstmax;
-    float protein_fstmax;
-    float vitamin_fstmax;
-    float mineral_fstmax;
+    public float carb_fstmax;
+    public float lipid_fstmax;
+    public float protein_fstmax;
+    public float vitamin_fstmax;
+    public float mineral_fstmax;
 
     int flag_counter = 0;
 
@@ -49,7 +50,7 @@ public class StatusParameter01 : DynamicPentagon
         }
         public string parameterName;
 
-        [Range(0.0f, 0.5f)]
+        [Range(0.0f, 1.5f)]
         public float value;
     }
 
@@ -73,13 +74,6 @@ public class StatusParameter01 : DynamicPentagon
             new Parameter( "タンパク質", protein),
             new Parameter( "ミネラル", mineral),
         };
-
-        //1回目の食事で得た栄養素(最低値0，最大値1で正規化)
-        carb_fstmax = 0.2f;
-        lipid_fstmax = 0.5f;
-        protein_fstmax = 0.4f;
-        vitamin_fstmax = 0.5f;
-        mineral_fstmax = 0.3f;
     }
 
     
