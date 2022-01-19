@@ -8,6 +8,8 @@ public class Result : MonoBehaviour
 {
     public bool next = false;
 
+    public Canvas gameover;
+
     public PlayerManager pm;
     public BattleManager bm;
     public AssetConfig result_text;
@@ -22,6 +24,7 @@ public class Result : MonoBehaviour
     void Start()
     {
         pm.hero.day = 1;
+        gameover.enabled = false;
     }
 
     // Update is called once per frame
@@ -71,7 +74,8 @@ public class Result : MonoBehaviour
             {
                 if (Input.GetMouseButtonDown(0))
                 {
-                    next = true;
+                    this.enabled = false;
+                    gameover.enabled = true;
                 }
             }
         }

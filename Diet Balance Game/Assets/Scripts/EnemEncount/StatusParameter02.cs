@@ -16,11 +16,11 @@ public class StatusParameter02 : DynamicPentagon
     float vitamin;
     float mineral;
 
-    float carb_sndmax;
-    float lipid_sndmax;
-    float protein_sndmax;
-    float vitamin_sndmax;
-    float mineral_sndmax;
+    public float carb_sndmax;
+    public float lipid_sndmax;
+    public float protein_sndmax;
+    public float vitamin_sndmax;
+    public float mineral_sndmax;
 
     int flag_counter = 0;
 
@@ -50,7 +50,7 @@ public class StatusParameter02 : DynamicPentagon
         }
         public string parameterName;
 
-        [Range(0.0f, 1.0f)]
+        [Range(0.0f, 1.5f)]
         public float value;
     }
 
@@ -74,13 +74,6 @@ public class StatusParameter02 : DynamicPentagon
             new Parameter( "タンパク質", protein),
             new Parameter( "ミネラル", mineral),
         };
-
-        //1回目の食事で得た栄養素(最低値0，最大値1で正規化)
-        carb_sndmax = 1.0f;
-        lipid_sndmax = 0.9f;
-        protein_sndmax = 1.0f;
-        vitamin_sndmax = 0.7f;
-        mineral_sndmax = 1.0f;
     }
 
     protected override void Update()
