@@ -17,6 +17,7 @@ public class BattleManager : MonoBehaviour
     public PlayerManager pm;  //player data
     public FoodSelection fs;
     public BattlePP b_pp;
+    public BattleEP b_ep;
 
     public AssetConfig enem;
     public AssetConfig character;
@@ -55,6 +56,9 @@ public class BattleManager : MonoBehaviour
     float distance_two;     //distance two point
     float time_counter = 0;
 
+    //win rate
+    int probability;
+
     void Start()
     {
         run_animation = false;
@@ -70,6 +74,8 @@ public class BattleManager : MonoBehaviour
         paramPentagon.SetActive(false);
         fightButton.gameObject.SetActive(false);
         goawayButton.gameObject.SetActive(false);
+        Winrate1.gameObject.SetActive(false);
+        Winrate2.gameObject.SetActive(false);
 
         //Background alpha
         backimg01_alpha = 1.0f;
@@ -93,6 +99,7 @@ public class BattleManager : MonoBehaviour
                 LoadCharacter(pm.hero.statusid);
                 LoadEnemy(em.enemy.enemID);
                 setCharaFlag = false;
+                transform_nutParam_to_pentagonParam();
             }
 
             if(sceneFlag)
@@ -118,7 +125,7 @@ public class BattleManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-
+            battle_result = Battle();
             sceneAnimeFlag = true;
             sceneFlag = false;
 
@@ -129,12 +136,14 @@ public class BattleManager : MonoBehaviour
 
     void BattleScene02()
     {
-
-        run_animation = true;
+        if(run_animation == false)
+        {
+            //Load Number Image
+            SetWinRateImg(probability);
+        }
 
         if (battle_button_flag)
         {
-            battle_result = Battle();
             next = true;
             Debug.Log("Battle" + battle_result);
             battle_button_flag = false;
@@ -168,6 +177,7 @@ public class BattleManager : MonoBehaviour
         else
         {
             //move Scene2
+            run_animation = true;
             sceneAnimeFlag = false;
             //active(Scene2)
             basePentagon.gameObject.SetActive(true);
@@ -181,8 +191,6 @@ public class BattleManager : MonoBehaviour
     bool Battle()
     {
         bool bool_result = false;
-
-        int probability;
         int random_prob = 0;
 
         //Calculating win rate
@@ -200,9 +208,6 @@ public class BattleManager : MonoBehaviour
         }
 
         Debug.Log(probability + ", " + random_prob);
-
-        //Load Number Image
-        SetWinRateImg(probability);
 
         return bool_result;
     }
@@ -230,7 +235,9 @@ public class BattleManager : MonoBehaviour
     {
         int text1, text2;
 
-        if(winrate < 10)
+        Winrate1.gameObject.SetActive(true);
+
+        if (winrate < 10)
         {
             text1 = winrate;
             Winrate1.sprite = probtext.sprites[text1];
@@ -305,7 +312,32 @@ public class BattleManager : MonoBehaviour
         return result_prob;
     }
 
-    void Initilized_BattleMng()
+    void transform_nutParam_to_pentagonParam()
+    {
+        float range_max = 1.5f;
+
+        //sum player's three selection
+        float carb_p, lipid_p, protein_p, vitamin_p, mineral_p;
+        carb_p = pm.selectedFoodData1.carb + pm.selectedFoodData2.carb + pm.selectedFoodData3.carb;
+        lipid_p = pm.selectedFoodData1.lipid + pm.selectedFoodData2.lipid + pm.selectedFoodData3.lipid;
+        protein_p = pm.selectedFoodData1.protein + pm.selectedFoodData2.protein + pm.selectedFoodData3.protein;
+        vitamin_p = pm.selectedFoodData1.vitamin + pm.selectedFoodData2.vitamin + pm.selectedFoodData3.vitamin;
+        mineral_p = pm.selectedFoodData1.mineral + pm.selectedFoodData2.mineral + pm.selectedFoodData3.mineral;
+
+        b_pp.vitamin_max = range_max * vitamin_p / pm.baseNut.vitamin;
+        b_pp.carb_max = range_max * carb_p / pm.baseNut.carb;
+        b_pp.lipid_max = range_max * lipid_p / pm.baseNut.lipid;
+        b_pp.protein_max = range_max * protein_p / pm.baseNut.protein;
+        b_pp.mineral_max = range_max * mineral_p / pm.baseNut.mineral;
+
+        b_ep.vitamin = range_max * em.enemy.vitamin / pm.baseNut.vitamin;
+        b_ep.carb = range_max * em.enemy.carb / pm.baseNut.carb;
+        b_ep.lipid = range_max * em.enemy.lipid / pm.baseNut.lipid;
+        b_ep.protein = range_max * em.enemy.protein / pm.baseNut.protein;
+        b_ep.mineral = range_max * em.enemy.mineral / pm.baseNut.mineral;
+    }
+
+        void Initilized_BattleMng()
     {
         run_animation = false;
         sceneFlag = true;

@@ -13,11 +13,13 @@ public class BattlePP : DynamicPentagon
     float vitamin;
     float mineral;
 
-    float carb_max;
-    float lipid_max;
-    float protein_max;
-    float vitamin_max;
-    float mineral_max;
+    public float carb_max;
+    public float lipid_max;
+    public float protein_max;
+    public float vitamin_max;
+    public float mineral_max;
+
+    int flag_counter = 0;
 
     protected override void Awake()
     {
@@ -69,13 +71,6 @@ public class BattlePP : DynamicPentagon
             new Parameter( "タンパク質", protein),
             new Parameter( "ミネラル", mineral),
         };
-
-        //食事で得た栄養素の合計(最低値0，最大値1で正規化)
-        carb_max = 1.5f;
-        lipid_max = 1.5f;
-        protein_max = 1.5f;
-        vitamin_max = 1.5f;
-        mineral_max = 1.5f;
     }
 
     protected override void Update()
@@ -87,25 +82,54 @@ public class BattlePP : DynamicPentagon
             {
                 carb += speed;
             }
+            else
+            {
+                flag_counter++;
+            }
 
             if (lipid < lipid_max)
             {
                 lipid += speed;
+            }
+            else
+            {
+                flag_counter++;
             }
 
             if (protein < protein_max)
             {
                 protein += speed;
             }
+            else
+            {
+                flag_counter++;
+            }
 
             if (vitamin < vitamin_max)
             {
                 vitamin += speed;
             }
+            else
+            {
+                flag_counter++;
+            }
 
             if (mineral < mineral_max)
             {
                 mineral += speed;
+            }
+            else
+            {
+                flag_counter++;
+            }
+
+            if (flag_counter == 5)
+            {
+                bm.run_animation = false;
+            }
+            else
+            {
+                flag_counter = 0;
             }
         }
 
@@ -130,6 +154,8 @@ public class BattlePP : DynamicPentagon
         protein = 0;
         vitamin = 0;
         mineral = 0;
+
+        flag_counter = 0;
 
         m_ParameterList = new List<Parameter>
         {
