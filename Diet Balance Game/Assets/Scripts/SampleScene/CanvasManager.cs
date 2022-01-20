@@ -78,18 +78,19 @@ public class CanvasManager : MonoBehaviour
         if (ps.next)
         {
             playerStatus.enabled = false;
+            enemyEncount.enabled = true;  
+        }
+        if (ee.next)
+        {
+            enemyEncount.enabled = false;
             foodSelection.enabled = true;
         }
         if (fs.next)
         {
             foodSelection.enabled = false;
-            enemyEncount.enabled = true;
-        }
-        if (ee.next)
-        {
-            enemyEncount.enabled = false;
             Battle.enabled = true;
         }
+        
         if (bm.next)
         {
             Battle.enabled = false;

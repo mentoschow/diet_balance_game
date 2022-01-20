@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BattlePP : DynamicPentagon
 {
-    public EnemyEncount ee;
     public BattleManager bm;
     float speed;
 
@@ -81,7 +80,7 @@ public class BattlePP : DynamicPentagon
 
     protected override void Update()
     {
-        if (ee.next && bm.run_animation)
+        if (bm.run_animation)
         {
             speed = Time.deltaTime;
             if (carb < carb_max)

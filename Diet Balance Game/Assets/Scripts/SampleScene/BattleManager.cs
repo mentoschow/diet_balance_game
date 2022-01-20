@@ -15,47 +15,157 @@ public class BattleManager : MonoBehaviour
 
     public EnemyManager em;  //enemy data
     public PlayerManager pm;  //player data
-    public EnemyEncount ee;
+    public FoodSelection fs;
     public BattlePP b_pp;
 
     public AssetConfig enem;
     public AssetConfig character;
 
+    //child object1
     public Image hero;
     public Image enemy;
+    GameObject enemyObj;
+    [SerializeField] Image backgroundScene01;
+
+    //child object2
+    [SerializeField] Image backgroundScene02;
+    public Image basePentagon;
+    public Button fightButton;
+    public Button goawayButton;
+    GameObject paramPentagon;
+
+    //Flag
+    bool sceneFlag = true;
+    bool setCharaFlag = true;
+    bool sceneAnimeFlag = false;
+
+    //background
+    float backimg01_alpha;
+    float backimg02_alpha;
+    float alphaSpeed;
+
+    //enemy position
+    Vector3 startPos;
+    Vector3 endPos;
+    Vector3 present_pos;
+    float speed = 1.0F;
+    float distance_two; //distance two point
+    float time_counter = 0;
 
     void Start()
     {
         run_animation = false;
-        //LoadCharacter(character.sprites[0], character.sprites[1]);  //LoadCharacter and LoadEnemy should be runed in Update because the character would be changed in SelectCharacter.
-        //LoadEnemy(em.enemy.enemImgAddress);
-        //Debug.Log(em.enemy.name);
+
+        //get GameObject
+        enemyObj = transform.Find("BattleEnemy").gameObject;
+        paramPentagon = transform.Find("BattlePlayerParam").gameObject;
+
+        hero.gameObject.SetActive(true);
+        enemy.gameObject.SetActive(true);
+
+        basePentagon.gameObject.SetActive(false);
+        paramPentagon.SetActive(false);
+        fightButton.gameObject.SetActive(false);
+        goawayButton.gameObject.SetActive(false);
+
+        //Background alpha
+        backimg01_alpha = 255f;
+        backimg02_alpha = 0f;
+        alphaSpeed = 0.001f;
+
+        //enemy position
+        startPos = new Vector3(350, 0, 0);
+        endPos = new Vector3(-350, 0, 0);
+        present_pos = startPos;
+        distance_two = Vector3.Distance(startPos, endPos);
     }
 
     void Update()
     {
-        if (ee.next == true && next == false)
+        if (fs.next == true && next == false)
         {
-            run_animation = true;
-
-            LoadCharacter(pm.hero.statusid); 
-            LoadEnemy(em.enemy.enemID);
-            
-
-            if (battle_button_flag)
+           
+            if(setCharaFlag)
             {
-                battle_result = Battle();
-                next = true;
-                Debug.Log("Battle" + battle_result);
-                battle_button_flag = false;
+                LoadCharacter(pm.hero.statusid);
+                LoadEnemy(em.enemy.enemID);
+                setCharaFlag = false;
             }
 
-            if (goaway_button_flag)
+            if(sceneFlag)
             {
-
+                BattleScene01();
             }
+            else
+            {
+                if(sceneAnimeFlag)
+                {
+                    SceneAnimation();
+                }
+                BattleScene02();
+            }   
+        }
+    }
+
+    void BattleScene01()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+
+            sceneAnimeFlag = true;
+            sceneFlag = false;
+
+            //deactive
+            hero.gameObject.SetActive(false);
+            //active(Scene2)
+            basePentagon.gameObject.SetActive(true);
+            fightButton.gameObject.SetActive(true);
+            goawayButton.gameObject.SetActive(true);
+        }
+    }
+
+    void BattleScene02()
+    {
+
+        run_animation = true;
+
+        if (battle_button_flag)
+        {
+            battle_result = Battle();
+            next = true;
+            Debug.Log("Battle" + battle_result);
+            battle_button_flag = false;
         }
 
+        if (goaway_button_flag)
+        {
+            
+        }
+    }
+
+    void SceneAnimation()
+    {
+        time_counter += Time.deltaTime;
+        // 現在の位置
+        float present_Location = time_counter * speed / distance_two;
+
+        // オブジェクトの移動
+        enemyObj.transform.position = Vector3.Lerp(startPos, endPos, present_Location);
+        present_pos = Vector3.Lerp(startPos, endPos, present_Location);
+
+        if (alphaSpeed < 255f)
+        {
+            backimg01_alpha -= alphaSpeed;
+            backimg02_alpha += alphaSpeed;
+            //set
+            backgroundScene01.color = new Color(255f, 255f, 255f, backimg01_alpha);
+            backgroundScene02.color = new Color(255f, 255f, 255f, backimg02_alpha);
+        }
+        else
+        {
+            //move Scene2
+            sceneAnimeFlag = false;
+        }
         
     }
 
@@ -117,6 +227,12 @@ public class BattleManager : MonoBehaviour
     void Initilized_BattleMng()
     {
         run_animation = false;
+        sceneFlag = true;
+        setCharaFlag = true;
+        sceneAnimeFlag = false;
+
+        backimg01_alpha = 255f;
+        backimg02_alpha = 0f;
 
         b_pp.Initialized_BPP();
     }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StatusParameter01 : DynamicPentagon
+public class EnemyStatusPentagon : DynamicPentagon
 {
     public bool end_flag = false;
     public EnemImgMng EIM;
@@ -76,14 +76,14 @@ public class StatusParameter01 : DynamicPentagon
         };
     }
 
-    
+
 
     protected override void Update()
     {
         if (EIM.end_enem_down == true && end_flag == false)
         {
             speed = Time.deltaTime;
-            
+
             if (carb < carb_fstmax)
             {
                 carb += speed;
@@ -93,7 +93,7 @@ public class StatusParameter01 : DynamicPentagon
                 flag_counter++;
             }
 
-            if(lipid < lipid_fstmax)
+            if (lipid < lipid_fstmax)
             {
                 lipid += speed;
             }
@@ -130,7 +130,7 @@ public class StatusParameter01 : DynamicPentagon
             }
 
             //次のパラメータ表示に進むか
-            if(flag_counter == 5)
+            if (flag_counter == 5)
             {
                 end_flag = true;
             }
@@ -139,7 +139,7 @@ public class StatusParameter01 : DynamicPentagon
                 flag_counter = 0;
             }
         }
-        
+
         //値の更新
         m_ParameterList = new List<Parameter>
         {
@@ -153,7 +153,7 @@ public class StatusParameter01 : DynamicPentagon
         SetUp();
     }
 
-    public void InitializedSP01()
+    public void InitializedESP()
     {
         carb = 0;
         lipid = 0;
@@ -174,3 +174,4 @@ public class StatusParameter01 : DynamicPentagon
         };
     }
 }
+

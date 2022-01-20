@@ -12,13 +12,19 @@ public class Result : MonoBehaviour
 
     public PlayerManager pm;
     public BattleManager bm;
+    public AssetConfig resultChara;
     public AssetConfig result_text;
     public AssetConfig DayNumImg;
 
+    [SerializeField] Image character = null;
     [SerializeField] Image ResultText = null;      //プレイヤー画像
     [SerializeField] Image DayText = null;        //日達成，日終了のテキスト
     [SerializeField] Image Day01 = null;        //日にちの一の位
     [SerializeField] Image Day02 = null;        //日にちの十の位
+
+    //Flags of function
+    bool dayflag = true;
+    bool imageflag = true;
 
     // Start is called before the first frame update
     void Start()
@@ -30,11 +36,48 @@ public class Result : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        int day = pm.hero.day;
         int status = pm.hero.statusid;
+
+        if (bm.next)
+        {
+            //Set Day Image
+            if (dayflag)
+            {
+                DayDisplay();
+            }
+
+            //Set some images
+            if (imageflag)
+            {
+                ImageDisplay();
+            }
+
+            //Change processing by battle result
+            if (bm.battle_result == true)
+            {
+                if (Input.GetMouseButtonDown(0))
+                {
+                    next = true;
+                    Initialize();
+                }
+            }
+            else
+            {
+               if (Input.GetMouseButtonDown(0))
+               {
+                   this.enabled = false;
+                   Initialize();
+                   gameover.enabled = true;
+               }
+            }
+        }  
+    }
+
+    void DayDisplay()
+    {
+        int day = pm.hero.day;
         int day1;
         int day2;
-
 
         //日数の表示
         if (day < 10)
@@ -51,34 +94,38 @@ public class Result : MonoBehaviour
             Day02.sprite = DayNumImg.sprites[day2];
         }
 
+        dayflag = false;
+    }
+
+    void ImageDisplay()
+    {
         //勝ち負けによって，表示を変える
         if (bm.battle_result == true)
         {
+            if (pm.isboy)
+            {
+                character.sprite = resultChara.sprites[0];  //boy
+            }
+            else
+            {
+                character.sprite = resultChara.sprites[1];  //girl
+            }
             ResultText.sprite = result_text.sprites[0];
             DayText.sprite = result_text.sprites[2];
-
-            if (bm.next)
-            {
-                if (Input.GetMouseButtonDown(0))
-                {
-                    next = true;
-                }
-            }
         }
         else
         {
+            character.sprite = resultChara.sprites[2];      //mother
             ResultText.sprite = result_text.sprites[1];
             DayText.sprite = result_text.sprites[3];
-
-            if (bm.next)
-            {
-                if (Input.GetMouseButtonDown(0))
-                {
-                    this.enabled = false;
-                    gameover.enabled = true;
-                }
-            }
         }
-        
+
+        imageflag = false;
+    }
+
+    void Initialize()
+    {
+        dayflag = true;
+        imageflag = true;
     }
 }
