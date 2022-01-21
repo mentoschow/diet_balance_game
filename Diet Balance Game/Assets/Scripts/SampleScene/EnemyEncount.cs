@@ -10,7 +10,7 @@ public class EnemyEncount : MonoBehaviour
     public bool run_update;     //アニメーション関連のフラグ
 
     public PlayerManager pm;
-    public FoodSelection fs;
+    public Score score;
     public AssetConfig enem;
     [SerializeField] Image EnemImg = null;      //敵画像
 
@@ -29,54 +29,50 @@ public class EnemyEncount : MonoBehaviour
 
     //子オブジェクト
     public EnemImgMng EIM;
-    public StatusParameter01 SP01;
-    public StatusParameter02 SP02;
-    public StatusParameter03 SP03;
-
-    //選択された栄養素のパラメータを五角形のパラメータに変換したものを保存する構造体
-    //0:ビタミン，1:炭水化物，2:脂質，3：タンパク質，4:ミネラル
-    public struct FoodParam
-    {
-        public float[] select01;
-        public float[] select02;
-        public float[] select03;
-    }
-    public FoodParam pentagonParam;
+    public EnemyStatusPentagon ESP;
 
 
     void transform_FoodParam_to_pentagonParam()
     {
+        float range_max = 1.5f;
+
+        ESP.vitamin_fstmax = range_max * em.enemy.vitamin / pm.baseNut.vitamin;
+        ESP.carb_fstmax    = range_max * em.enemy.carb    / pm.baseNut.carb;
+        ESP.lipid_fstmax   = range_max * em.enemy.lipid   / pm.baseNut.lipid;
+        ESP.protein_fstmax = range_max * em.enemy.protein / pm.baseNut.protein;
+        ESP.mineral_fstmax = range_max * em.enemy.mineral / pm.baseNut.mineral;
+
         //１回目の選択のパラメータ変換
-        SP01.vitamin_fstmax = 1.5f * pm.selectedFoodData1.vitamin / pm.baseNut.vitamin;
-        SP01.carb_fstmax = 1.5f * pm.selectedFoodData1.carb / pm.baseNut.carb;
-        SP01.lipid_fstmax = 1.5f * pm.selectedFoodData1.lipid / pm.baseNut.lipid;
-        SP01.protein_fstmax = 1.5f * pm.selectedFoodData1.protein / pm.baseNut.protein;
-        SP01.mineral_fstmax = 1.5f * pm.selectedFoodData1.mineral / pm.baseNut.mineral;
+        //SP01.vitamin_fstmax = range_max * pm.selectedFoodData1.vitamin / pm.baseNut.vitamin;
+        //SP01.carb_fstmax = range_max * pm.selectedFoodData1.carb       / pm.baseNut.carb;
+        //SP01.lipid_fstmax = range_max * pm.selectedFoodData1.lipid     / pm.baseNut.lipid;
+        //SP01.protein_fstmax = range_max * pm.selectedFoodData1.protein / pm.baseNut.protein;
+        //SP01.mineral_fstmax = range_max * pm.selectedFoodData1.mineral / pm.baseNut.mineral;
 
         //２回目の選択のパラメータ変換
-        SP02.vitamin_sndmax = SP01.vitamin_fstmax + 1.5f * pm.selectedFoodData2.vitamin / pm.baseNut.vitamin;
-        SP02.carb_sndmax = SP01.carb_fstmax + 1.5f * pm.selectedFoodData2.carb / pm.baseNut.carb;
-        SP02.lipid_sndmax = SP01.lipid_fstmax + 1.5f * pm.selectedFoodData2.lipid / pm.baseNut.lipid;
-        SP02.protein_sndmax = SP01.protein_fstmax + 1.5f * pm.selectedFoodData2.protein / pm.baseNut.protein;
-        SP02.mineral_sndmax = SP01.mineral_fstmax + 1.5f * pm.selectedFoodData2.mineral / pm.baseNut.mineral;
+        //SP02.vitamin_sndmax = ESP.vitamin_fstmax + range_max * pm.selectedFoodData2.vitamin / pm.baseNut.vitamin;
+        //SP02.carb_sndmax = ESP.carb_fstmax + range_max * pm.selectedFoodData2.carb / pm.baseNut.carb;
+        //SP02.lipid_sndmax = ESP.lipid_fstmax + range_max * pm.selectedFoodData2.lipid / pm.baseNut.lipid;
+        //SP02.protein_sndmax = ESP.protein_fstmax + range_max * pm.selectedFoodData2.protein / pm.baseNut.protein;
+        //SP02.mineral_sndmax = ESP.mineral_fstmax + range_max * pm.selectedFoodData2.mineral / pm.baseNut.mineral;
 
         //３回目の選択のパラメータ変換
-        SP03.vitamin_trdmax = SP02.vitamin_sndmax + 1.5f * pm.selectedFoodData3.vitamin / pm.baseNut.vitamin;
-        SP03.carb_trdmax = SP02.carb_sndmax + 1.5f * pm.selectedFoodData3.carb / pm.baseNut.carb;
-        SP03.lipid_trdmax = SP02.lipid_sndmax + 1.5f * pm.selectedFoodData3.lipid / pm.baseNut.lipid;
-        SP03.protein_trdmax = SP02.protein_sndmax + 1.5f * pm.selectedFoodData3.protein / pm.baseNut.protein;
-        SP03.mineral_trdmax = SP02.mineral_sndmax + 1.5f * pm.selectedFoodData3.mineral / pm.baseNut.mineral;
+        //SP03.vitamin_trdmax = SP02.vitamin_sndmax + range_max * pm.selectedFoodData3.vitamin / pm.baseNut.vitamin;
+        //SP03.carb_trdmax = SP02.carb_sndmax + range_max * pm.selectedFoodData3.carb / pm.baseNut.carb;
+        //SP03.lipid_trdmax = SP02.lipid_sndmax + range_max * pm.selectedFoodData3.lipid / pm.baseNut.lipid;
+        //SP03.protein_trdmax = SP02.protein_sndmax + range_max * pm.selectedFoodData3.protein / pm.baseNut.protein;
+        //SP03.mineral_trdmax = SP02.mineral_sndmax + range_max * pm.selectedFoodData3.mineral / pm.baseNut.mineral;
 
-        Debug.Log("(EnemyEncount)pm.baseNut.vitamin" + pm.baseNut.vitamin);
-        Debug.Log("(EnemyEncount)pm.baseNut.carb" + pm.baseNut.carb);
-        Debug.Log("(EnemyEncount)pm.baseNut.lipid" + pm.baseNut.lipid);
-        Debug.Log("(EnemyEncount)pm.baseNut.protein" + pm.baseNut.protein);
-        Debug.Log("(EnemyEncount)pm.baseNut.mineral" + pm.baseNut.mineral);
-        Debug.Log("pm.selectedFoodData1.vitamin"+ pm.selectedFoodData1.vitamin);
-        Debug.Log("pm.selectedFoodData1.carb" + pm.selectedFoodData1.carb);
-        Debug.Log("pm.selectedFoodData1.lipid" + pm.selectedFoodData1.lipid);
-        Debug.Log("pm.selectedFoodData1.protein" + pm.selectedFoodData1.protein);
-        Debug.Log("pm.selectedFoodData1.mineral" + pm.selectedFoodData1.mineral);
+        //Debug.Log("(EnemyEncount)pm.baseNut.vitamin" + pm.baseNut.vitamin);
+        //Debug.Log("(EnemyEncount)pm.baseNut.carb" + pm.baseNut.carb);
+        //Debug.Log("(EnemyEncount)pm.baseNut.lipid" + pm.baseNut.lipid);
+        //Debug.Log("(EnemyEncount)pm.baseNut.protein" + pm.baseNut.protein);
+        //Debug.Log("(EnemyEncount)pm.baseNut.mineral" + pm.baseNut.mineral);
+        //Debug.Log("pm.selectedFoodData1.vitamin"+ pm.selectedFoodData1.vitamin);
+        //Debug.Log("pm.selectedFoodData1.carb" + pm.selectedFoodData1.carb);
+        //Debug.Log("pm.selectedFoodData1.lipid" + pm.selectedFoodData1.lipid);
+        //Debug.Log("pm.selectedFoodData1.protein" + pm.selectedFoodData1.protein);
+        //Debug.Log("pm.selectedFoodData1.mineral" + pm.selectedFoodData1.mineral);
     }
 
     //csvファイル読み込み関数
@@ -134,7 +130,7 @@ public class EnemyEncount : MonoBehaviour
         saveInfo(enem_id);
 
         //アニメーション動作開始
-        if (fs.next && next == false)
+        if (score.next && next == false)
         {
             transform_FoodParam_to_pentagonParam();
             run_update = true;
@@ -152,7 +148,7 @@ public class EnemyEncount : MonoBehaviour
         }
 
         //ボタンの表示
-        if (fs.next && SP03.end_flag == true)
+        if (ESP.end_flag == true)
         {
             childButton.SetActive(true);
             if (Input.GetMouseButtonDown(0))
@@ -169,9 +165,7 @@ public class EnemyEncount : MonoBehaviour
 
         childButton.SetActive(false);
         EIM.Initilized_EnemImgMng();
-        SP01.InitializedSP01();
-        SP02.InitializedSP02();
-        SP03.InitializedSP03();
+        ESP.InitializedESP();
 
         Debug.Log("EE Initilized");
     }
