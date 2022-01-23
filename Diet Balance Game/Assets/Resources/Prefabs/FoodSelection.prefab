@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5164425223367086153}
   - component: {fileID: 1551403218484501023}
   m_Layer: 5
-  m_Name: food1
+  m_Name: food15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ RectTransform:
   m_GameObject: {fileID: 238806801632016982}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 1563210241273940664}
   m_RootOrder: 1
@@ -35,7 +35,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 300, y: 209}
+  m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5164425223367086153
 CanvasRenderer:
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 8274047192630478574}
   - component: {fileID: 2324674834791781584}
   m_Layer: 5
-  m_Name: food1
+  m_Name: food8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -102,7 +102,7 @@ RectTransform:
   m_GameObject: {fileID: 537801095429731951}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 1402195538832607029}
   m_RootOrder: 1
@@ -110,7 +110,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 300, y: 209}
+  m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8274047192630478574
 CanvasRenderer:
@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: 8425651976654674441}
   - component: {fileID: 3039428468631310797}
   m_Layer: 5
-  m_Name: food1 (5)
+  m_Name: food18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -187,7 +187,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -174, y: 128}
+  m_AnchoredPosition: {x: 238, y: -252}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7873795914712290028
@@ -301,7 +301,7 @@ GameObject:
   - component: {fileID: 33556747808254074}
   - component: {fileID: 7789946440801998079}
   m_Layer: 5
-  m_Name: food1 (1)
+  m_Name: food14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -325,7 +325,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -174, y: 128}
+  m_AnchoredPosition: {x: -174, y: -62}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5463692162920603815
@@ -438,7 +438,7 @@ GameObject:
   - component: {fileID: 5662797154738245648}
   - component: {fileID: 1422017975403619691}
   m_Layer: 5
-  m_Name: food1
+  m_Name: food18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -453,7 +453,7 @@ RectTransform:
   m_GameObject: {fileID: 744773067261125362}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 8370598532918619148}
   m_RootOrder: 1
@@ -461,7 +461,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 300, y: 209}
+  m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5662797154738245648
 CanvasRenderer:
@@ -514,7 +514,7 @@ GameObject:
   - component: {fileID: 5295157016861936093}
   - component: {fileID: 5495788869773109753}
   m_Layer: 5
-  m_Name: food1 (2)
+  m_Name: food15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -538,7 +538,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -174, y: 128}
+  m_AnchoredPosition: {x: -174, y: -252}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7249214318750617284
@@ -666,7 +666,7 @@ RectTransform:
   m_GameObject: {fileID: 1178935342850528779}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7623860556161551770}
   m_RootOrder: 0
@@ -741,15 +741,15 @@ RectTransform:
   m_GameObject: {fileID: 1249386948793926263}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 4335970088326174572}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 40, y: 7}
-  m_SizeDelta: {x: 800, y: 450}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &207611231075361729
 CanvasRenderer:
@@ -779,7 +779,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 238f12da642dfde47868db3f04b49431, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 997fbda6cb30dc944bebf64fd84fdb66, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -823,7 +823,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 165, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8657565791553871419
@@ -951,7 +951,7 @@ GameObject:
   - component: {fileID: 924157333053200732}
   - component: {fileID: 6904648661299432042}
   m_Layer: 5
-  m_Name: food1
+  m_Name: food11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -966,7 +966,7 @@ RectTransform:
   m_GameObject: {fileID: 1677845366120570803}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 8609566396563317196}
   m_RootOrder: 1
@@ -974,7 +974,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 300, y: 209}
+  m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &924157333053200732
 CanvasRenderer:
@@ -1026,7 +1026,7 @@ GameObject:
   - component: {fileID: 8397966159127265111}
   - component: {fileID: 4165934414798012517}
   m_Layer: 5
-  m_Name: food1
+  m_Name: food12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1041,7 +1041,7 @@ RectTransform:
   m_GameObject: {fileID: 1749668122594183581}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 7623860556161551770}
   m_RootOrder: 1
@@ -1049,7 +1049,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 300, y: 209}
+  m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8397966159127265111
 CanvasRenderer:
@@ -1101,7 +1101,7 @@ GameObject:
   - component: {fileID: 7928013527302886469}
   - component: {fileID: 4343002484948534459}
   m_Layer: 5
-  m_Name: food1
+  m_Name: food9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1116,7 +1116,7 @@ RectTransform:
   m_GameObject: {fileID: 1800480841721907337}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 5124533785788803833}
   m_RootOrder: 1
@@ -1124,7 +1124,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 300, y: 209}
+  m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7928013527302886469
 CanvasRenderer:
@@ -1176,7 +1176,7 @@ GameObject:
   - component: {fileID: 155710904278144847}
   - component: {fileID: 6504186410892462924}
   m_Layer: 5
-  m_Name: food1
+  m_Name: food6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1191,7 +1191,7 @@ RectTransform:
   m_GameObject: {fileID: 2059692183964817484}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 3209918710345418323}
   m_RootOrder: 1
@@ -1199,7 +1199,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 300, y: 209}
+  m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &155710904278144847
 CanvasRenderer:
@@ -1229,7 +1229,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c74d895df39db3746b9927f1a5d97829, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 44a92db09ca8d9f4b9d6502e77e40863, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1273,7 +1273,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -45, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &617656241329686407
@@ -1326,7 +1326,7 @@ GameObject:
   - component: {fileID: 7868946413939028622}
   - component: {fileID: 4387323577210485613}
   m_Layer: 5
-  m_Name: food1
+  m_Name: food10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1341,7 +1341,7 @@ RectTransform:
   m_GameObject: {fileID: 2502712667125651205}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 8270583735916037260}
   m_RootOrder: 1
@@ -1349,7 +1349,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 300, y: 209}
+  m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7868946413939028622
 CanvasRenderer:
@@ -1416,7 +1416,7 @@ RectTransform:
   m_GameObject: {fileID: 2512558332850803632}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4831522478595666192}
   m_RootOrder: 0
@@ -1476,7 +1476,7 @@ GameObject:
   - component: {fileID: 183615092392950730}
   - component: {fileID: 647128500075669589}
   m_Layer: 5
-  m_Name: food1
+  m_Name: food14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1491,7 +1491,7 @@ RectTransform:
   m_GameObject: {fileID: 2718841613616443136}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 8349387036091831678}
   m_RootOrder: 1
@@ -1499,7 +1499,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 300, y: 209}
+  m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &183615092392950730
 CanvasRenderer:
@@ -1566,7 +1566,7 @@ RectTransform:
   m_GameObject: {fileID: 2974720021469697468}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8270583735916037260}
   m_RootOrder: 0
@@ -1626,7 +1626,7 @@ GameObject:
   - component: {fileID: 4743388735818238636}
   - component: {fileID: 3398762508730642158}
   m_Layer: 5
-  m_Name: food1
+  m_Name: food16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1641,7 +1641,7 @@ RectTransform:
   m_GameObject: {fileID: 3060323995399389667}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 4831522478595666192}
   m_RootOrder: 1
@@ -1649,7 +1649,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 300, y: 209}
+  m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4743388735818238636
 CanvasRenderer:
@@ -1716,7 +1716,7 @@ RectTransform:
   m_GameObject: {fileID: 3162170476059467692}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8370598532918619148}
   m_RootOrder: 0
@@ -1777,7 +1777,7 @@ GameObject:
   - component: {fileID: 6676508304077067665}
   - component: {fileID: 706699567978638637}
   m_Layer: 5
-  m_Name: food1 (3)
+  m_Name: food10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1801,7 +1801,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -174, y: 128}
+  m_AnchoredPosition: {x: 238, y: 128}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7256470381535099294
@@ -1938,7 +1938,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -174, y: -67}
+  m_AnchoredPosition: {x: -174, y: -62}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4419208758086919564
@@ -1988,13 +1988,13 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5708810198999002476}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 5708810198999002471}
+        m_TargetAssemblyTypeName: FoodSelection, Assembly-CSharp
+        m_MethodName: SelectedEncount
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 4419208758086919564}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Toggle, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2036,7 +2036,7 @@ RectTransform:
   m_GameObject: {fileID: 3569994906792201918}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3209918710345418323}
   m_RootOrder: 0
@@ -2097,7 +2097,7 @@ GameObject:
   - component: {fileID: 3124066931620640738}
   - component: {fileID: 4511754164636885907}
   m_Layer: 5
-  m_Name: food1 (2)
+  m_Name: food9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2121,7 +2121,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -174, y: 128}
+  m_AnchoredPosition: {x: -174, y: -252}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &9158085437761350935
@@ -2256,7 +2256,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 60, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8378439036424806166
@@ -2309,7 +2309,7 @@ GameObject:
   - component: {fileID: 4865427401419390363}
   - component: {fileID: 4183912434320993238}
   m_Layer: 5
-  m_Name: food1
+  m_Name: food17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2324,7 +2324,7 @@ RectTransform:
   m_GameObject: {fileID: 4193912761728569434}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 9188301799146113989}
   m_RootOrder: 1
@@ -2332,7 +2332,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 300, y: 209}
+  m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4865427401419390363
 CanvasRenderer:
@@ -2399,7 +2399,7 @@ RectTransform:
   m_GameObject: {fileID: 4390955433599481994}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8609566396563317196}
   m_RootOrder: 0
@@ -2474,15 +2474,15 @@ RectTransform:
   m_GameObject: {fileID: 4835375182489020557}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 5708810200482505306}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -3, y: 48}
+  m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6322414273483942732
 CanvasRenderer:
@@ -2662,7 +2662,7 @@ RectTransform:
   m_GameObject: {fileID: 5673246533369385785}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1259370785307365831}
   m_RootOrder: 0
@@ -2722,7 +2722,7 @@ GameObject:
   - component: {fileID: 1359429079725814854}
   - component: {fileID: 258520876574057192}
   m_Layer: 5
-  m_Name: food1
+  m_Name: food5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2737,7 +2737,7 @@ RectTransform:
   m_GameObject: {fileID: 5692136306343740944}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 1259370785307365831}
   m_RootOrder: 1
@@ -2745,7 +2745,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 300, y: 209}
+  m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1359429079725814854
 CanvasRenderer:
@@ -2775,7 +2775,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c74d895df39db3746b9927f1a5d97829, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9229e5b46bc5e7b4382ab8bfcac9c0dc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2895,7 +2895,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 138, y: 0}
+  m_AnchoredPosition: {x: 125, y: -75}
   m_SizeDelta: {x: 1480, y: 1480}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5708810198578941531
@@ -3388,7 +3388,7 @@ GameObject:
   - component: {fileID: 5708810198965921851}
   - component: {fileID: 5708810198965921852}
   m_Layer: 5
-  m_Name: food1
+  m_Name: food13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3403,7 +3403,7 @@ RectTransform:
   m_GameObject: {fileID: 5708810198965921854}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 5708810199957667789}
   m_RootOrder: 1
@@ -3411,7 +3411,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 300, y: 209}
+  m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5708810198965921851
 CanvasRenderer:
@@ -3441,7 +3441,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c74d895df39db3746b9927f1a5d97829, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4ebd08f866e1dd94cba478fde5401b17, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3463,7 +3463,7 @@ GameObject:
   - component: {fileID: 5708810198972437910}
   - component: {fileID: 5708810198972437911}
   m_Layer: 5
-  m_Name: food1
+  m_Name: food7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3478,7 +3478,7 @@ RectTransform:
   m_GameObject: {fileID: 5708810198972437913}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 5708810200501426856}
   m_RootOrder: 1
@@ -3486,7 +3486,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 300, y: 209}
+  m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5708810198972437910
 CanvasRenderer:
@@ -3516,7 +3516,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c74d895df39db3746b9927f1a5d97829, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3647,14 +3647,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pm: {fileID: 0}
   character: {fileID: 11400000, guid: b6c7ace076637034bb1d8973b7cfdbcc, type: 2}
-  FoodImage: {fileID: 0}
-  status_bg_tex: {fileID: 0}
-  status_word_tex: {fileID: 0}
-  FoodData: {fileID: 0}
+  FoodImage: {fileID: 11400000, guid: e61c5419fcd735446b715fe51b61f848, type: 2}
+  status_bg_tex: {fileID: 11400000, guid: 7a4db310987e863448b632230f81c19a, type: 2}
+  status_word_tex: {fileID: 11400000, guid: 08438f1713c699a4a99837f0491c6569, type: 2}
+  FoodData: {fileID: 11400000, guid: 597f0b12b19e1dc4c8bc0774bd290788, type: 2}
   next: 0
   hero: {fileID: 5708810198578941532}
-  status_bg: {fileID: 0}
-  status_word: []
+  status_bg: {fileID: 5708810199221056424}
+  status_word:
+  - {fileID: 1214157708990902897}
+  - {fileID: 5648055111286771133}
+  - {fileID: 3113073977617949633}
   comfirm: {fileID: 5708810200094719731}
   filter: {fileID: 5708810199907929608}
   menu1: {fileID: 5708810200236992819}
@@ -3662,15 +3665,54 @@ MonoBehaviour:
   menu3: {fileID: 5708810199181418262}
   turn: {fileID: 5708810200045562463}
   turn_sprite: {fileID: 11400000, guid: 11592f5b3cb9e3843aedb7972f13b743, type: 2}
-  comfirmImage: []
+  comfirmImage:
+  - {fileID: 3483810287140702711}
+  - {fileID: 1761703845876492095}
+  - {fileID: 1692276238835356672}
   comfirmEncount: 0
   comfirmEncount_temp: 0
-  food: []
-  foodTex: []
+  food:
+  - {fileID: 5708810199623981130}
+  - {fileID: 4419208758086919564}
+  - {fileID: 8801918541540921223}
+  - {fileID: 7210513195830086675}
+  - {fileID: 2575061551946622190}
+  - {fileID: 7228601484355831840}
+  - {fileID: 5708810200501426853}
+  - {fileID: 4585130767989461281}
+  - {fileID: 9158085437761350935}
+  - {fileID: 7256470381535099294}
+  - {fileID: 1764408051793298180}
+  - {fileID: 2824207830119346966}
+  - {fileID: 5708810199957667786}
+  - {fileID: 5463692162920603815}
+  - {fileID: 7249214318750617284}
+  - {fileID: 6253907184122526728}
+  - {fileID: 8333929905694505296}
+  - {fileID: 7873795914712290028}
+  foodTex:
+  - {fileID: 5708810199756961608}
+  - {fileID: 600335122637954709}
+  - {fileID: 129952169251686089}
+  - {fileID: 4482817647044870631}
+  - {fileID: 258520876574057192}
+  - {fileID: 6504186410892462924}
+  - {fileID: 5708810198972437911}
+  - {fileID: 2324674834791781584}
+  - {fileID: 4343002484948534459}
+  - {fileID: 4387323577210485613}
+  - {fileID: 6904648661299432042}
+  - {fileID: 4165934414798012517}
+  - {fileID: 5708810198965921852}
+  - {fileID: 647128500075669589}
+  - {fileID: 1551403218484501023}
+  - {fileID: 3398762508730642158}
+  - {fileID: 4183912434320993238}
+  - {fileID: 1422017975403619691}
   turnEncount: 0
   menuEncount: 0
   selectedEncount: 0
-  selectedFood: 
+  selectedFood: 000000000000000000000000
   randomNum: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 --- !u!1 &5708810199018283821
 GameObject:
@@ -3876,15 +3918,15 @@ RectTransform:
   m_GameObject: {fileID: 5708810199096020999}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 5708810200482505306}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -220, y: 48}
+  m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7897662129990260468
 CanvasRenderer:
@@ -4038,7 +4080,7 @@ RectTransform:
   m_GameObject: {fileID: 5708810199221056426}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children:
   - {fileID: 5257841237567978564}
   m_Father: {fileID: 5708810198578941530}
@@ -4046,8 +4088,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 50}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 36, y: 290}
+  m_SizeDelta: {x: 653, y: 260}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5708810199221056423
 CanvasRenderer:
@@ -4557,13 +4599,13 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5708810198999002476}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 5708810198999002471}
+        m_TargetAssemblyTypeName: FoodSelection, Assembly-CSharp
+        m_MethodName: SelectedEncount
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 5708810199623981130}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Toggle, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4605,7 +4647,7 @@ RectTransform:
   m_GameObject: {fileID: 5708810199756961610}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 5708810199623981133}
   m_RootOrder: 1
@@ -4613,7 +4655,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 300, y: 209}
+  m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5708810199756961607
 CanvasRenderer:
@@ -4643,7 +4685,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c74d895df39db3746b9927f1a5d97829, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 484c6f4f78c8efc419392842c7553239, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4702,7 +4744,7 @@ GameObject:
   - component: {fileID: 5708810199957667787}
   - component: {fileID: 5708810199957667788}
   m_Layer: 5
-  m_Name: food1
+  m_Name: food13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4915,7 +4957,7 @@ GameObject:
   - component: {fileID: 5708810200054641160}
   - component: {fileID: 5708810200054641161}
   m_Layer: 5
-  m_Name: start
+  m_Name: OK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4930,15 +4972,15 @@ RectTransform:
   m_GameObject: {fileID: 5708810200054641163}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_Children: []
   m_Father: {fileID: 5708810198999002472}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 165, y: -56}
-  m_SizeDelta: {x: 283, y: 77}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 104, y: 50}
+  m_SizeDelta: {x: 185, y: 87}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5708810200054641159
 CanvasRenderer:
@@ -4968,7 +5010,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e2ea7db0d779e2a4c8abad631c195044, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 15e820a39a1c9334aa8ba792f662aca1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5626,7 +5668,7 @@ GameObject:
   - component: {fileID: 5708810200501426854}
   - component: {fileID: 5708810200501426855}
   m_Layer: 5
-  m_Name: food1
+  m_Name: food7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5950,7 +5992,7 @@ GameObject:
   - component: {fileID: 8121134466855848606}
   - component: {fileID: 7342719813829904863}
   m_Layer: 5
-  m_Name: food1 (4)
+  m_Name: food11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5974,7 +6016,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -174, y: 128}
+  m_AnchoredPosition: {x: 238, y: -62}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1764408051793298180
@@ -6177,7 +6219,7 @@ RectTransform:
   m_GameObject: {fileID: 5965892199019370200}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 5409605875767159838}
   m_RootOrder: 1
@@ -6185,7 +6227,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 300, y: 209}
+  m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5239227207438373562
 CanvasRenderer:
@@ -6215,7 +6257,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c74d895df39db3746b9927f1a5d97829, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7abf62a56039a8945bf674d6fa34929f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6252,15 +6294,15 @@ RectTransform:
   m_GameObject: {fileID: 6061555918344716739}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 5708810200482505306}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 211, y: 48}
+  m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7720175350778267717
 CanvasRenderer:
@@ -6388,7 +6430,7 @@ GameObject:
   - component: {fileID: 7262652801747686112}
   - component: {fileID: 6656487242500043832}
   m_Layer: 5
-  m_Name: food1 (5)
+  m_Name: food12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6412,7 +6454,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -174, y: 128}
+  m_AnchoredPosition: {x: 238, y: -252}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2824207830119346966
@@ -6550,7 +6592,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 229, y: -62}
+  m_AnchoredPosition: {x: 238, y: -62}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2575061551946622190
@@ -6600,13 +6642,13 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5708810198999002476}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 5708810198999002471}
+        m_TargetAssemblyTypeName: FoodSelection, Assembly-CSharp
+        m_MethodName: SelectedEncount
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 2575061551946622190}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Toggle, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -6678,7 +6720,7 @@ RectTransform:
   m_GameObject: {fileID: 6966973803896500436}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9188301799146113989}
   m_RootOrder: 0
@@ -6738,7 +6780,7 @@ GameObject:
   - component: {fileID: 6003817925440945406}
   - component: {fileID: 4482817647044870631}
   m_Layer: 5
-  m_Name: food1
+  m_Name: food4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6753,7 +6795,7 @@ RectTransform:
   m_GameObject: {fileID: 7321916863009225998}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 8250921335048023343}
   m_RootOrder: 1
@@ -6761,7 +6803,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 300, y: 209}
+  m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6003817925440945406
 CanvasRenderer:
@@ -6791,7 +6833,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c74d895df39db3746b9927f1a5d97829, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 39e1d79eeaab64745b3f208d5dc808a7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6889,7 +6931,7 @@ GameObject:
   - component: {fileID: 5564374146544021171}
   - component: {fileID: 2327794087173882258}
   m_Layer: 5
-  m_Name: food1 (1)
+  m_Name: food8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6913,7 +6955,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -174, y: 128}
+  m_AnchoredPosition: {x: -174, y: -62}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4585130767989461281
@@ -7027,7 +7069,7 @@ GameObject:
   - component: {fileID: 9202341606986990911}
   - component: {fileID: 5283351000978582973}
   m_Layer: 5
-  m_Name: food1 (4)
+  m_Name: food17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7051,7 +7093,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -174, y: 128}
+  m_AnchoredPosition: {x: 238, y: -62}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8333929905694505296
@@ -7189,7 +7231,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 229, y: -252}
+  m_AnchoredPosition: {x: 238, y: -252}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7228601484355831840
@@ -7239,13 +7281,13 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5708810198999002476}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 5708810198999002471}
+        m_TargetAssemblyTypeName: FoodSelection, Assembly-CSharp
+        m_MethodName: SelectedEncount
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 7228601484355831840}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Toggle, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -7378,7 +7420,7 @@ GameObject:
   - component: {fileID: 3234733697038576469}
   - component: {fileID: 4507472891937254355}
   m_Layer: 5
-  m_Name: food1 (3)
+  m_Name: food16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7402,7 +7444,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -174, y: 128}
+  m_AnchoredPosition: {x: 238, y: 128}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6253907184122526728
@@ -7540,7 +7582,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -174, y: -255}
+  m_AnchoredPosition: {x: -174, y: -252}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8801918541540921223
@@ -7590,13 +7632,13 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5708810198999002476}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 5708810198999002471}
+        m_TargetAssemblyTypeName: FoodSelection, Assembly-CSharp
+        m_MethodName: SelectedEncount
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 8801918541540921223}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Toggle, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -7668,7 +7710,7 @@ RectTransform:
   m_GameObject: {fileID: 8549482466221786146}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8250921335048023343}
   m_RootOrder: 0
@@ -7753,7 +7795,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 229, y: 128}
+  m_AnchoredPosition: {x: 238, y: 128}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7210513195830086675
@@ -7803,13 +7845,13 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5708810198999002476}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 5708810198999002471}
+        m_TargetAssemblyTypeName: FoodSelection, Assembly-CSharp
+        m_MethodName: SelectedEncount
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 7210513195830086675}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Toggle, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
