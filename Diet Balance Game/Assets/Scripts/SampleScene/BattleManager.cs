@@ -28,24 +28,35 @@ public class BattleManager : MonoBehaviour
     public Image enemy;
     GameObject enemyObj;
     [SerializeField] Image backgroundScene01;
+    [SerializeField] Image backgroundWhite;
 
     //child object2
     [SerializeField] Image backgroundScene02;
+    [SerializeField] Image backFire;
     public Image basePentagon;
+    public Image pentagonText;
     public Button fightButton;
     public Button goawayButton;
     public Image Winrate1;
     public Image Winrate2;
+    public Image percentText;
     GameObject paramPentagon;
+
+
+    //Button Image
+    Image fightButtonImg;
+    Image goawayButtonImg;
 
     //Flag
     bool sceneFlag = true;
     bool setCharaFlag = true;
     bool sceneAnimeFlag = false;
+    bool fireEffectFlag = false;
 
     //background
     float backimg01_alpha;
     float backimg02_alpha;
+    float backfire_alpha;
     float alphaSpeed;
 
     //enemy position
@@ -59,32 +70,40 @@ public class BattleManager : MonoBehaviour
     //win rate
     int probability;
 
+    [SerializeField] Animator BackImgAnimation = null;
+
     void Start()
     {
         run_animation = false;
+        fireEffectFlag = false;
 
         //get GameObject
         enemyObj = transform.Find("BattleEnemy").gameObject;
         paramPentagon = transform.Find("BattlePlayerParam").gameObject;
+        fightButtonImg = fightButton.GetComponent<Image>();
+        goawayButtonImg = goawayButton.GetComponent<Image>();
 
         hero.gameObject.SetActive(true);
         enemy.gameObject.SetActive(true);
 
         basePentagon.gameObject.SetActive(false);
         paramPentagon.SetActive(false);
+        pentagonText.gameObject.SetActive(false);
         fightButton.gameObject.SetActive(false);
         goawayButton.gameObject.SetActive(false);
         Winrate1.gameObject.SetActive(false);
         Winrate2.gameObject.SetActive(false);
+        percentText.gameObject.SetActive(false);
 
         //Background alpha
         backimg01_alpha = 1.0f;
         backimg02_alpha = 0f;
+        backfire_alpha = 0f;
         alphaSpeed = 0.001f;
 
         //enemy position
         startPos = new Vector3(990, 360, 0);
-        endPos = new Vector3(290, 360, 0);
+        endPos = new Vector3(310, 400, 0);
         present_pos = startPos;
         distance_two = Vector3.Distance(startPos, endPos);
     }
@@ -125,6 +144,9 @@ public class BattleManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            //background(red and blue) is moved
+            BackImgAnimation.SetTrigger("MoveTrigger");
+
             battle_result = Battle();
             sceneAnimeFlag = true;
             sceneFlag = false;
@@ -136,10 +158,33 @@ public class BattleManager : MonoBehaviour
 
     void BattleScene02()
     {
-        if(run_animation == false)
+        float fireRand = 0;
+        float buttonRand = 0;
+
+        //Fire Animation and Button Animation
+        if (fireEffectFlag)
+        {
+            fireRand = (float)Random.Range(70, 100) / 100f;
+            buttonRand = (float)Random.Range(85, 100) / 100f;
+            backFire.color = new Color(255f, 255f, 255f, fireRand);
+            fightButtonImg.color = new Color(255f, 255f, 255f, buttonRand);
+            goawayButtonImg.color = new Color(255f, 255f, 255f, buttonRand);
+        }
+        else if (backfire_alpha < 1.0f)
+        {
+            backfire_alpha += alphaSpeed;
+            backFire.color = new Color(255f, 255f, 255f, backfire_alpha);
+        }
+        else
+        {
+            fireEffectFlag = true;
+        }
+
+        if (run_animation == false)
         {
             //Load Number Image
             SetWinRateImg(probability);
+            
         }
 
         if (battle_button_flag)
@@ -172,6 +217,7 @@ public class BattleManager : MonoBehaviour
             backimg02_alpha += alphaSpeed;
             //set
             backgroundScene01.color = new Color(255f, 255f, 255f, backimg01_alpha);
+            backgroundWhite.color = new Color(255f, 255f, 255f, backimg01_alpha);
             backgroundScene02.color = new Color(255f, 255f, 255f, backimg02_alpha);
         }
         else
@@ -181,11 +227,11 @@ public class BattleManager : MonoBehaviour
             sceneAnimeFlag = false;
             //active(Scene2)
             basePentagon.gameObject.SetActive(true);
+            pentagonText.gameObject.SetActive(true);
             paramPentagon.SetActive(true);
             fightButton.gameObject.SetActive(true);
             goawayButton.gameObject.SetActive(true);
         }
-        
     }
 
     bool Battle()
@@ -195,7 +241,7 @@ public class BattleManager : MonoBehaviour
 
         //Calculating win rate
         probability = CalculateProb();
-        random_prob = Random.Range(0, 100);
+        random_prob = 0;//Random.Range(0, 100);
 
         //Battle result(Win or Lose)
         if (random_prob < probability)
@@ -236,6 +282,7 @@ public class BattleManager : MonoBehaviour
         int text1, text2;
 
         Winrate1.gameObject.SetActive(true);
+        percentText.gameObject.SetActive(true);
 
         if (winrate < 10)
         {
@@ -278,8 +325,15 @@ public class BattleManager : MonoBehaviour
         vitamin_prob = (pm.baseNut.vitamin - Mathf.Abs(pm.baseNut.vitamin - vitamin_p)) / pm.baseNut.vitamin;
         mineral_prob = (pm.baseNut.mineral - Mathf.Abs(pm.baseNut.mineral - mineral_p)) / pm.baseNut.mineral;
 
+        Debug.Log("energy" + energy_p);
+        Debug.Log("carb" + carb_p);
+        Debug.Log("lipid" + lipid_p);
+        Debug.Log("protein" + protein_p);
+        Debug.Log("vitamin" + vitamin_p);
+        Debug.Log("mineral" + mineral_p);
+
         //the number of player's parameter that player wins
-        if(em.enemy.energy < energy_p)
+        if (em.enemy.energy < energy_p)
         {
             win_count++;
         }
@@ -315,6 +369,7 @@ public class BattleManager : MonoBehaviour
     void transform_nutParam_to_pentagonParam()
     {
         float range_max = 1.5f;
+        float max_param = 1.7f;
 
         //sum player's three selection
         float carb_p, lipid_p, protein_p, vitamin_p, mineral_p;
@@ -330,6 +385,28 @@ public class BattleManager : MonoBehaviour
         b_pp.protein_max = range_max * protein_p / pm.baseNut.protein;
         b_pp.mineral_max = range_max * mineral_p / pm.baseNut.mineral;
 
+        //if each nutrition is larger than range_max, that is changed to max_param
+        if(b_pp.vitamin_max > range_max)
+        {
+            b_pp.vitamin_max = max_param;
+        }
+        if (b_pp.carb_max > range_max)
+        {
+            b_pp.carb_max = max_param;
+        }
+        if (b_pp.lipid_max > range_max)
+        {
+            b_pp.lipid_max = max_param;
+        }
+        if (b_pp.protein_max > range_max)
+        {
+            b_pp.protein_max = max_param;
+        }
+        if (b_pp.mineral_max > range_max)
+        {
+            b_pp.mineral_max = max_param;
+        }
+
         b_ep.vitamin = range_max * em.enemy.vitamin / pm.baseNut.vitamin;
         b_ep.carb = range_max * em.enemy.carb / pm.baseNut.carb;
         b_ep.lipid = range_max * em.enemy.lipid / pm.baseNut.lipid;
@@ -343,9 +420,27 @@ public class BattleManager : MonoBehaviour
         sceneFlag = true;
         setCharaFlag = true;
         sceneAnimeFlag = false;
+        fireEffectFlag = false;
 
         backimg01_alpha = 1.0f;
         backimg02_alpha = 0f;
+        backfire_alpha = 0f;
+
+        backgroundScene01.color = new Color(255f, 255f, 255f, 1.0f);
+        backgroundWhite.color = new Color(255f, 255f, 255f, 1.0f);
+        backgroundScene02.color = new Color(255f, 255f, 255f, 0.0f);
+        backFire.color = new Color(255f, 255f, 255f, 0.0f);
+
+        basePentagon.gameObject.SetActive(false);
+        paramPentagon.SetActive(false);
+        pentagonText.gameObject.SetActive(false);
+        fightButton.gameObject.SetActive(false);
+        goawayButton.gameObject.SetActive(false);
+        Winrate1.gameObject.SetActive(false);
+        Winrate2.gameObject.SetActive(false);
+        percentText.gameObject.SetActive(false);
+
+        BackImgAnimation.SetTrigger("EmptyTrigger");
 
         b_pp.Initialized_BPP();
     }

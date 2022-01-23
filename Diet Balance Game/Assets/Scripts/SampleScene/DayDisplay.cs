@@ -9,6 +9,8 @@ public class DayDisplay : MonoBehaviour
     public PlayerManager pm;
     public Result result;
 
+    [SerializeField] Animator Animation = null;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,11 +22,15 @@ public class DayDisplay : MonoBehaviour
     {
         if(result.next && this.enabled)
         {
+            //animation on
+            Animation.SetTrigger("MoveTrigger");
+
             if (Input.GetMouseButtonDown(0))
             {
                 Debug.Log("DayDisplay");
                 pm.hero.statusid = Random.Range(0, 5);  //プレイヤーのステータスの変更
                 pm.hero.day++;                          //日数を進める
+                Animation.SetTrigger("StateTrigger");   //animation off
                 next = true;
             }
 
