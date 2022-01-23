@@ -163,7 +163,6 @@ GameObject:
   - component: {fileID: 2810613746061906101}
   - component: {fileID: 2810613746061906100}
   - component: {fileID: 2810613746061906103}
-  - component: {fileID: 2810613746061906102}
   - component: {fileID: 2810613746419376118}
   m_Layer: 5
   m_Name: Result 1
@@ -268,36 +267,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2810613746061906097}
   m_CullTransparentMesh: 1
---- !u!114 &2810613746061906102
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2810613746061906097}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f333dbe67f50ff242a713b1a1ec5fbb9, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &2810613746419376118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,9 +283,11 @@ MonoBehaviour:
   gameover: {fileID: 0}
   pm: {fileID: 0}
   bm: {fileID: 0}
+  resultBack: {fileID: 11400000, guid: f2410d8cc1071dd46beb59553e78e3a6, type: 2}
   resultChara: {fileID: 11400000, guid: 7c046b7d767bf3042bfb767eb6056a81, type: 2}
   result_text: {fileID: 11400000, guid: 23bf5dedcada2804abe315866b384ca5, type: 2}
   DayNumImg: {fileID: 11400000, guid: d494b49d2d2eab5469bdf0a3fd99887b, type: 2}
+  background: {fileID: 7856905013572048754}
   character: {fileID: 2810613747449928079}
   ResultText: {fileID: 2810613746539099187}
   DayText: {fileID: 8738149529336724127}
@@ -732,7 +703,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 1280, y: 720}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3907363308594988733
 CanvasRenderer:

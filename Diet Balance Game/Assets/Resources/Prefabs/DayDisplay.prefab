@@ -232,6 +232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   next: 0
   pm: {fileID: 0}
+  bm: {fileID: 0}
   result: {fileID: 0}
   Animation: {fileID: 1539029090}
 --- !u!1 &1401475751516520801

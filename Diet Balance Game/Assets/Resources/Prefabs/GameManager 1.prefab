@@ -48,6 +48,55 @@ MonoBehaviour:
   fs: {fileID: 0}
   FoodData: {fileID: 11400000, guid: 597f0b12b19e1dc4c8bc0774bd290788, type: 2}
   isboy: 0
+  hero:
+    energy: 0
+    carb: 0
+    lipid: 0
+    protein: 0
+    vitamin: 0
+    mineral: 0
+    age: 
+    statusid: 0
+    day: 0
+    healthy: 0
+  baseNut:
+    energy: 0
+    carb: 0
+    lipid: 0
+    protein: 0
+    vitamin: 0
+    mineral: 0
+    age: 
+    statusid: 0
+    day: 0
+    healthy: 0
+  selectedFoodData1:
+    name: 
+    energy: 0
+    carb: 0
+    lipid: 0
+    protein: 0
+    vitamin: 0
+    mineral: 0
+    ID: 0
+  selectedFoodData2:
+    name: 
+    energy: 0
+    carb: 0
+    lipid: 0
+    protein: 0
+    vitamin: 0
+    mineral: 0
+    ID: 0
+  selectedFoodData3:
+    name: 
+    energy: 0
+    carb: 0
+    lipid: 0
+    protein: 0
+    vitamin: 0
+    mineral: 0
+    ID: 0
 --- !u!114 &5208545335542563881
 MonoBehaviour:
   m_ObjectHideFlags: 0
