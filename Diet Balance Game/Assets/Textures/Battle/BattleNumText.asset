@@ -12,4 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df24fc2e82fa05e4c82708e89946ae21, type: 3}
   m_Name: BattleNumText
   m_EditorClassIdentifier: 
-  sprites: []
+  sprites:
+  - {fileID: 21300000, guid: 2039cf4fc1b8fd946b4e190a8f6fe8a4, type: 3}
+  - {fileID: 21300000, guid: 8df5d29a29c74ab4ca09f23cf213babf, type: 3}
+  - {fileID: 21300000, guid: 82b7b88b0ef02434e8392161a6ee29bd, type: 3}
+  - {fileID: 21300000, guid: 6aedf1b24fcdefd46ad6cc35f29a4dd4, type: 3}
+  - {fileID: 21300000, guid: 01e919f207fd7774aa70c2ffdc941d1f, type: 3}
+  - {fileID: 21300000, guid: d39636eb2cfc7724bb5c7655cc6a6190, type: 3}
+  - {fileID: 21300000, guid: 061896b2568129745b48bf24c213dd51, type: 3}
+  - {fileID: 21300000, guid: bd3fb355ba4dc184a89e2d4b9374ba91, type: 3}
+  - {fileID: 21300000, guid: 2f6839c55ec450a40890e52ba289f3aa, type: 3}
+  - {fileID: 21300000, guid: 1bf0a4c2d2668244ca62ca3954408772, type: 3}

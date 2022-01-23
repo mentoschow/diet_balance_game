@@ -72,5 +72,6 @@ public class GameStartButton : MonoBehaviour
         pm.baseNut.vitamin = float.Parse(baseData[id][6]);
         pm.baseNut.mineral = float.Parse(baseData[id][7]);
 
+        pm.hero.healthy = 50;
     }
 }

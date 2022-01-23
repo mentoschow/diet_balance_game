@@ -8,9 +8,10 @@ public class EnemyEncount : MonoBehaviour
 {
     public bool next;           //シーン遷移用のブール変数
     public bool run_update;     //アニメーション関連のフラグ
+    public bool pentagon_animeFlag;     //Flag(using animation)
 
     public PlayerManager pm;
-    public Score score;
+    public PlayerStatus ps;
     public AssetConfig enem;
     [SerializeField] Image EnemImg = null;      //敵画像
 
@@ -31,6 +32,23 @@ public class EnemyEncount : MonoBehaviour
     public EnemImgMng EIM;
     public EnemyStatusPentagon ESP;
 
+    //warning images
+    [SerializeField] Image warningLD;
+    [SerializeField] Image warningLT;
+    [SerializeField] Image warningRD;
+    [SerializeField] Image warningRT;
+    float oparate_warning_time;
+
+    //pentagon
+    [SerializeField] Image Pentagon = null;
+    [SerializeField] Image PentagonText = null;
+
+    //Pentagon.enabled = false;
+    //Pentagon.enabled = true;
+
+    //"enemy encount" text image
+    [SerializeField] Image callText;
+
 
     void transform_FoodParam_to_pentagonParam()
     {
@@ -42,37 +60,6 @@ public class EnemyEncount : MonoBehaviour
         ESP.protein_fstmax = range_max * em.enemy.protein / pm.baseNut.protein;
         ESP.mineral_fstmax = range_max * em.enemy.mineral / pm.baseNut.mineral;
 
-        //１回目の選択のパラメータ変換
-        //SP01.vitamin_fstmax = range_max * pm.selectedFoodData1.vitamin / pm.baseNut.vitamin;
-        //SP01.carb_fstmax = range_max * pm.selectedFoodData1.carb       / pm.baseNut.carb;
-        //SP01.lipid_fstmax = range_max * pm.selectedFoodData1.lipid     / pm.baseNut.lipid;
-        //SP01.protein_fstmax = range_max * pm.selectedFoodData1.protein / pm.baseNut.protein;
-        //SP01.mineral_fstmax = range_max * pm.selectedFoodData1.mineral / pm.baseNut.mineral;
-
-        //２回目の選択のパラメータ変換
-        //SP02.vitamin_sndmax = ESP.vitamin_fstmax + range_max * pm.selectedFoodData2.vitamin / pm.baseNut.vitamin;
-        //SP02.carb_sndmax = ESP.carb_fstmax + range_max * pm.selectedFoodData2.carb / pm.baseNut.carb;
-        //SP02.lipid_sndmax = ESP.lipid_fstmax + range_max * pm.selectedFoodData2.lipid / pm.baseNut.lipid;
-        //SP02.protein_sndmax = ESP.protein_fstmax + range_max * pm.selectedFoodData2.protein / pm.baseNut.protein;
-        //SP02.mineral_sndmax = ESP.mineral_fstmax + range_max * pm.selectedFoodData2.mineral / pm.baseNut.mineral;
-
-        //３回目の選択のパラメータ変換
-        //SP03.vitamin_trdmax = SP02.vitamin_sndmax + range_max * pm.selectedFoodData3.vitamin / pm.baseNut.vitamin;
-        //SP03.carb_trdmax = SP02.carb_sndmax + range_max * pm.selectedFoodData3.carb / pm.baseNut.carb;
-        //SP03.lipid_trdmax = SP02.lipid_sndmax + range_max * pm.selectedFoodData3.lipid / pm.baseNut.lipid;
-        //SP03.protein_trdmax = SP02.protein_sndmax + range_max * pm.selectedFoodData3.protein / pm.baseNut.protein;
-        //SP03.mineral_trdmax = SP02.mineral_sndmax + range_max * pm.selectedFoodData3.mineral / pm.baseNut.mineral;
-
-        //Debug.Log("(EnemyEncount)pm.baseNut.vitamin" + pm.baseNut.vitamin);
-        //Debug.Log("(EnemyEncount)pm.baseNut.carb" + pm.baseNut.carb);
-        //Debug.Log("(EnemyEncount)pm.baseNut.lipid" + pm.baseNut.lipid);
-        //Debug.Log("(EnemyEncount)pm.baseNut.protein" + pm.baseNut.protein);
-        //Debug.Log("(EnemyEncount)pm.baseNut.mineral" + pm.baseNut.mineral);
-        //Debug.Log("pm.selectedFoodData1.vitamin"+ pm.selectedFoodData1.vitamin);
-        //Debug.Log("pm.selectedFoodData1.carb" + pm.selectedFoodData1.carb);
-        //Debug.Log("pm.selectedFoodData1.lipid" + pm.selectedFoodData1.lipid);
-        //Debug.Log("pm.selectedFoodData1.protein" + pm.selectedFoodData1.protein);
-        //Debug.Log("pm.selectedFoodData1.mineral" + pm.selectedFoodData1.mineral);
     }
 
     //csvファイル読み込み関数
@@ -104,11 +91,24 @@ public class EnemyEncount : MonoBehaviour
     void Start()
     {
         run_update = false;
+        pentagon_animeFlag = false;
+        oparate_warning_time = 0;
 
         childButton = transform.Find("NextButton").gameObject;
         NextButton = childButton.gameObject.GetComponent<Button>();
         ButtonAnime = childButton.gameObject.GetComponent<Animator>();
+
+        //yellow warning image
+        warningLD.gameObject.SetActive(false);
+        warningLT.gameObject.SetActive(false);
+        warningRD.gameObject.SetActive(false);
+        warningRT.gameObject.SetActive(false);
+        //text image
         childButton.SetActive(false);
+        callText.gameObject.SetActive(false);
+        //pentagon
+        Pentagon.gameObject.SetActive(false);
+        PentagonText.gameObject.SetActive(false);
 
         //normal用の敵乱数生成
         normal_enem = Random.Range(1, 5);
@@ -129,13 +129,6 @@ public class EnemyEncount : MonoBehaviour
         //構造体へ敵情報の保存
         saveInfo(enem_id);
 
-        //アニメーション動作開始
-        if (score.next && next == false)
-        {
-            transform_FoodParam_to_pentagonParam();
-            run_update = true;
-        }
-
         //敵画像の表示
         if (status == 0)
         {
@@ -147,10 +140,43 @@ public class EnemyEncount : MonoBehaviour
             EnemImg.sprite = enem.sprites[status];
         }
 
-        //ボタンの表示
-        if (ESP.end_flag == true)
+        if (ps.next && next == false)
         {
-            childButton.SetActive(true);
+            SceneAnimation();
+        }
+    }
+
+    void SceneAnimation()
+    {
+        bool childButtonTrigger = false;
+
+        if (EIM.end_enem_down == false)                           //enemy down animation
+        {
+            transform_FoodParam_to_pentagonParam();
+            run_update = true;
+        }
+        else if (EIM.end_enem_down && pentagon_animeFlag == false)                      //warning (yellow line) animation and display "Enemy Encount" text image
+        {
+            if(YellowWarningAnimation())
+            {
+                childButton.SetActive(true);
+                childButtonTrigger = true;
+            }
+
+            if (childButtonTrigger && Input.GetMouseButtonDown(0))
+            {
+                pentagon_animeFlag = true;
+                childButton.SetActive(false);
+            }
+        }
+        else if (pentagon_animeFlag && ESP.end_flag == false)                //Display pentagon
+        {
+            Pentagon.gameObject.SetActive(true);
+            PentagonText.gameObject.SetActive(true);
+        }
+        else                                        //Display "call text" text image
+        {
+            callText.gameObject.SetActive(true);
             if (Input.GetMouseButtonDown(0))
             {
                 next = true;
@@ -159,11 +185,54 @@ public class EnemyEncount : MonoBehaviour
         }
     }
 
+    bool YellowWarningAnimation()
+    {
+        bool EndYellowWarning = false;
+
+        oparate_warning_time += Time.deltaTime;
+        
+        if (oparate_warning_time > 1.5)
+        {
+            EndYellowWarning = true;
+        }
+        else if (oparate_warning_time > 1.2)
+        {
+            warningLD.gameObject.SetActive(true);
+        }
+        else if (oparate_warning_time > 0.9)
+        {
+            
+            warningRD.gameObject.SetActive(true);
+        }
+        else if (oparate_warning_time > 0.6)
+        {
+            warningRT.gameObject.SetActive(true);
+        }
+        else if (oparate_warning_time > 0.3)
+        {
+            warningLT.gameObject.SetActive(true);
+        } 
+
+        return EndYellowWarning;
+    }
+
     void Initilized_EEParam()
     {
         run_update = false;
+        pentagon_animeFlag = false;
+        oparate_warning_time = 0;
 
-        childButton.SetActive(false);
+        //yellow warning image
+        warningLD.gameObject.SetActive(false);
+        warningLT.gameObject.SetActive(false);
+        warningRD.gameObject.SetActive(false);
+        warningRT.gameObject.SetActive(false);
+        //text image
+        callText.gameObject.SetActive(false);
+        //pentagon
+        Pentagon.gameObject.SetActive(false);
+        PentagonText.gameObject.SetActive(false);
+
         EIM.Initilized_EnemImgMng();
         ESP.InitializedESP();
 

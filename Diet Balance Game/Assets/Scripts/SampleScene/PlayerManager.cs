@@ -33,6 +33,7 @@ public class PlayerManager : MonoBehaviour
         public string age;
         public int statusid;       //normal:0, cold:1, busy:2, fat:3, roughskin:4
         public int day;            //ƒNƒŠƒA‚µ‚½“ú”‚ğ•Û‘¶
+        public int healthy;        //healthy degree (using the selection of go away)
     }
     
     public HERO hero;

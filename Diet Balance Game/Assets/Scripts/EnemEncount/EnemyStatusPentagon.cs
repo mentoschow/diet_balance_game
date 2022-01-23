@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemyStatusPentagon : DynamicPentagon
 {
     public bool end_flag = false;
-    public EnemImgMng EIM;
     public EnemyEncount ee;
 
     float speed;
@@ -80,7 +79,7 @@ public class EnemyStatusPentagon : DynamicPentagon
 
     protected override void Update()
     {
-        if (EIM.end_enem_down == true && end_flag == false)
+        if (ee.pentagon_animeFlag && end_flag == false)
         {
             speed = Time.deltaTime;
 

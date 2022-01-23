@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class BattleManager : MonoBehaviour
 {
     public bool next = false;
+    public bool goawayNext = false;
     public bool run_animation;
 
     public bool battle_result = false; //WIN:true, LOSE:false
@@ -41,6 +42,7 @@ public class BattleManager : MonoBehaviour
     public Image Winrate2;
     public Image percentText;
     GameObject paramPentagon;
+    public Text healthyText;
 
 
     //Button Image
@@ -94,6 +96,7 @@ public class BattleManager : MonoBehaviour
         Winrate1.gameObject.SetActive(false);
         Winrate2.gameObject.SetActive(false);
         percentText.gameObject.SetActive(false);
+        healthyText.gameObject.SetActive(false);
 
         //Background alpha
         backimg01_alpha = 1.0f;
@@ -189,15 +192,20 @@ public class BattleManager : MonoBehaviour
 
         if (battle_button_flag)
         {
+            if(battle_result)
+            {
+                pm.hero.healthy += 5;       //Update healthy degree
+            }
             next = true;
-            Debug.Log("Battle" + battle_result);
             battle_button_flag = false;
             Initilized_BattleMng();
         }
 
-        if (goaway_button_flag)
+        if (goaway_button_flag && pm.hero.healthy > 0)
         {
             Initilized_BattleMng();
+            pm.hero.healthy -= 30;
+            goawayNext = true;
         }
     }
 
@@ -231,6 +239,8 @@ public class BattleManager : MonoBehaviour
             paramPentagon.SetActive(true);
             fightButton.gameObject.SetActive(true);
             goawayButton.gameObject.SetActive(true);
+            healthyText.gameObject.SetActive(true);
+            HealthyTextChange();
         }
     }
 
@@ -414,6 +424,29 @@ public class BattleManager : MonoBehaviour
         b_ep.mineral = range_max * em.enemy.mineral / pm.baseNut.mineral;
     }
 
+    void HealthyTextChange()
+    {
+        int healthy = pm.hero.healthy;
+        int ten, one;
+        string tenNum, oneNum;
+
+        if(healthy < 10)
+        {
+            oneNum = healthy.ToString();
+            healthyText.text = "Œ’N“xF" + oneNum;
+        }
+        else
+        {
+            one = healthy % 10;
+            ten = healthy / 10;
+            oneNum = one.ToString();
+            tenNum = ten.ToString();
+            healthyText.text = "Œ’N“xF" + tenNum + oneNum;
+        }
+
+        
+    }
+
         void Initilized_BattleMng()
     {
         run_animation = false;
@@ -431,6 +464,8 @@ public class BattleManager : MonoBehaviour
         backgroundScene02.color = new Color(255f, 255f, 255f, 0.0f);
         backFire.color = new Color(255f, 255f, 255f, 0.0f);
 
+        hero.gameObject.SetActive(true);
+        enemy.gameObject.SetActive(true);
         basePentagon.gameObject.SetActive(false);
         paramPentagon.SetActive(false);
         pentagonText.gameObject.SetActive(false);
@@ -439,9 +474,17 @@ public class BattleManager : MonoBehaviour
         Winrate1.gameObject.SetActive(false);
         Winrate2.gameObject.SetActive(false);
         percentText.gameObject.SetActive(false);
+        healthyText.gameObject.SetActive(false);
+
+        //enemyposition
+        time_counter = 0;
+        enemyObj.transform.position = startPos;
+        present_pos = startPos;
+        distance_two = Vector3.Distance(startPos, endPos);
 
         BackImgAnimation.SetTrigger("EmptyTrigger");
 
         b_pp.Initialized_BPP();
+        b_ep.Initialize();
     }
 }

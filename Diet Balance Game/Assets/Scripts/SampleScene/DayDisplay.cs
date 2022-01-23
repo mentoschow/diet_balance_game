@@ -5,8 +5,10 @@ using UnityEngine;
 public class DayDisplay : MonoBehaviour
 {
     public bool next = false;
+    bool animationFlag = true;
 
     public PlayerManager pm;
+    public BattleManager bm;
     public Result result;
 
     [SerializeField] Animator Animation = null;
@@ -20,10 +22,15 @@ public class DayDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(result.next && this.enabled)
+        if((result.next || bm.goawayNext) && this.enabled)
         {
-            //animation on
-            Animation.SetTrigger("MoveTrigger");
+            if (animationFlag)
+            {
+                //animation on
+                Animation.SetTrigger("MoveTrigger");
+                animationFlag = false;
+            }
+            
 
             if (Input.GetMouseButtonDown(0))
             {
@@ -32,6 +39,7 @@ public class DayDisplay : MonoBehaviour
                 pm.hero.day++;                          //ì˙êîÇêiÇﬂÇÈ
                 Animation.SetTrigger("StateTrigger");   //animation off
                 next = true;
+                animationFlag = true;
             }
 
         }
