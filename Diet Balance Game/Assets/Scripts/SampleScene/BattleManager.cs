@@ -251,7 +251,7 @@ public class BattleManager : MonoBehaviour
 
         //Calculating win rate
         probability = CalculateProb();
-        random_prob = 0;//Random.Range(0, 100);
+        random_prob = Random.Range(0, 100);
 
         //Battle result(Win or Lose)
         if (random_prob < probability)
