@@ -7,11 +7,13 @@ using UnityEngine.UI;
 public class FoodSelection : MonoBehaviour
 {
     public PlayerManager pm;
+    public EnemyEncount ee;
     public AssetConfig character;
     public AssetConfig FoodImage;
     public AssetConfig status_bg_tex;
     public AssetConfig status_word_tex;
-    public AssetConfig comfirm_title_tex;
+    public AssetConfig comfirm_bg_tex;
+    public AssetConfig bg_tex;
     public Sheet1 FoodData;
     public bool next;
     public Image hero;
@@ -22,12 +24,16 @@ public class FoodSelection : MonoBehaviour
     public GameObject menu1;
     public GameObject menu2;
     public GameObject menu3;
+    public GameObject start_scene;
+    public Image please;
     public Image turn;
     public AssetConfig turn_sprite;
     public List<Image> comfirmImage;
     public int comfirmEncount;
     public int comfirmEncount_temp;
-    public Image comfirm_title;
+    public Image comfirm_no_eat;
+    public Image comfirm_bg;
+    public Image bg;
 
     public List<Toggle> food;
     public List<Image> foodTex;
@@ -40,10 +46,13 @@ public class FoodSelection : MonoBehaviour
     [SerializeField] private int[] randomNum = new int[18];
     private int tempNum;
     private int tempSort;
+    [SerializeField] private float time;
+    private bool first;
 
     void Start()
     {
         turnEncount = 1;
+        first = true;
         Initialized();       
     }
 
@@ -52,6 +61,7 @@ public class FoodSelection : MonoBehaviour
         LoadCharacter(character.sprites[0], character.sprites[1]);
         LoadTurnImage(turnEncount);
         LoadStatusTextures();
+        StartScene();
         switch (menuEncount)
         {
             case 1:
@@ -102,6 +112,7 @@ public class FoodSelection : MonoBehaviour
     void LoadTurnImage(int turnEncount)
     {
         turn.sprite = turn_sprite.sprites[turnEncount - 1];
+        bg.sprite = bg_tex.sprites[turnEncount - 1];
     }
 
     void LoadFoodTexture()
@@ -160,21 +171,23 @@ public class FoodSelection : MonoBehaviour
     public void StartComfirm()  // to comfirm
     {
         comfirmEncount_temp = 0;
-        comfirm_title.sprite = comfirm_title_tex.sprites[0];
+        comfirm_bg.sprite = comfirm_bg_tex.sprites[0];
+        comfirm_no_eat.enabled = false;
         for (int i = 0; i < 3; i++)
         {
+            comfirmImage[i].enabled = true;
             comfirmImage[i].color = new Color(1, 1, 1, 1);
         }
         switch (selectedEncount)
         {
             case 0:
-                comfirm_title.sprite = comfirm_title_tex.sprites[1];
                 for(int i = 0; i < 3; i++)
                 {
-                    selectedFood[i] = 30;
-                    comfirmImage[i].sprite = FoodImage.sprites[30];
-                    comfirmImage[i].color = new Color(0, 0, 0, 0);
-                }               
+                    selectedFood[i] = FoodData.dataArray.Length - 1;
+                    comfirmImage[i].enabled = false;                   
+                }
+                comfirm_bg.sprite = comfirm_bg_tex.sprites[1];
+                comfirm_no_eat.enabled = true;
                 break;
             case 1:
                 for (comfirmEncount = comfirmEncount_temp; comfirmEncount < food.Count; comfirmEncount++)
@@ -189,7 +202,7 @@ public class FoodSelection : MonoBehaviour
                 }
                 for (int i = 1; i < 3; i++)
                 {
-                    selectedFood[i] = 30;
+                    selectedFood[i] = FoodData.dataArray.Length - 1;
                     comfirmImage[i].sprite = FoodImage.sprites[30];
                     comfirmImage[i].color = new Color(0, 0, 0, 0);
                 }
@@ -208,7 +221,7 @@ public class FoodSelection : MonoBehaviour
                         }
                     }
                 }
-                selectedFood[2] = 30;
+                selectedFood[2] = FoodData.dataArray.Length - 1;
                 comfirmImage[2].sprite = FoodImage.sprites[30];
                 comfirmImage[2].color = new Color(0, 0, 0, 0);
                 break;
@@ -318,6 +331,28 @@ public class FoodSelection : MonoBehaviour
                     randomNum[m] = randomNum[n];
                     randomNum[n] = tempSort;
                 }
+            }
+        }
+    }
+
+    private void StartScene()
+    {
+        if (ee.next && !next && first)
+        {
+            start_scene.SetActive(true);
+            time += Time.deltaTime;
+            if(time <= 2)
+            {
+                please.color = new Color(1, 1, 1, 1);
+            }
+            else if(time > 2 && time <= 3)
+            {
+                please.color = new Color(1, 1, 1, 1 - time / 3);
+            }          
+            else if (time > 3)
+            {
+                start_scene.SetActive(false);
+                first = false;
             }
         }
     }
