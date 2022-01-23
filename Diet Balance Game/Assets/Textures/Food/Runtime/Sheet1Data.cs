@@ -13,20 +13,24 @@ public class Sheet1Data
   public string Name { get {return name; } set { name = value;} }
   
   [SerializeField]
+  int id;
+  public int ID { get {return id; } set { id = value;} }
+  
+  [SerializeField]
   float energy;
   public float Energy { get {return energy; } set { energy = value;} }
   
   [SerializeField]
-  float carb;
-  public float Carb { get {return carb; } set { carb = value;} }
-  
-  [SerializeField]
-  float lipid;
-  public float Lipid { get {return lipid; } set { lipid = value;} }
-  
-  [SerializeField]
   float protein;
   public float Protein { get {return protein; } set { protein = value;} }
+  
+  [SerializeField]
+  float lipids;
+  public float Lipids { get {return lipids; } set { lipids = value;} }
+  
+  [SerializeField]
+  float carbohydrates;
+  public float Carbohydrates { get {return carbohydrates; } set { carbohydrates = value;} }
   
   [SerializeField]
   float vitamin;
@@ -37,7 +41,7 @@ public class Sheet1Data
   public float Mineral { get {return mineral; } set { mineral = value;} }
   
   [SerializeField]
-  int id;
-  public int ID { get {return id; } set { id = value;} }
+  string name_jp;
+  public string Name_Jp { get {return name_jp; } set { name_jp = value;} }
   
 }
