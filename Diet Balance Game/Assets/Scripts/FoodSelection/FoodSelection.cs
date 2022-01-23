@@ -11,7 +11,7 @@ public class FoodSelection : MonoBehaviour
     public AssetConfig FoodImage;
     public AssetConfig status_bg_tex;
     public AssetConfig status_word_tex;
-    public AssetConfig comfirm_title_tex;
+    public AssetConfig comfirm_bg_tex;
     public Sheet1 FoodData;
     public bool next;
     public Image hero;
@@ -27,7 +27,8 @@ public class FoodSelection : MonoBehaviour
     public List<Image> comfirmImage;
     public int comfirmEncount;
     public int comfirmEncount_temp;
-    public Image comfirm_title;
+    public Image comfirm_no_eat;
+    public Image comfirm_bg;
 
     public List<Toggle> food;
     public List<Image> foodTex;
@@ -160,21 +161,23 @@ public class FoodSelection : MonoBehaviour
     public void StartComfirm()  // to comfirm
     {
         comfirmEncount_temp = 0;
-        comfirm_title.sprite = comfirm_title_tex.sprites[0];
+        comfirm_bg.sprite = comfirm_bg_tex.sprites[0];
+        comfirm_no_eat.enabled = false;
         for (int i = 0; i < 3; i++)
         {
+            comfirmImage[i].enabled = true;
             comfirmImage[i].color = new Color(1, 1, 1, 1);
         }
         switch (selectedEncount)
         {
             case 0:
-                comfirm_title.sprite = comfirm_title_tex.sprites[1];
                 for(int i = 0; i < 3; i++)
                 {
-                    selectedFood[i] = 30;
-                    comfirmImage[i].sprite = FoodImage.sprites[30];
-                    comfirmImage[i].color = new Color(0, 0, 0, 0);
-                }               
+                    selectedFood[i] = FoodData.dataArray.Length - 1;
+                    comfirmImage[i].enabled = false;                   
+                }
+                comfirm_bg.sprite = comfirm_bg_tex.sprites[1];
+                comfirm_no_eat.enabled = true;
                 break;
             case 1:
                 for (comfirmEncount = comfirmEncount_temp; comfirmEncount < food.Count; comfirmEncount++)
@@ -189,7 +192,7 @@ public class FoodSelection : MonoBehaviour
                 }
                 for (int i = 1; i < 3; i++)
                 {
-                    selectedFood[i] = 30;
+                    selectedFood[i] = FoodData.dataArray.Length - 1;
                     comfirmImage[i].sprite = FoodImage.sprites[30];
                     comfirmImage[i].color = new Color(0, 0, 0, 0);
                 }
@@ -208,7 +211,7 @@ public class FoodSelection : MonoBehaviour
                         }
                     }
                 }
-                selectedFood[2] = 30;
+                selectedFood[2] = FoodData.dataArray.Length - 1;
                 comfirmImage[2].sprite = FoodImage.sprites[30];
                 comfirmImage[2].color = new Color(0, 0, 0, 0);
                 break;
