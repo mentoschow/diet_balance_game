@@ -22,32 +22,36 @@ MonoBehaviour:
     name: Name
     isEnable: 0
     isArray: 0
-  - type: 5
-    name: Energy
-    isEnable: 0
-    isArray: 0
-  - type: 5
-    name: Carb
-    isEnable: 0
-    isArray: 0
-  - type: 5
-    name: Lipid
-    isEnable: 0
-    isArray: 0
-  - type: 5
-    name: Protein
-    isEnable: 0
-    isArray: 0
-  - type: 5
-    name: Vitamin
-    isEnable: 0
-    isArray: 0
-  - type: 5
-    name: Mineral
-    isEnable: 0
-    isArray: 0
   - type: 3
     name: ID
+    isEnable: 0
+    isArray: 0
+  - type: 5
+    name: energy
+    isEnable: 0
+    isArray: 0
+  - type: 5
+    name: protein
+    isEnable: 0
+    isArray: 0
+  - type: 5
+    name: Lipids
+    isEnable: 0
+    isArray: 0
+  - type: 5
+    name: carbohydrates
+    isEnable: 0
+    isArray: 0
+  - type: 5
+    name: vitamin
+    isEnable: 0
+    isArray: 0
+  - type: 5
+    name: mineral
+    isEnable: 0
+    isArray: 0
+  - type: 1
+    name: name_jp
     isEnable: 0
     isArray: 0
   excelFilePath: Assets/Textures/Food/FoodData.xlsx

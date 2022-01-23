@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class FoodSelection : MonoBehaviour
 {
     public PlayerManager pm;
@@ -10,6 +11,7 @@ public class FoodSelection : MonoBehaviour
     public AssetConfig FoodImage;
     public AssetConfig status_bg_tex;
     public AssetConfig status_word_tex;
+    public AssetConfig comfirm_title_tex;
     public Sheet1 FoodData;
     public bool next;
     public Image hero;
@@ -25,9 +27,11 @@ public class FoodSelection : MonoBehaviour
     public List<Image> comfirmImage;
     public int comfirmEncount;
     public int comfirmEncount_temp;
+    public Image comfirm_title;
 
     public List<Toggle> food;
     public List<Image> foodTex;
+    public List<Text> foodName;
 
     [SerializeField] private int turnEncount;
     [SerializeField] private int menuEncount;
@@ -105,6 +109,8 @@ public class FoodSelection : MonoBehaviour
         for(int i = 0; i < 18; i++)
         {
             foodTex[i].sprite = FoodImage.sprites[randomNum[i]];
+            foodName[i].text = FoodData.dataArray[randomNum[i]].Name_Jp;
+            //foodName[i].color = new Color();
         }
     }
 
@@ -154,12 +160,21 @@ public class FoodSelection : MonoBehaviour
     public void StartComfirm()  // to comfirm
     {
         comfirmEncount_temp = 0;
+        comfirm_title.sprite = comfirm_title_tex.sprites[0];
+        for (int i = 0; i < 3; i++)
+        {
+            comfirmImage[i].color = new Color(1, 1, 1, 1);
+        }
         switch (selectedEncount)
         {
             case 0:
-                selectedFood[0] = 30;
-                selectedFood[1] = 30;
-                selectedFood[2] = 30;
+                comfirm_title.sprite = comfirm_title_tex.sprites[1];
+                for(int i = 0; i < 3; i++)
+                {
+                    selectedFood[i] = 30;
+                    comfirmImage[i].sprite = FoodImage.sprites[30];
+                    comfirmImage[i].color = new Color(0, 0, 0, 0);
+                }               
                 break;
             case 1:
                 for (comfirmEncount = comfirmEncount_temp; comfirmEncount < food.Count; comfirmEncount++)
@@ -172,10 +187,12 @@ public class FoodSelection : MonoBehaviour
                         break;
                     }
                 }
-                selectedFood[1] = 30;
-                selectedFood[2] = 30;
-                comfirmImage[1].sprite = FoodImage.sprites[30];
-                comfirmImage[2].sprite = FoodImage.sprites[30];
+                for (int i = 1; i < 3; i++)
+                {
+                    selectedFood[i] = 30;
+                    comfirmImage[i].sprite = FoodImage.sprites[30];
+                    comfirmImage[i].color = new Color(0, 0, 0, 0);
+                }
                 break;
             case 2:
                 for (int i = 0; i < 2; i++)
@@ -193,6 +210,7 @@ public class FoodSelection : MonoBehaviour
                 }
                 selectedFood[2] = 30;
                 comfirmImage[2].sprite = FoodImage.sprites[30];
+                comfirmImage[2].color = new Color(0, 0, 0, 0);
                 break;
             case 3:
                 for (int i = 0; i < 3; i++)
@@ -267,8 +285,8 @@ public class FoodSelection : MonoBehaviour
     public void RecordFoodData(int a, int b, int c, ref PlayerManager.FOOD food)
     {
         food.energy = FoodData.dataArray[a].Energy + FoodData.dataArray[b].Energy + FoodData.dataArray[c].Energy;
-        food.carb = FoodData.dataArray[a].Carb + FoodData.dataArray[b].Carb + FoodData.dataArray[c].Carb;
-        food.lipid = FoodData.dataArray[a].Lipid + FoodData.dataArray[b].Lipid + FoodData.dataArray[c].Lipid;
+        food.carb = FoodData.dataArray[a].Carbohydrates + FoodData.dataArray[b].Carbohydrates + FoodData.dataArray[c].Carbohydrates;
+        food.lipid = FoodData.dataArray[a].Lipids + FoodData.dataArray[b].Lipids + FoodData.dataArray[c].Lipids;
         food.protein = FoodData.dataArray[a].Protein + FoodData.dataArray[b].Protein + FoodData.dataArray[c].Protein;
         food.vitamin = FoodData.dataArray[a].Vitamin + FoodData.dataArray[b].Vitamin + FoodData.dataArray[c].Vitamin;
         food.mineral = FoodData.dataArray[a].Mineral + FoodData.dataArray[b].Mineral + FoodData.dataArray[c].Mineral;
