@@ -8,7 +8,6 @@ public class EnemImgMng : MonoBehaviour
     public bool end_enem_down = false;           //シーン遷移用のブール変数
 
     public EnemyEncount ee;
-    [SerializeField] Image Pentagon = null;      //五角形画像
 
     //始点，終点
     Vector3 startPos;
@@ -33,8 +32,6 @@ public class EnemImgMng : MonoBehaviour
         endPos = new Vector3(640, 360, 0);
         present_pos = startPos;
         distance_two = Vector3.Distance(startPos, endPos);
-
-        Pentagon.enabled = false;
     }
 
     // Update is called once per frame
@@ -54,7 +51,6 @@ public class EnemImgMng : MonoBehaviour
             if (present_pos == endPos)
             {
                 end_enem_down = true;
-                Pentagon.enabled = true;
             }
         }
         
@@ -64,12 +60,10 @@ public class EnemImgMng : MonoBehaviour
     {
         time_counter = 0;
 
+        transform.position = startPos;
         present_pos = startPos;
         distance_two = Vector3.Distance(startPos, endPos);
 
         end_enem_down = false;
-        Pentagon.enabled = false;
-
-        Debug.Log(present_pos);
     }
 }

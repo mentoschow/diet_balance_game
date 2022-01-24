@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class BattleManager : MonoBehaviour
 {
     public bool next = false;
+    public bool goawayNext = false;
     public bool run_animation;
 
     public bool battle_result = false; //WIN:true, LOSE:false
@@ -28,24 +29,36 @@ public class BattleManager : MonoBehaviour
     public Image enemy;
     GameObject enemyObj;
     [SerializeField] Image backgroundScene01;
+    [SerializeField] Image backgroundWhite;
 
     //child object2
     [SerializeField] Image backgroundScene02;
+    [SerializeField] Image backFire;
     public Image basePentagon;
+    public Image pentagonText;
     public Button fightButton;
     public Button goawayButton;
     public Image Winrate1;
     public Image Winrate2;
+    public Image percentText;
     GameObject paramPentagon;
+    public Text healthyText;
+
+
+    //Button Image
+    Image fightButtonImg;
+    Image goawayButtonImg;
 
     //Flag
     bool sceneFlag = true;
     bool setCharaFlag = true;
     bool sceneAnimeFlag = false;
+    bool fireEffectFlag = false;
 
     //background
     float backimg01_alpha;
     float backimg02_alpha;
+    float backfire_alpha;
     float alphaSpeed;
 
     //enemy position
@@ -59,32 +72,41 @@ public class BattleManager : MonoBehaviour
     //win rate
     int probability;
 
+    [SerializeField] Animator BackImgAnimation = null;
+
     void Start()
     {
         run_animation = false;
+        fireEffectFlag = false;
 
         //get GameObject
         enemyObj = transform.Find("BattleEnemy").gameObject;
         paramPentagon = transform.Find("BattlePlayerParam").gameObject;
+        fightButtonImg = fightButton.GetComponent<Image>();
+        goawayButtonImg = goawayButton.GetComponent<Image>();
 
         hero.gameObject.SetActive(true);
         enemy.gameObject.SetActive(true);
 
         basePentagon.gameObject.SetActive(false);
         paramPentagon.SetActive(false);
+        pentagonText.gameObject.SetActive(false);
         fightButton.gameObject.SetActive(false);
         goawayButton.gameObject.SetActive(false);
         Winrate1.gameObject.SetActive(false);
         Winrate2.gameObject.SetActive(false);
+        percentText.gameObject.SetActive(false);
+        healthyText.gameObject.SetActive(false);
 
         //Background alpha
         backimg01_alpha = 1.0f;
         backimg02_alpha = 0f;
+        backfire_alpha = 0f;
         alphaSpeed = 0.001f;
 
         //enemy position
         startPos = new Vector3(990, 360, 0);
-        endPos = new Vector3(290, 360, 0);
+        endPos = new Vector3(310, 400, 0);
         present_pos = startPos;
         distance_two = Vector3.Distance(startPos, endPos);
     }
@@ -125,6 +147,9 @@ public class BattleManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            //background(red and blue) is moved
+            BackImgAnimation.SetTrigger("MoveTrigger");
+
             battle_result = Battle();
             sceneAnimeFlag = true;
             sceneFlag = false;
@@ -136,23 +161,51 @@ public class BattleManager : MonoBehaviour
 
     void BattleScene02()
     {
-        if(run_animation == false)
+        float fireRand = 0;
+        float buttonRand = 0;
+
+        //Fire Animation and Button Animation
+        if (fireEffectFlag)
+        {
+            fireRand = (float)Random.Range(70, 100) / 100f;
+            buttonRand = (float)Random.Range(85, 100) / 100f;
+            backFire.color = new Color(255f, 255f, 255f, fireRand);
+            fightButtonImg.color = new Color(255f, 255f, 255f, buttonRand);
+            goawayButtonImg.color = new Color(255f, 255f, 255f, buttonRand);
+        }
+        else if (backfire_alpha < 1.0f)
+        {
+            backfire_alpha += alphaSpeed;
+            backFire.color = new Color(255f, 255f, 255f, backfire_alpha);
+        }
+        else
+        {
+            fireEffectFlag = true;
+        }
+
+        if (run_animation == false)
         {
             //Load Number Image
             SetWinRateImg(probability);
+            
         }
 
         if (battle_button_flag)
         {
+            if(battle_result)
+            {
+                pm.hero.healthy += 5;       //Update healthy degree
+            }
             next = true;
-            Debug.Log("Battle" + battle_result);
             battle_button_flag = false;
             Initilized_BattleMng();
         }
 
-        if (goaway_button_flag)
+        if (goaway_button_flag && pm.hero.healthy > 0)
         {
             Initilized_BattleMng();
+            pm.hero.healthy -= 30;
+            goawayNext = true;
         }
     }
 
@@ -172,6 +225,7 @@ public class BattleManager : MonoBehaviour
             backimg02_alpha += alphaSpeed;
             //set
             backgroundScene01.color = new Color(255f, 255f, 255f, backimg01_alpha);
+            backgroundWhite.color = new Color(255f, 255f, 255f, backimg01_alpha);
             backgroundScene02.color = new Color(255f, 255f, 255f, backimg02_alpha);
         }
         else
@@ -181,11 +235,13 @@ public class BattleManager : MonoBehaviour
             sceneAnimeFlag = false;
             //active(Scene2)
             basePentagon.gameObject.SetActive(true);
+            pentagonText.gameObject.SetActive(true);
             paramPentagon.SetActive(true);
             fightButton.gameObject.SetActive(true);
             goawayButton.gameObject.SetActive(true);
+            healthyText.gameObject.SetActive(true);
+            HealthyTextChange();
         }
-        
     }
 
     bool Battle()
@@ -236,6 +292,7 @@ public class BattleManager : MonoBehaviour
         int text1, text2;
 
         Winrate1.gameObject.SetActive(true);
+        percentText.gameObject.SetActive(true);
 
         if (winrate < 10)
         {
@@ -278,8 +335,15 @@ public class BattleManager : MonoBehaviour
         vitamin_prob = (pm.baseNut.vitamin - Mathf.Abs(pm.baseNut.vitamin - vitamin_p)) / pm.baseNut.vitamin;
         mineral_prob = (pm.baseNut.mineral - Mathf.Abs(pm.baseNut.mineral - mineral_p)) / pm.baseNut.mineral;
 
+        Debug.Log("energy" + energy_p);
+        Debug.Log("carb" + carb_p);
+        Debug.Log("lipid" + lipid_p);
+        Debug.Log("protein" + protein_p);
+        Debug.Log("vitamin" + vitamin_p);
+        Debug.Log("mineral" + mineral_p);
+
         //the number of player's parameter that player wins
-        if(em.enemy.energy < energy_p)
+        if (em.enemy.energy < energy_p)
         {
             win_count++;
         }
@@ -315,6 +379,7 @@ public class BattleManager : MonoBehaviour
     void transform_nutParam_to_pentagonParam()
     {
         float range_max = 1.5f;
+        float max_param = 1.7f;
 
         //sum player's three selection
         float carb_p, lipid_p, protein_p, vitamin_p, mineral_p;
@@ -330,11 +395,56 @@ public class BattleManager : MonoBehaviour
         b_pp.protein_max = range_max * protein_p / pm.baseNut.protein;
         b_pp.mineral_max = range_max * mineral_p / pm.baseNut.mineral;
 
+        //if each nutrition is larger than range_max, that is changed to max_param
+        if(b_pp.vitamin_max > range_max)
+        {
+            b_pp.vitamin_max = max_param;
+        }
+        if (b_pp.carb_max > range_max)
+        {
+            b_pp.carb_max = max_param;
+        }
+        if (b_pp.lipid_max > range_max)
+        {
+            b_pp.lipid_max = max_param;
+        }
+        if (b_pp.protein_max > range_max)
+        {
+            b_pp.protein_max = max_param;
+        }
+        if (b_pp.mineral_max > range_max)
+        {
+            b_pp.mineral_max = max_param;
+        }
+
         b_ep.vitamin = range_max * em.enemy.vitamin / pm.baseNut.vitamin;
         b_ep.carb = range_max * em.enemy.carb / pm.baseNut.carb;
         b_ep.lipid = range_max * em.enemy.lipid / pm.baseNut.lipid;
         b_ep.protein = range_max * em.enemy.protein / pm.baseNut.protein;
         b_ep.mineral = range_max * em.enemy.mineral / pm.baseNut.mineral;
+    }
+
+    void HealthyTextChange()
+    {
+        int healthy = pm.hero.healthy;
+        int ten, one;
+        string tenNum, oneNum;
+
+        if(healthy < 10)
+        {
+            oneNum = healthy.ToString();
+            healthyText.text = "Œ’N“xF" + oneNum;
+        }
+        else
+        {
+            one = healthy % 10;
+            ten = healthy / 10;
+            oneNum = one.ToString();
+            tenNum = ten.ToString();
+            healthyText.text = "Œ’N“xF" + tenNum + oneNum;
+        }
+
+        
     }
 
         void Initilized_BattleMng()
@@ -343,10 +453,38 @@ public class BattleManager : MonoBehaviour
         sceneFlag = true;
         setCharaFlag = true;
         sceneAnimeFlag = false;
+        fireEffectFlag = false;
 
         backimg01_alpha = 1.0f;
         backimg02_alpha = 0f;
+        backfire_alpha = 0f;
+
+        backgroundScene01.color = new Color(255f, 255f, 255f, 1.0f);
+        backgroundWhite.color = new Color(255f, 255f, 255f, 1.0f);
+        backgroundScene02.color = new Color(255f, 255f, 255f, 0.0f);
+        backFire.color = new Color(255f, 255f, 255f, 0.0f);
+
+        hero.gameObject.SetActive(true);
+        enemy.gameObject.SetActive(true);
+        basePentagon.gameObject.SetActive(false);
+        paramPentagon.SetActive(false);
+        pentagonText.gameObject.SetActive(false);
+        fightButton.gameObject.SetActive(false);
+        goawayButton.gameObject.SetActive(false);
+        Winrate1.gameObject.SetActive(false);
+        Winrate2.gameObject.SetActive(false);
+        percentText.gameObject.SetActive(false);
+        healthyText.gameObject.SetActive(false);
+
+        //enemyposition
+        time_counter = 0;
+        enemyObj.transform.position = startPos;
+        present_pos = startPos;
+        distance_two = Vector3.Distance(startPos, endPos);
+
+        BackImgAnimation.SetTrigger("EmptyTrigger");
 
         b_pp.Initialized_BPP();
+        b_ep.Initialize();
     }
 }

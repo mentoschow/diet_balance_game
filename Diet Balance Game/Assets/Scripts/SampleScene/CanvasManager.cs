@@ -90,6 +90,11 @@ public class CanvasManager : MonoBehaviour
             foodSelection.enabled = false;
             Battle.enabled = true;
         }
+        if(bm.goawayNext)
+        {
+            Battle.enabled = false;
+            daydisplay.enabled = true;
+        }
         
         if (bm.next)
         {
@@ -110,6 +115,7 @@ public class CanvasManager : MonoBehaviour
             fs.next = false;
             ee.next = false;
             bm.next = false;
+            bm.goawayNext = false;
             result.next = false;
             dd.next = false;
         }

@@ -12,10 +12,12 @@ public class Result : MonoBehaviour
 
     public PlayerManager pm;
     public BattleManager bm;
+    public AssetConfig resultBack;
     public AssetConfig resultChara;
     public AssetConfig result_text;
     public AssetConfig DayNumImg;
 
+    [SerializeField] Image background = null;
     [SerializeField] Image character = null;
     [SerializeField] Image ResultText = null;      //プレイヤー画像
     [SerializeField] Image DayText = null;        //日達成，日終了のテキスト
@@ -102,6 +104,7 @@ public class Result : MonoBehaviour
         //勝ち負けによって，表示を変える
         if (bm.battle_result == true)
         {
+            background.sprite = resultBack.sprites[0];
             if (pm.isboy)
             {
                 character.sprite = resultChara.sprites[0];  //boy
@@ -115,6 +118,7 @@ public class Result : MonoBehaviour
         }
         else
         {
+            background.sprite = resultBack.sprites[1];
             character.sprite = resultChara.sprites[2];      //mother
             ResultText.sprite = result_text.sprites[1];
             DayText.sprite = result_text.sprites[3];
