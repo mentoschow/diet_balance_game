@@ -120,7 +120,6 @@ MonoBehaviour:
   next: 0
   numbers_tex: {fileID: 0}
   age: []
-  inputField: {fileID: 0}
   num_count: 0
 --- !u!1 &314292746642025241
 GameObject:

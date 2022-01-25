@@ -39,7 +39,6 @@ public class CanvasManager : MonoBehaviour
         Battle.enabled = false;
         canvasResult.enabled = false;
         daydisplay.enabled = false;
-
         foodbook.enabled = false;
     }
 

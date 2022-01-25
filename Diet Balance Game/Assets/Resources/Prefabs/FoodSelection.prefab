@@ -5134,6 +5134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pm: {fileID: 0}
+  ee: {fileID: 0}
   character: {fileID: 11400000, guid: b6c7ace076637034bb1d8973b7cfdbcc, type: 2}
   FoodImage: {fileID: 0}
   status_bg_tex: {fileID: 0}
@@ -5150,6 +5151,8 @@ MonoBehaviour:
   menu1: {fileID: 5708810200236992819}
   menu2: {fileID: 5708810199154196203}
   menu3: {fileID: 5708810199181418262}
+  start_scene: {fileID: 0}
+  please: {fileID: 0}
   turn: {fileID: 5708810200045562463}
   turn_sprite: {fileID: 11400000, guid: 11592f5b3cb9e3843aedb7972f13b743, type: 2}
   comfirmImage: []
@@ -5166,6 +5169,7 @@ MonoBehaviour:
   selectedEncount: 0
   selectedFood: 
   randomNum: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  time: 0
 --- !u!1 &5708810199018283821
 GameObject:
   m_ObjectHideFlags: 0
