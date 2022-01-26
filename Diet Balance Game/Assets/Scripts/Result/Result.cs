@@ -40,7 +40,7 @@ public class Result : MonoBehaviour
     {
         int status = pm.hero.statusid;
 
-        if (bm.next)
+        if (bm.next && bm.goawayNext == false)
         {
             //Set Day Image
             if (dayflag)

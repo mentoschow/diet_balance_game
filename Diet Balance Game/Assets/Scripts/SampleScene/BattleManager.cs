@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class BattleManager : MonoBehaviour
 {
     public bool next = false;
-    public bool goawayNext = false;
+    public bool goawayNext = false;     //go away flag
     public bool run_animation;
 
     public bool battle_result = false; //WIN:true, LOSE:false
@@ -113,9 +113,9 @@ public class BattleManager : MonoBehaviour
 
     void Update()
     {
-        if (fs.next == true && next == false)
+        if (fs.next && next == false)
         {
-           
+           //display Character and Enemy
             if(setCharaFlag)
             {
                 LoadCharacter(pm.hero.statusid);
@@ -190,7 +190,7 @@ public class BattleManager : MonoBehaviour
             
         }
 
-        if (battle_button_flag)
+        if (battle_button_flag)             //Fight Button Push
         {
             if(battle_result)
             {
@@ -201,8 +201,10 @@ public class BattleManager : MonoBehaviour
             Initilized_BattleMng();
         }
 
-        if (goaway_button_flag && pm.hero.healthy > 0)
+        if (goaway_button_flag && pm.hero.healthy > 29)
         {
+            next = true;
+            goaway_button_flag = false;
             Initilized_BattleMng();
             pm.hero.healthy -= 30;
             goawayNext = true;

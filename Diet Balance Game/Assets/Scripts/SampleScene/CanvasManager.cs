@@ -90,17 +90,20 @@ public class CanvasManager : MonoBehaviour
             foodSelection.enabled = false;
             Battle.enabled = true;
         }
-        if(bm.goawayNext)
-        {
-            Battle.enabled = false;
-            daydisplay.enabled = true;
-        }
-        
+
+        //battle separate
         if (bm.next)
         {
             Battle.enabled = false;
             canvasResult.enabled = true;
         }
+        if (bm.goawayNext)
+        {
+            Battle.enabled = false;
+            canvasResult.enabled = false;
+            daydisplay.enabled = true;
+        }
+
         if (result.next)
         {
             canvasResult.enabled = false;
