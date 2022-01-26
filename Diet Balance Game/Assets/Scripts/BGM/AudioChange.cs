@@ -30,6 +30,7 @@ public class AudioChange : MonoBehaviour
     public Canvas daydisplay;
     public DayDisplay dd;
     public Canvas foodbook;
+    public Canvas gameover;
 
     bool BGM = false;
     bool encountBGM = false;
@@ -38,7 +39,9 @@ public class AudioChange : MonoBehaviour
     bool selectBGM = false;
     bool battleBGM = false;
     bool daydisplayBGM = false;
-    bool ResultBGM = false;
+    bool winBGM = false;
+    bool loseBGM = false;
+    bool gameoverBGM = false;
     void Start()
     {
         //GetComponenntoでAudioSourceコンポーネントにアクセスして
@@ -94,19 +97,41 @@ public class AudioChange : MonoBehaviour
             if (!daydisplayBGM)
             {
                 daydisplayBGM = true;
-                audios.clip = clips[1];
+                audios.clip = clips[4];
                 audios.Play();
             }
         }
 
         if (bm.next)//canvasResult
         {
-            
-            if (!ResultBGM)
+            if (bm.battle_result == true)
             {
-                ResultBGM = true;
-                audios.clip = clips[1];
-                audios.Play();
+                if (!winBGM)
+                {
+                    winBGM = true;
+                    audios.clip = clips[3];
+                    audios.Play();
+                }
+            }
+            else
+            {
+                if (!loseBGM)
+                {
+                    loseBGM = true;
+                    audios.clip = clips[5];
+                    audios.Play();
+
+                    
+                }
+                if (gameover.enabled == true)
+                {
+                    if (!gameoverBGM)
+                    {
+                        gameoverBGM = true;
+                        audios.clip = clips[6];
+                        audios.Play();
+                    }
+                }
             }
         }
         if (result.next)//daydisplay
@@ -115,7 +140,7 @@ public class AudioChange : MonoBehaviour
             if (!daydisplay2BGM)
             {
                 daydisplay2BGM = true;
-                audios.clip = clips[1];
+                audios.clip = clips[4];
                 audios.Play();
             }
         }
@@ -132,11 +157,13 @@ public class AudioChange : MonoBehaviour
             encountBGM = false;
             encount2BGM = false;
             daydisplayBGM = false;
-            ResultBGM = false;
+            winBGM = false;
             daydisplay2BGM = false;
             selectBGM = false;
             battleBGM = false;
             BGM = false;
+            loseBGM = false;
+            gameoverBGM = false;
         }
     }
 
