@@ -58,7 +58,7 @@ public class FoodBook : MonoBehaviour
         for (int i = 0; i < 6; i++)  // [6 * page_num - (6 - i)] is the encount of food.(ID - 1)
         {
             food_img[i].sprite = food_tex.sprites[6 * page_num - (6 - i)];
-            food_name[i].text = food_data.dataArray[6 * page_num - (6 - i)].Name_Jp;
+            food_name[i].text = food_data.dataArray[6 * page_num - (6 - i)].Name_Jp;  // load food data
         }
     }
 
