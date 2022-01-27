@@ -5,14 +5,18 @@ using UnityEngine.UI;
 
 public class FoodBook : MonoBehaviour
 {
+    //Data
     public AssetConfig food_tex;
     public AssetConfig number_tex;
     public Sheet1 food_data;
     public Score score;
 
+    //Objects
     public List<Image> food_img;
     public List<Text> food_name;
     public Image page_img;
+    public GameObject nextPage;
+    public GameObject frontPage;
 
     [SerializeField] private int page_num;
     [SerializeField] private bool first;
@@ -31,6 +35,16 @@ public class FoodBook : MonoBehaviour
         {
             page_num = 1;
             first = false;
+        }
+        nextPage.SetActive(true);
+        frontPage.SetActive(true);
+        if (page_num == 1)
+        {
+            frontPage.SetActive(false);
+        }
+        if (page_num == 7)
+        {
+            nextPage.SetActive(false);
         }
     }
 
