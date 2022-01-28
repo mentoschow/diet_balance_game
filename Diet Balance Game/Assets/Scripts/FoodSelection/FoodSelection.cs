@@ -13,7 +13,7 @@ public class FoodSelection : MonoBehaviour
     public AssetConfig status_bg_tex;
     public AssetConfig status_word_tex;
     public AssetConfig comfirm_bg_tex;
-    public AssetConfig bg_tex;
+    //public AssetConfig bg_tex;
     public Sheet1 FoodData;
     public bool next;
     public Image hero;
@@ -33,7 +33,7 @@ public class FoodSelection : MonoBehaviour
     public int comfirmEncount_temp;
     public Image comfirm_no_eat;
     public Image comfirm_bg;
-    public Image bg;
+    public Image bg;  //morning, daytime, night
 
     public List<Toggle> food;
     public List<Image> foodTex;
@@ -48,6 +48,8 @@ public class FoodSelection : MonoBehaviour
     private int tempSort;
     [SerializeField] private float time;
     private bool first;
+    [SerializeField] private float rotateSpeed;
+    [SerializeField] private float rotateTime;
 
     void Start()
     {
@@ -59,7 +61,8 @@ public class FoodSelection : MonoBehaviour
     void Update()
     {
         LoadCharacter(character.sprites[0], character.sprites[1]);
-        LoadTurnImage(turnEncount);
+        LoadTurnImage();
+        LoadBackgroundImage();
         LoadStatusTextures();
         StartScene();
         switch (menuEncount)
@@ -86,6 +89,8 @@ public class FoodSelection : MonoBehaviour
     {
         next = false;
         menuEncount = 1;
+        rotateSpeed = 5f;
+        rotateTime = 0;
         comfirm.SetActive(false);
         filter.SetActive(false);
         for(int i = 0; i < food.Count; i++)
@@ -109,10 +114,44 @@ public class FoodSelection : MonoBehaviour
         }
     }
 
-    void LoadTurnImage(int turnEncount)
+    void LoadTurnImage()
     {
         turn.sprite = turn_sprite.sprites[turnEncount - 1];
-        bg.sprite = bg_tex.sprites[turnEncount - 1];
+    }
+
+    void LoadBackgroundImage()
+    {
+        if (ee.next && !next)
+        {
+            rotateTime += Time.deltaTime;
+            switch (turnEncount)
+            {
+                case 1:
+                    bg.transform.Rotate(Vector3.forward, rotateSpeed * rotateTime);
+                    if (bg.transform.localEulerAngles.z >= 90)
+                    {
+                        bg.transform.eulerAngles = new Vector3(0, 0, 90);
+                        rotateSpeed = 0;
+                    }
+                    break;
+                case 2:
+                    bg.transform.Rotate(Vector3.forward, rotateSpeed * rotateTime);
+                    if (bg.transform.localEulerAngles.z >= 180)
+                    {
+                        bg.transform.eulerAngles = new Vector3(0, 0, 180);
+                        rotateSpeed = 0;
+                    }
+                    break;
+                case 3:
+                    bg.transform.Rotate(Vector3.forward, rotateSpeed * rotateTime);
+                    if (bg.transform.localEulerAngles.z >= 270)
+                    {
+                        bg.transform.eulerAngles = new Vector3(0, 0, 270);
+                        rotateSpeed = 0;
+                    }
+                    break;
+            }
+        }       
     }
 
     void LoadFoodTexture()
@@ -190,14 +229,17 @@ public class FoodSelection : MonoBehaviour
                 comfirm_no_eat.enabled = true;
                 break;
             case 1:
-                for (comfirmEncount = comfirmEncount_temp; comfirmEncount < food.Count; comfirmEncount++)
+                for (int i = 0; i < 1; i++)
                 {
-                    if (food[comfirmEncount].isOn == true)
+                    for (comfirmEncount = comfirmEncount_temp; comfirmEncount < food.Count; comfirmEncount++)
                     {
-                        comfirmImage[0].sprite = FoodImage.sprites[randomNum[comfirmEncount]];
-                        selectedFood[0] = randomNum[comfirmEncount];  //record the number of food.
-                        comfirmEncount_temp = comfirmEncount + 1;
-                        break;
+                        if (food[comfirmEncount].isOn == true)
+                        {
+                            comfirmImage[i].sprite = FoodImage.sprites[randomNum[comfirmEncount]];
+                            selectedFood[i] = randomNum[comfirmEncount];  //record the number of food.
+                            comfirmEncount_temp = comfirmEncount + 1;
+                            break;
+                        }
                     }
                 }
                 for (int i = 1; i < 3; i++)
@@ -269,6 +311,7 @@ public class FoodSelection : MonoBehaviour
                 turnEncount = 1;
                 RecordFoodData(selectedFood[0], selectedFood[1], selectedFood[2], ref pm.selectedFoodData3);  //do recording
                 Initialized();
+                bg.transform.localEulerAngles = new Vector3(0, 0, 0);
                 next = true;
                 break;
         }

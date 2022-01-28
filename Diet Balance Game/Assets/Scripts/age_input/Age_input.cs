@@ -139,4 +139,10 @@ public class Age_input : MonoBehaviour
             next = true;
         }
     }
+    
+    public void OK()
+    {
+        pm.hero.age = age[0].sprite.name + age[1].sprite.name;
+        next = true;
+    }
 }
