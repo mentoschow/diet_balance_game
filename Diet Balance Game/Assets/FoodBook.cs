@@ -15,11 +15,11 @@ public class FoodBook : MonoBehaviour
     public List<Image> food_img;
     public List<Text> food_name;
     public Image page_img;
-    public GameObject nextPage;
-    public GameObject frontPage;
+    public GameObject nextPage;  //right button
+    public GameObject frontPage;  //left button
 
     [SerializeField] private int page_num;
-    [SerializeField] private bool first;
+    [SerializeField] private bool first;  //is first time entering this scene?
 
     void Start()
     {
