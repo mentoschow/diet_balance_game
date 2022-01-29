@@ -12,6 +12,8 @@ public class Age_input : MonoBehaviour
 
     public AssetConfig numbers_tex;
     public List<Image> age;
+    public AudioSource type_sound;
+    public AudioSource ok_sound;
 
     [SerializeField] private int num_count = 0;
 
@@ -32,7 +34,8 @@ public class Age_input : MonoBehaviour
             {
                 age[num_count].sprite = numbers_tex.sprites[0];
                 num_count++;
-            }           
+            }
+            type_sound.Play();
         }
         if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1))
         {
@@ -42,6 +45,7 @@ public class Age_input : MonoBehaviour
                 age[num_count].sprite = numbers_tex.sprites[1];
                 num_count++;
             }
+            type_sound.Play();
         }
         if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Keypad2))
         {
@@ -51,6 +55,7 @@ public class Age_input : MonoBehaviour
                 age[num_count].sprite = numbers_tex.sprites[2];
                 num_count++;
             }
+            type_sound.Play();
         }
         if (Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Keypad3))
         {
@@ -60,6 +65,7 @@ public class Age_input : MonoBehaviour
                 age[num_count].sprite = numbers_tex.sprites[3];
                 num_count++;
             }
+            type_sound.Play();
         }
         if (Input.GetKeyDown(KeyCode.Alpha4) || Input.GetKeyDown(KeyCode.Keypad4))
         {
@@ -69,6 +75,7 @@ public class Age_input : MonoBehaviour
                 age[num_count].sprite = numbers_tex.sprites[4];
                 num_count++;
             }
+            type_sound.Play();
         }
         if (Input.GetKeyDown(KeyCode.Alpha5) || Input.GetKeyDown(KeyCode.Keypad5))
         {
@@ -78,6 +85,7 @@ public class Age_input : MonoBehaviour
                 age[num_count].sprite = numbers_tex.sprites[5];
                 num_count++;
             }
+            type_sound.Play();
         }
         if (Input.GetKeyDown(KeyCode.Alpha6) || Input.GetKeyDown(KeyCode.Keypad6))
         {
@@ -87,6 +95,7 @@ public class Age_input : MonoBehaviour
                 age[num_count].sprite = numbers_tex.sprites[6];
                 num_count++;
             }
+            type_sound.Play();
         }
         if (Input.GetKeyDown(KeyCode.Alpha7) || Input.GetKeyDown(KeyCode.Keypad7))
         {
@@ -96,6 +105,7 @@ public class Age_input : MonoBehaviour
                 age[num_count].sprite = numbers_tex.sprites[7];
                 num_count++;
             }
+            type_sound.Play();
         }
         if (Input.GetKeyDown(KeyCode.Alpha8) || Input.GetKeyDown(KeyCode.Keypad8))
         {
@@ -105,6 +115,7 @@ public class Age_input : MonoBehaviour
                 age[num_count].sprite = numbers_tex.sprites[8];
                 num_count++;
             }
+            type_sound.Play();
         }
         if (Input.GetKeyDown(KeyCode.Alpha9) || Input.GetKeyDown(KeyCode.Keypad9))
         {
@@ -114,6 +125,7 @@ public class Age_input : MonoBehaviour
                 age[num_count].sprite = numbers_tex.sprites[9];
                 num_count++;
             }
+            type_sound.Play();
         }
         if (Input.GetKeyDown(KeyCode.Backspace))
         {
@@ -122,7 +134,8 @@ public class Age_input : MonoBehaviour
             {
                 num_count--;
                 age[num_count].sprite = numbers_tex.sprites[0];
-            }          
+            }
+            type_sound.Play();
         }
         if (num_count > 2)
         {
@@ -137,6 +150,7 @@ public class Age_input : MonoBehaviour
         {
             pm.hero.age = age[0].sprite.name + age[1].sprite.name;
             next = true;
+            ok_sound.Play();
         }
     }
     
@@ -144,5 +158,6 @@ public class Age_input : MonoBehaviour
     {
         pm.hero.age = age[0].sprite.name + age[1].sprite.name;
         next = true;
+        ok_sound.Play();
     }
 }

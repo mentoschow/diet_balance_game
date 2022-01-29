@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contents:
   - dialogText: How are you?
-    showCharacter: 0
+    showCharacter: 1
   - dialogText: I'm fine.
     showCharacter: 1
   - dialogText: Thank you.

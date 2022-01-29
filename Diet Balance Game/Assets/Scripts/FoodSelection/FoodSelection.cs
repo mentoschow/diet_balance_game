@@ -13,8 +13,9 @@ public class FoodSelection : MonoBehaviour
     public AssetConfig status_bg_tex;
     public AssetConfig status_word_tex;
     public AssetConfig comfirm_bg_tex;
-    //public AssetConfig bg_tex;
+    public AssetConfig next_tex;
     public Sheet1 FoodData;
+
     public bool next;
     public Image hero;
     public Image status_bg;
@@ -34,6 +35,13 @@ public class FoodSelection : MonoBehaviour
     public Image comfirm_no_eat;
     public Image comfirm_bg;
     public Image bg;  //morning, daytime, night
+    public Image next_img;
+
+    public AudioSource page_sound;
+    public AudioSource select_sound;
+    public AudioSource cannotselect_sound;
+    public AudioSource nextturn_sound;
+    public AudioSource click_sound;
 
     public List<Toggle> food;
     public List<Image> foodTex;
@@ -200,15 +208,18 @@ public class FoodSelection : MonoBehaviour
     public void NextMenu()
     {
         menuEncount++;
+        page_sound.Play();
     }
 
     public void FrontMenu()
     {
         menuEncount--;
+        page_sound.Play();
     }
 
     public void StartComfirm()  // to comfirm
     {
+        click_sound.Play();
         comfirmEncount_temp = 0;
         comfirm_bg.sprite = comfirm_bg_tex.sprites[0];
         comfirm_no_eat.enabled = false;
@@ -226,7 +237,7 @@ public class FoodSelection : MonoBehaviour
                     comfirmImage[i].enabled = false;                   
                 }
                 comfirm_bg.sprite = comfirm_bg_tex.sprites[1];
-                comfirm_no_eat.enabled = true;
+                comfirm_no_eat.enabled = true;                
                 break;
             case 1:
                 for (int i = 0; i < 1; i++)
@@ -282,13 +293,26 @@ public class FoodSelection : MonoBehaviour
                     }
                 }
                 break;
-        }       
+        }
+        switch(turnEncount)
+        {
+            case 1:
+                next_img.sprite = next_tex.sprites[0];
+                break;
+            case 2:
+                next_img.sprite = next_tex.sprites[0];
+                break;
+            case 3:
+                next_img.sprite = next_tex.sprites[1];
+                break;
+        }
         filter.SetActive(true);
         comfirm.SetActive(true);
     }
 
     public void BackToSelection()
     {
+        click_sound.Play();
         filter.SetActive(false);
         comfirm.SetActive(false);
     }
@@ -299,16 +323,19 @@ public class FoodSelection : MonoBehaviour
         {
             case 1:
                 turnEncount++;
+                nextturn_sound.Play();
                 RecordFoodData(selectedFood[0], selectedFood[1], selectedFood[2], ref pm.selectedFoodData1);  //do recording              
                 Initialized();
                 break;
             case 2:
                 turnEncount++;
+                nextturn_sound.Play();
                 RecordFoodData(selectedFood[0], selectedFood[1], selectedFood[2], ref pm.selectedFoodData2);  //do recording
                 Initialized();
                 break;
             case 3:
                 turnEncount = 1;
+                nextturn_sound.Play();
                 RecordFoodData(selectedFood[0], selectedFood[1], selectedFood[2], ref pm.selectedFoodData3);  //do recording
                 Initialized();
                 bg.transform.localEulerAngles = new Vector3(0, 0, 0);
@@ -322,18 +349,22 @@ public class FoodSelection : MonoBehaviour
         if (toggle.isOn == false)
         {
             selectedEncount--;
+            select_sound.Play();
         }
         if (toggle.isOn == true)
         {
             if (selectedEncount < 3)
             {
                 selectedEncount++;
+                select_sound.Play();
             }
             else
             {
                 print("can not select.");
                 toggle.isOn = false;
                 selectedEncount = 3;
+                select_sound.Stop();
+                cannotselect_sound.Play();
             }
         }      
     }
