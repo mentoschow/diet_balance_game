@@ -36,7 +36,6 @@ public class DayDisplay : MonoBehaviour
             {
                 Debug.Log("DayDisplay");
                 pm.hero.statusid = Random.Range(0, 5);  //プレイヤーのステータスの変更
-                pm.hero.day++;                          //日数を進める
                 Animation.SetTrigger("StateTrigger");   //animation off
                 next = true;
                 animationFlag = true;

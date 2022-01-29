@@ -26,6 +26,8 @@ public class CanvasManager : MonoBehaviour
     public DayDisplay dd;
 
     public Canvas foodbook;
+    public Canvas gameOver;
+    public GameOver go;
 
     void Start()
     {
@@ -121,6 +123,13 @@ public class CanvasManager : MonoBehaviour
             bm.goawayNext = false;
             result.next = false;
             dd.next = false;
+        }
+
+        if(go.newgameFlag)
+        {
+            gameOver.enabled = false;
+            canvasResult.enabled = false;
+            go.newgameFlag = false;
         }
     }
 }
