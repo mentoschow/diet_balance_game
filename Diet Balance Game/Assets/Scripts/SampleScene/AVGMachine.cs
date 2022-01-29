@@ -18,6 +18,7 @@ public class AVGMachine : MonoBehaviour
     public UIPanel UIPanel;
     public PlayerManager pm;
     public Performance pf;
+    public AudioSource typing_sound;
     [Range(1,50)]
     public float typingSpeed;
 
@@ -31,7 +32,7 @@ public class AVGMachine : MonoBehaviour
     {
         state = STATE.OFF;       
         justEnter = true;
-        typingSpeed = 20f;
+        typingSpeed = 10f;
     }
 
     void Update()
@@ -50,13 +51,18 @@ public class AVGMachine : MonoBehaviour
                 if (justEnter)
                 {
                     ShowUI();
-                    LoadCharacter(characterSprite.sprites[0], characterSprite.sprites[1]);
+                    //LoadCharacter(characterSprite.sprites[0], characterSprite.sprites[1]);
                     LoadContent(dialog.contents[currentLine].showCharacter, dialog.contents[currentLine].dialogText);
                     timer = 0;
                     justEnter = false;
                 }
                 checkTypingFinished();
                 UpdateContentString();
+                if (!typing_sound.isPlaying)
+                {
+                    typing_sound.Play();
+                    //Debug.Log(typing_sound.isPlaying);
+                }              
                 break;
             case STATE.PAUSED:
                 if (justEnter)
@@ -64,6 +70,11 @@ public class AVGMachine : MonoBehaviour
 
                     justEnter = false;
                 }
+                if (typing_sound.isPlaying)
+                {
+                    typing_sound.Stop();
+                    //Debug.Log(typing_sound.isPlaying);
+                }               
                 break;
         }
     }
@@ -88,7 +99,6 @@ public class AVGMachine : MonoBehaviour
                 else
                 {
                     GoToState(STATE.TYPING);
-                    
                 }
                 
                 break;
@@ -99,8 +109,10 @@ public class AVGMachine : MonoBehaviour
     {
         if (state == STATE.TYPING)
         {
+            
             if ((int)Mathf.Floor(timer * typingSpeed) >= targetString.Length)
             {
+                
                 GoToState(STATE.PAUSED);
             }
         }
