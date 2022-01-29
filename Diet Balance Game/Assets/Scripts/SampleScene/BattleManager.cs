@@ -194,6 +194,7 @@ public class BattleManager : MonoBehaviour
         {
             if(battle_result)
             {
+                pm.hero.day++;                          //“ú”‚ği‚ß‚é
                 pm.hero.healthy += 5;       //Update healthy degree
             }
             next = true;
@@ -203,6 +204,7 @@ public class BattleManager : MonoBehaviour
 
         if (goaway_button_flag && pm.hero.healthy > 29)
         {
+            pm.hero.day++;                          //“ú”‚ği‚ß‚é
             next = true;
             goaway_button_flag = false;
             Initilized_BattleMng();

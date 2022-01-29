@@ -28,6 +28,7 @@ public class GameStartButton : MonoBehaviour
     public void OnClickStartButton()
     {
         score.next = true;
+        score.Initialized();
         //年齢と性別から栄養素のベースデータを読み込み
         int id = 0;
         int player_age = 0;
@@ -73,5 +74,6 @@ public class GameStartButton : MonoBehaviour
         pm.baseNut.mineral = float.Parse(baseData[id][7]);
 
         pm.hero.healthy = 50;
+        pm.hero.day = 0;
     }
 }
