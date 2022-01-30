@@ -74,6 +74,7 @@ public class CanvasManager : MonoBehaviour
                 else
                 {
                     Score.enabled = false;
+                    foodbookdata.enabled = false;
                     foodbook.enabled = true;
                 }
                 

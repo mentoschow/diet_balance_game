@@ -29,6 +29,8 @@ public class Result : MonoBehaviour
     [SerializeField] Image Day01 = null;        //日にちの一の位
     [SerializeField] Image Day02 = null;        //日にちの十の位
 
+    [SerializeField] Text ResultTextSentence = null;
+
     //Flags of function
     bool dayflag = true;
     bool imageflag = true;
@@ -125,6 +127,7 @@ public class Result : MonoBehaviour
             }
             ResultText.sprite = result_text.sprites[0];
             DayText.sprite = result_text.sprites[2];
+            WinText();
         }
         else
         {
@@ -132,6 +135,7 @@ public class Result : MonoBehaviour
             character.sprite = resultChara.sprites[2];      //mother
             ResultText.sprite = result_text.sprites[1];
             DayText.sprite = result_text.sprites[3];
+            LoseText();
         }
 
         imageflag = false;
@@ -187,6 +191,33 @@ public class Result : MonoBehaviour
         imageflag = true;
         run_animation = false;
         r_pp.Initialized_RPP();
+    }
+
+
+
+    //Text
+    void WinText()
+    {
+        string[] text = new string[5];
+        text[0] = "バランス良く栄養が摂れてるね！この調子で健康な食生活を続けていこう！";
+        text[1] = "ビタミンとミネラルをしっかり摂って、風邪の対策ができたみたい。この調子で健康な食生活を続けていこう！";   //cold
+        text[2] = "忙しいけど、エネルギーになるタンパク質を摂って元気にがんばれそう！この調子で健康な食生活を続けていこう！"; //busy
+        text[3] = "脂質や炭水化物を抑えたことで、太り過ぎを抑えられたみたい！この調子で健康な食生活を続けていこう！";
+        text[4] = "ビタミンをしっかり摂ったから、肌荒れ対策ができたみたい！この調子で健康な食生活を続けていこう！";
+
+        ResultTextSentence.text = text[pm.hero.statusid];
+    }
+
+    void LoseText()
+    {
+        string[] text = new string[5];
+        text[0] = "栄養バランスが悪いみたい…。まずは、タンパク質・脂質・炭水化物・ビタミン・ミネラルの5つをバランス良く摂ることを意識しよう！タンパク質・脂質は肉、炭水化物は麺やご飯、ビタミン・ミネラルは野菜などに多く含まれるよ！";
+        text[1] = "風邪を治すには、ビタミンやミネラルを多く採って免疫力をあげよう！";
+        text[2] = "忙しいときは、エネルギーになるタンパク質やミネラルを多く摂るようにしよう！";
+        text[3] = "脂質やタンパク質を摂りすぎると太ってしまうよ！ビタミンやミネラルもしっかり摂ろう。";
+        text[4] = "肌の健康のためには、野菜や果物のビタミンをしっかり摂ろう！体を作るタンパク質となる肉も忘れずに。";
+
+        ResultTextSentence.text = text[pm.hero.statusid];
     }
 
 
