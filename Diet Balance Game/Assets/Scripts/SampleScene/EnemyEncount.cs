@@ -79,12 +79,12 @@ public class EnemyEncount : MonoBehaviour
     void saveInfo(int enem_id)
     {
         em.enemy.enemID = enem_id;     
-        em.enemy.energy = int.Parse(enemyData[enem_id][1]);
-        em.enemy.carb = float.Parse(enemyData[enem_id][2]);
-        em.enemy.lipid = float.Parse(enemyData[enem_id][3]);
-        em.enemy.protein = float.Parse(enemyData[enem_id][4]);
-        em.enemy.vitamin = float.Parse(enemyData[enem_id][5]);
-        em.enemy.mineral = float.Parse(enemyData[enem_id][6]);
+        em.enemy.energy = int.Parse(enemyData[enem_id][1]) * (int)pm.baseNut.energy / 100;
+        em.enemy.carb = float.Parse(enemyData[enem_id][2]) * pm.baseNut.carb / 100;
+        em.enemy.lipid = float.Parse(enemyData[enem_id][3]) * pm.baseNut.lipid / 100;
+        em.enemy.protein = float.Parse(enemyData[enem_id][4]) * pm.baseNut.protein / 100;
+        em.enemy.vitamin = float.Parse(enemyData[enem_id][5]) * pm.baseNut.vitamin / 100;
+        em.enemy.mineral = float.Parse(enemyData[enem_id][6]) * pm.baseNut.mineral / 100;
     }
 
     // Start is called before the first frame update

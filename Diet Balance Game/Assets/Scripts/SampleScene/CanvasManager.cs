@@ -26,6 +26,8 @@ public class CanvasManager : MonoBehaviour
     public DayDisplay dd;
 
     public Canvas foodbook;
+    public FoodBook fb;
+    public Canvas foodbookdata;
     public Canvas gameOver;
     public GameOver go;
 
@@ -43,6 +45,7 @@ public class CanvasManager : MonoBehaviour
         daydisplay.enabled = false;
 
         foodbook.enabled = false;
+        foodbookdata.enabled = false;
     }
 
     void Update()
@@ -63,8 +66,17 @@ public class CanvasManager : MonoBehaviour
             performance.enabled = false;
             if (score.foodbookFlag)
             {
-                Score.enabled = false;
-                foodbook.enabled = true;
+                if(fb.foodbookDataFlag)
+                {
+                    foodbook.enabled = false;
+                    foodbookdata.enabled = true;
+                }
+                else
+                {
+                    Score.enabled = false;
+                    foodbook.enabled = true;
+                }
+                
             }
             else
             {
