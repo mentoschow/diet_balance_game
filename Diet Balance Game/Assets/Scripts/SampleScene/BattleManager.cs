@@ -332,12 +332,12 @@ public class BattleManager : MonoBehaviour
         mineral_p = pm.selectedFoodData1.mineral + pm.selectedFoodData2.mineral + pm.selectedFoodData3.mineral;
 
         //calculate each probability
-        energy_prob = (pm.baseNut.energy - Mathf.Abs(pm.baseNut.energy - energy_p)) / pm.baseNut.energy;
-        carb_prob = (pm.baseNut.carb - Mathf.Abs(pm.baseNut.carb - carb_p)) / pm.baseNut.carb;
-        lipid_prob = (pm.baseNut.lipid - Mathf.Abs(pm.baseNut.lipid - lipid_p)) / pm.baseNut.lipid;
-        protein_prob = (pm.baseNut.protein - Mathf.Abs(pm.baseNut.protein - protein_p)) / pm.baseNut.protein;
-        vitamin_prob = (pm.baseNut.vitamin - Mathf.Abs(pm.baseNut.vitamin - vitamin_p)) / pm.baseNut.vitamin;
-        mineral_prob = (pm.baseNut.mineral - Mathf.Abs(pm.baseNut.mineral - mineral_p)) / pm.baseNut.mineral;
+        energy_prob = Mathf.Abs(pm.baseNut.energy - Mathf.Abs(pm.baseNut.energy - energy_p)) / pm.baseNut.energy;
+        carb_prob = Mathf.Abs(pm.baseNut.carb - Mathf.Abs(pm.baseNut.carb - carb_p)) / pm.baseNut.carb;
+        lipid_prob = Mathf.Abs(pm.baseNut.lipid - Mathf.Abs(pm.baseNut.lipid - lipid_p)) / pm.baseNut.lipid;
+        protein_prob = Mathf.Abs(pm.baseNut.protein - Mathf.Abs(pm.baseNut.protein - protein_p)) / pm.baseNut.protein;
+        vitamin_prob = Mathf.Abs(pm.baseNut.vitamin - Mathf.Abs(pm.baseNut.vitamin - vitamin_p)) / pm.baseNut.vitamin;
+        mineral_prob = Mathf.Abs(pm.baseNut.mineral - Mathf.Abs(pm.baseNut.mineral - mineral_p)) / pm.baseNut.mineral;
 
         Debug.Log("energy" + energy_p);
         Debug.Log("carb" + carb_p);
