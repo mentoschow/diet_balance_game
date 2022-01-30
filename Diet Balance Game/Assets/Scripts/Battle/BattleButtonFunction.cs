@@ -5,6 +5,7 @@ using UnityEngine;
 public class BattleButtonFunction : MonoBehaviour
 {
     public BattleManager bm;
+    public PlayerManager pm;
 
     public void OnClickBattle()
     {
@@ -13,6 +14,9 @@ public class BattleButtonFunction : MonoBehaviour
 
     public void OnClickGoAway()
     {
-        bm.goaway_button_flag = true;
+        if(pm.hero.healthy > 29)
+        {
+            bm.goaway_button_flag = true;
+        }
     }
 }

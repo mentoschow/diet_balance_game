@@ -202,7 +202,7 @@ public class BattleManager : MonoBehaviour
             Initilized_BattleMng();
         }
 
-        if (goaway_button_flag && pm.hero.healthy > 29)
+        if (goaway_button_flag)
         {
             pm.hero.day++;                          //“ú”‚ği‚ß‚é
             next = true;
