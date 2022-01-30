@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class FoodBook : MonoBehaviour
 {
+    //Flag
+    public bool foodbookDataFlag;
+
     //Data
     public AssetConfig food_tex;
     public AssetConfig number_tex;
@@ -17,6 +20,7 @@ public class FoodBook : MonoBehaviour
     public Image page_img;
     public GameObject nextPage;  //right button
     public GameObject frontPage;  //left button
+    public FoodBookData fbd;
 
     [SerializeField] private int page_num;
     [SerializeField] private bool first;  //is first time entering this scene?
@@ -25,6 +29,7 @@ public class FoodBook : MonoBehaviour
     {
         page_num = 1;
         first = true;
+        foodbookDataFlag = false;
     }
 
     void Update()
@@ -84,5 +89,41 @@ public class FoodBook : MonoBehaviour
     {
         score.foodbookFlag = false;
         first = true;
+    }
+
+    public void OnClickFoodDataMenu1()
+    {
+        foodbookDataFlag = true;
+        fbd.DataID = 6 * page_num - (6 - 0);
+    }
+
+    public void OnClickFoodDataMenu2()
+    {
+        foodbookDataFlag = true;
+        fbd.DataID = 6 * page_num - (6 - 1);
+    }
+
+    public void OnClickFoodDataMenu3()
+    {
+        foodbookDataFlag = true;
+        fbd.DataID = 6 * page_num - (6 - 2);
+    }
+
+    public void OnClickFoodDataMenu4()
+    {
+        foodbookDataFlag = true;
+        fbd.DataID = 6 * page_num - (6 - 3);
+    }
+
+    public void OnClickFoodDataMenu5()
+    {
+        foodbookDataFlag = true;
+        fbd.DataID = 6 * page_num - (6 - 4);
+    }
+
+    public void OnClickFoodDataMenu6()
+    {
+        foodbookDataFlag = true;
+        fbd.DataID = 6 * page_num - (6 - 5);
     }
 }

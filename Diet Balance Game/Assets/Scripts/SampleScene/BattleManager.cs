@@ -102,7 +102,7 @@ public class BattleManager : MonoBehaviour
         backimg01_alpha = 1.0f;
         backimg02_alpha = 0f;
         backfire_alpha = 0f;
-        alphaSpeed = 0.001f;
+        alphaSpeed = 0.003f;
 
         //enemy position
         startPos = new Vector3(990, 360, 0);
@@ -232,7 +232,7 @@ public class BattleManager : MonoBehaviour
             backgroundWhite.color = new Color(255f, 255f, 255f, backimg01_alpha);
             backgroundScene02.color = new Color(255f, 255f, 255f, backimg02_alpha);
         }
-        else
+        else if(present_pos == endPos)
         {
             //move Scene2
             run_animation = true;
