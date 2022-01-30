@@ -583,11 +583,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clips:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 2911177e4ee094146a401a0fdf886848, type: 3}
+  - {fileID: 8300000, guid: ab761ed06aeff4347a5204bb16cabcb0, type: 3}
+  - {fileID: 8300000, guid: 70ac5f6275fdc40449442878ff00ce06, type: 3}
+  - {fileID: 8300000, guid: dd8d4efa99d3dca4cb4a9581255af43f, type: 3}
+  - {fileID: 8300000, guid: b5a4b1427dd7e6d479b4f814ed647ab3, type: 3}
+  - {fileID: 8300000, guid: 9349ad4dd5624e74698e375202d25fce, type: 3}
+  - {fileID: 8300000, guid: cbb3125150f27ae408af75eccc89ef55, type: 3}
   selectCharacter: {fileID: 1201587435}
   sc: {fileID: 1201587432}
   age_input: {fileID: 1063400340}
