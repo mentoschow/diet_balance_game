@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class FoodSelection : MonoBehaviour
 {
     public PlayerManager pm;
-    public EnemyEncount ee;
+    public Canvas fs;
     public AssetConfig character;
     public AssetConfig FoodImage;
     public AssetConfig status_bg_tex;
@@ -55,7 +55,7 @@ public class FoodSelection : MonoBehaviour
     private int tempNum;
     private int tempSort;
     [SerializeField] private float time;
-    private bool first;
+    [SerializeField] private bool first;
     [SerializeField] private float rotateSpeed;
     [SerializeField] private float rotateTime;
 
@@ -129,7 +129,7 @@ public class FoodSelection : MonoBehaviour
 
     void LoadBackgroundImage()
     {
-        if (ee.next && !next)
+        if (fs.enabled && !next)
         {
             rotateTime += Time.deltaTime;
             switch (turnEncount)
@@ -412,7 +412,7 @@ public class FoodSelection : MonoBehaviour
 
     private void StartScene()
     {
-        if (ee.next && !next && first)
+        if (fs.enabled && !next && first)
         {
             start_scene.SetActive(true);
             time += Time.deltaTime;
@@ -428,6 +428,7 @@ public class FoodSelection : MonoBehaviour
             {
                 start_scene.SetActive(false);
                 first = false;
+                time = 0;
             }
         }
     }
