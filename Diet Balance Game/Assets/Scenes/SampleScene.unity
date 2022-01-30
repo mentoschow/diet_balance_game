@@ -4718,6 +4718,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1568049162 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2352478872669859132, guid: 38ce9319640d7db4594828ead0f4c5a5, type: 3}
+  m_PrefabInstance: {fileID: 7059692187972291021}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1598966210 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5708810198588568928, guid: 6d4590a852a3a3e42801e49281775f21, type: 3}
@@ -8400,6 +8411,10 @@ PrefabInstance:
       propertyPath: ps
       value: 
       objectReference: {fileID: 1398074822}
+    - target: {fileID: 1099260034, guid: 38ce9319640d7db4594828ead0f4c5a5, type: 3}
+      propertyPath: ChImg
+      value: 
+      objectReference: {fileID: 1568049162}
     - target: {fileID: 1099260034, guid: 38ce9319640d7db4594828ead0f4c5a5, type: 3}
       propertyPath: Score
       value: 
