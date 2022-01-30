@@ -2,32 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioChange : MonoBehaviour
+public class AudioChange : CanvasManager
 {
     public AudioClip[] clips;
     AudioSource audios;
 
-    public Canvas selectCharacter;
-    public SelectCharacter sc;
-    public Canvas age_input;
-    public Age_input ai;
-    public Canvas performance;
-    public Performance p;
-    public Canvas Score;
-    public Score score;
-    public Canvas playerStatus;
-    public PlayerStatus ps;
-    public Canvas foodSelection;
-    public FoodSelection fs;
-    public Canvas enemyEncount;
-    public EnemyEncount ee;
-    public Canvas Battle;
-    public BattleManager bm;
-    public Canvas canvasResult;
-    public Result result;
-    public Canvas daydisplay;
-    public DayDisplay dd;
-    public Canvas foodbook;
     public Canvas gameover;
 
     bool BGM = false;
@@ -40,27 +19,53 @@ public class AudioChange : MonoBehaviour
     bool winBGM = false;
     bool loseBGM = false;
     bool gameoverBGM = false;
+
+    bool newgame = false; 
+
     void Start()
     {
         audios = GetComponent<AudioSource>();
 
-        audios.clip = clips[0];
-        audios.Play();
+        //audios.clip = clips[0];
+        //audios.Play();
+        //BGM = true;
     }
 
     void Update()
     {
- 
-        if (score.next)//playerStatus
+        if(selectCharacter.enabled == true || Score.enabled == true)
+        {
+            if (!BGM)
+            {
+                BGM = true;
+                audios.clip = clips[0];
+                audios.Play();
+
+            }
+            encountBGM = false;
+            encount2BGM = false;
+            daydisplayBGM = false;
+            winBGM = false;
+            daydisplay2BGM = false;
+            selectBGM = false;
+            battleBGM = false;
+            loseBGM = false;
+            gameoverBGM = false;
+        }
+            
+        if (playerStatus.enabled == true)//playerStatus
         {
             if (!encountBGM)
             {
                 encountBGM = true;
                 audios.clip = clips[1];
                 audios.Play();
+
+                daydisplay2BGM = false;
+
             }
         }
-        if (ps.next)//enemyEncount
+        if (enemyEncount.enabled == true)//enemyEncount
         {
             
             if (!encount2BGM)
@@ -70,7 +75,7 @@ public class AudioChange : MonoBehaviour
                 audios.Play();
             }
         }
-        if (ee.next)//foodSelection
+        if (foodSelection.enabled == true)//foodSelection
         {
             if (!selectBGM)
             {
@@ -79,7 +84,7 @@ public class AudioChange : MonoBehaviour
                 audios.Play();
             }
         }
-        if (fs.next)//Battle
+        if (Battle.enabled == true)//Battle
         {
             if (!battleBGM)
             {
@@ -88,7 +93,7 @@ public class AudioChange : MonoBehaviour
                 audios.Play();
             }
         }
-        if (bm.goawayNext)//daydisplay
+        if (daydisplay.enabled == true)//daydisplay
         {
             if (!daydisplayBGM)
             {
@@ -98,7 +103,7 @@ public class AudioChange : MonoBehaviour
             }
         }
 
-        if (bm.next)//canvasResult
+        if (canvasResult.enabled == true)//canvasResult
         {
             if (bm.battle_result == true)
             {
@@ -116,8 +121,6 @@ public class AudioChange : MonoBehaviour
                     loseBGM = true;
                     audios.clip = clips[5];
                     audios.Play();
-
-                    
                 }
                 if (gameover.enabled == true)
                 {
@@ -126,11 +129,14 @@ public class AudioChange : MonoBehaviour
                         gameoverBGM = true;
                         audios.clip = clips[6];
                         audios.Play();
+                        //newgame = true;
+                        BGM = false;
                     }
+                    
                 }
             }
         }
-        if (result.next)//daydisplay
+        if (daydisplay.enabled == true)//daydisplay
         {
             
             if (!daydisplay2BGM)
@@ -138,8 +144,18 @@ public class AudioChange : MonoBehaviour
                 daydisplay2BGM = true;
                 audios.clip = clips[4];
                 audios.Play();
+
+                encountBGM = false;
+                encount2BGM = false;
+                daydisplayBGM = false;
+                winBGM = false;
+                selectBGM = false;
+                battleBGM = false;
+                loseBGM = false;
+                gameoverBGM = false;
             }
         }
+        /*
         if (dd.next)//playerStatus
         {
             
@@ -161,6 +177,24 @@ public class AudioChange : MonoBehaviour
             loseBGM = false;
             gameoverBGM = false;
         }
+        if (go.newgameFlag)
+        {
+            if (newgame == true)
+            {
+                newgame = false;
+                encountBGM = false;
+                encount2BGM = false;
+                daydisplayBGM = false;
+                winBGM = false;
+                daydisplay2BGM = false;
+                selectBGM = false;
+                battleBGM = false;
+                BGM = false;
+                loseBGM = false;
+            }
+            
+        }
+        */
     }
 
 
