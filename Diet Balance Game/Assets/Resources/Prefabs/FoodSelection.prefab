@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5164425223367086153}
   - component: {fileID: 1551403218484501023}
   m_Layer: 5
-  m_Name: food1
+  m_Name: food15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -239,7 +239,7 @@ GameObject:
   - component: {fileID: 8274047192630478574}
   - component: {fileID: 2324674834791781584}
   m_Layer: 5
-  m_Name: food1
+  m_Name: food8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -314,9 +314,8 @@ GameObject:
   - component: {fileID: 8370598532918619148}
   - component: {fileID: 7873795914712290028}
   - component: {fileID: 8425651976654674441}
-  - component: {fileID: 3039428468631310797}
   m_Layer: 5
-  m_Name: food1 (5)
+  m_Name: food18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -411,36 +410,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 548120592629089029}
   m_CullTransparentMesh: 1
---- !u!114 &3039428468631310797
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 548120592629089029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &551546636358382911
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,7 +422,7 @@ GameObject:
   - component: {fileID: 7895378043123703551}
   - component: {fileID: 3316585896859323197}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -531,9 +500,8 @@ GameObject:
   - component: {fileID: 8349387036091831678}
   - component: {fileID: 5463692162920603815}
   - component: {fileID: 33556747808254074}
-  - component: {fileID: 7789946440801998079}
   m_Layer: 5
-  m_Name: food1 (1)
+  m_Name: food14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -628,36 +596,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 711322118004632626}
   m_CullTransparentMesh: 1
---- !u!114 &7789946440801998079
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 711322118004632626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &744773067261125362
 GameObject:
   m_ObjectHideFlags: 0
@@ -670,7 +608,7 @@ GameObject:
   - component: {fileID: 5662797154738245648}
   - component: {fileID: 1422017975403619691}
   m_Layer: 5
-  m_Name: food1
+  m_Name: food18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -746,7 +684,7 @@ GameObject:
   - component: {fileID: 8839330805895480945}
   - component: {fileID: 7814387981872830099}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -900,9 +838,8 @@ GameObject:
   - component: {fileID: 1563210241273940664}
   - component: {fileID: 7249214318750617284}
   - component: {fileID: 5295157016861936093}
-  - component: {fileID: 5495788869773109753}
   m_Layer: 5
-  m_Name: food1 (2)
+  m_Name: food15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -997,36 +934,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 889914146364684549}
   m_CullTransparentMesh: 1
---- !u!114 &5495788869773109753
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 889914146364684549}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &1178935342850528779
 GameObject:
   m_ObjectHideFlags: 0
@@ -1114,7 +1021,7 @@ GameObject:
   - component: {fileID: 9008162867782962535}
   - component: {fileID: 7253577800932990612}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1459,7 +1366,7 @@ GameObject:
   - component: {fileID: 924157333053200732}
   - component: {fileID: 6904648661299432042}
   m_Layer: 5
-  m_Name: food1
+  m_Name: food11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1535,7 +1442,7 @@ GameObject:
   - component: {fileID: 8397966159127265111}
   - component: {fileID: 4165934414798012517}
   m_Layer: 5
-  m_Name: food1
+  m_Name: food12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1611,7 +1518,7 @@ GameObject:
   - component: {fileID: 7928013527302886469}
   - component: {fileID: 4343002484948534459}
   m_Layer: 5
-  m_Name: food1
+  m_Name: food9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1687,7 +1594,7 @@ GameObject:
   - component: {fileID: 155710904278144847}
   - component: {fileID: 6504186410892462924}
   m_Layer: 5
-  m_Name: food1
+  m_Name: food6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2046,7 +1953,7 @@ GameObject:
   - component: {fileID: 7868946413939028622}
   - component: {fileID: 4387323577210485613}
   m_Layer: 5
-  m_Name: food1
+  m_Name: food10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2197,7 +2104,7 @@ GameObject:
   - component: {fileID: 183615092392950730}
   - component: {fileID: 647128500075669589}
   m_Layer: 5
-  m_Name: food1
+  m_Name: food14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2424,7 +2331,7 @@ GameObject:
   - component: {fileID: 2981238069675106725}
   - component: {fileID: 1117110173443016932}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2503,7 +2410,7 @@ GameObject:
   - component: {fileID: 4743388735818238636}
   - component: {fileID: 3398762508730642158}
   m_Layer: 5
-  m_Name: food1
+  m_Name: food16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2653,9 +2560,8 @@ GameObject:
   - component: {fileID: 8270583735916037260}
   - component: {fileID: 7256470381535099294}
   - component: {fileID: 6676508304077067665}
-  - component: {fileID: 706699567978638637}
   m_Layer: 5
-  m_Name: food1 (3)
+  m_Name: food10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2750,36 +2656,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3273342263614908629}
   m_CullTransparentMesh: 1
---- !u!114 &706699567978638637
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3273342263614908629}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &3387464836277375990
 GameObject:
   m_ObjectHideFlags: 0
@@ -2975,7 +2851,7 @@ GameObject:
   - component: {fileID: 7519598985890271187}
   - component: {fileID: 8449766167233211469}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3488,7 +3364,7 @@ GameObject:
   - component: {fileID: 7539390428229287046}
   - component: {fileID: 2723779423956015676}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3566,9 +3442,8 @@ GameObject:
   - component: {fileID: 5124533785788803833}
   - component: {fileID: 9158085437761350935}
   - component: {fileID: 3124066931620640738}
-  - component: {fileID: 4511754164636885907}
   m_Layer: 5
-  m_Name: food1 (2)
+  m_Name: food9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3663,36 +3538,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3878148795526782509}
   m_CullTransparentMesh: 1
---- !u!114 &4511754164636885907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3878148795526782509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &3883376905025576979
 GameObject:
   m_ObjectHideFlags: 0
@@ -3780,7 +3625,7 @@ GameObject:
   - component: {fileID: 337389240886866467}
   - component: {fileID: 8679186438787955088}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3859,7 +3704,7 @@ GameObject:
   - component: {fileID: 4865427401419390363}
   - component: {fileID: 4183912434320993238}
   m_Layer: 5
-  m_Name: food1
+  m_Name: food17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4273,7 +4118,7 @@ GameObject:
   - component: {fileID: 3614501170852053485}
   - component: {fileID: 8801876622801025673}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4352,7 +4197,7 @@ GameObject:
   - component: {fileID: 255484727434519439}
   - component: {fileID: 7968888421907673232}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4431,7 +4276,7 @@ GameObject:
   - component: {fileID: 1033433508823278310}
   - component: {fileID: 265660200485959334}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4585,7 +4430,7 @@ GameObject:
   - component: {fileID: 1359429079725814854}
   - component: {fileID: 258520876574057192}
   m_Layer: 5
-  m_Name: food1
+  m_Name: food5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5252,7 +5097,7 @@ GameObject:
   - component: {fileID: 5708810198965921851}
   - component: {fileID: 5708810198965921852}
   m_Layer: 5
-  m_Name: food1
+  m_Name: food13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5328,7 +5173,7 @@ GameObject:
   - component: {fileID: 5708810198972437910}
   - component: {fileID: 5708810198972437911}
   m_Layer: 5
-  m_Name: food1
+  m_Name: food7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5545,6 +5390,8 @@ MonoBehaviour:
   page_sound: {fileID: 0}
   select_sound: {fileID: 0}
   cannotselect_sound: {fileID: 0}
+  nextturn_sound: {fileID: 0}
+  click_sound: {fileID: 0}
   food: []
   foodTex: []
   foodName: []
@@ -6585,9 +6432,8 @@ GameObject:
   - component: {fileID: 5708810199957667789}
   - component: {fileID: 5708810199957667786}
   - component: {fileID: 5708810199957667787}
-  - component: {fileID: 5708810199957667788}
   m_Layer: 5
-  m_Name: food1
+  m_Name: food13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6682,36 +6528,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5708810199957667790}
   m_CullTransparentMesh: 1
---- !u!114 &5708810199957667788
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5708810199957667790}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5708810200045562433
 GameObject:
   m_ObjectHideFlags: 0
@@ -7198,6 +7014,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5708810200236992818}
+  - component: {fileID: 3578756274415914247}
   m_Layer: 5
   m_Name: menu1
   m_TagString: Untagged
@@ -7232,6 +7049,14 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1130, y: 698}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &3578756274415914247
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5708810200236992819}
+  m_CullTransparentMesh: 1
 --- !u!1 &5708810200288122160
 GameObject:
   m_ObjectHideFlags: 0
@@ -7550,9 +7375,8 @@ GameObject:
   - component: {fileID: 5708810200501426856}
   - component: {fileID: 5708810200501426853}
   - component: {fileID: 5708810200501426854}
-  - component: {fileID: 5708810200501426855}
   m_Layer: 5
-  m_Name: food1
+  m_Name: food7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7647,36 +7471,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5708810200501426857}
   m_CullTransparentMesh: 1
---- !u!114 &5708810200501426855
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5708810200501426857}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5708810200525470212
 GameObject:
   m_ObjectHideFlags: 0
@@ -8082,9 +7876,8 @@ GameObject:
   - component: {fileID: 8609566396563317196}
   - component: {fileID: 1764408051793298180}
   - component: {fileID: 8121134466855848606}
-  - component: {fileID: 7342719813829904863}
   m_Layer: 5
-  m_Name: food1 (4)
+  m_Name: food11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8179,36 +7972,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5831930780609422561}
   m_CullTransparentMesh: 1
---- !u!114 &7342719813829904863
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5831930780609422561}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5902501221519998954
 GameObject:
   m_ObjectHideFlags: 0
@@ -8863,7 +8626,7 @@ GameObject:
   - component: {fileID: 7643774918285650000}
   - component: {fileID: 7890136050529053066}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8941,9 +8704,8 @@ GameObject:
   - component: {fileID: 7623860556161551770}
   - component: {fileID: 2824207830119346966}
   - component: {fileID: 7262652801747686112}
-  - component: {fileID: 6656487242500043832}
   m_Layer: 5
-  m_Name: food1 (5)
+  m_Name: food12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9038,36 +8800,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6368793628392930880}
   m_CullTransparentMesh: 1
---- !u!114 &6656487242500043832
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6368793628392930880}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &6409927862547847876
 GameObject:
   m_ObjectHideFlags: 0
@@ -9155,7 +8887,6 @@ GameObject:
   - component: {fileID: 1259370785307365831}
   - component: {fileID: 2575061551946622190}
   - component: {fileID: 6217548515708323401}
-  - component: {fileID: 2078274658032298154}
   m_Layer: 5
   m_Name: food5
   m_TagString: Untagged
@@ -9252,36 +8983,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6511749213606399561}
   m_CullTransparentMesh: 1
---- !u!114 &2078274658032298154
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6511749213606399561}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &6644089347559173670
 GameObject:
   m_ObjectHideFlags: 0
@@ -9294,7 +8995,7 @@ GameObject:
   - component: {fileID: 1026552326879104408}
   - component: {fileID: 7596497092281550957}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9373,7 +9074,7 @@ GameObject:
   - component: {fileID: 5682884819712552850}
   - component: {fileID: 4749262641302353517}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9603,7 +9304,7 @@ GameObject:
   - component: {fileID: 4248870322056329345}
   - component: {fileID: 4685431188557216394}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9682,7 +9383,7 @@ GameObject:
   - component: {fileID: 6003817925440945406}
   - component: {fileID: 4482817647044870631}
   m_Layer: 5
-  m_Name: food1
+  m_Name: food4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9832,9 +9533,8 @@ GameObject:
   - component: {fileID: 1402195538832607029}
   - component: {fileID: 4585130767989461281}
   - component: {fileID: 5564374146544021171}
-  - component: {fileID: 2327794087173882258}
   m_Layer: 5
-  m_Name: food1 (1)
+  m_Name: food8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9929,36 +9629,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7615718160058766285}
   m_CullTransparentMesh: 1
---- !u!114 &2327794087173882258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7615718160058766285}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &7649707264521791072
 GameObject:
   m_ObjectHideFlags: 0
@@ -9971,7 +9641,7 @@ GameObject:
   - component: {fileID: 6964905272513270498}
   - component: {fileID: 5220839469376612647}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10050,7 +9720,7 @@ GameObject:
   - component: {fileID: 4556231826685956435}
   - component: {fileID: 4933584373011675573}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10128,9 +9798,8 @@ GameObject:
   - component: {fileID: 9188301799146113989}
   - component: {fileID: 8333929905694505296}
   - component: {fileID: 9202341606986990911}
-  - component: {fileID: 5283351000978582973}
   m_Layer: 5
-  m_Name: food1 (4)
+  m_Name: food17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10225,36 +9894,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7700128911584883447}
   m_CullTransparentMesh: 1
---- !u!114 &5283351000978582973
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7700128911584883447}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &7832988742784904185
 GameObject:
   m_ObjectHideFlags: 0
@@ -10267,7 +9906,7 @@ GameObject:
   - component: {fileID: 6284467370934328570}
   - component: {fileID: 4381783326227718985}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10345,7 +9984,6 @@ GameObject:
   - component: {fileID: 3209918710345418323}
   - component: {fileID: 7228601484355831840}
   - component: {fileID: 2484999114987934149}
-  - component: {fileID: 76101200266326186}
   m_Layer: 5
   m_Name: food6
   m_TagString: Untagged
@@ -10442,36 +10080,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7835151363696947800}
   m_CullTransparentMesh: 1
---- !u!114 &76101200266326186
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7835151363696947800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &7922727951126523069
 GameObject:
   m_ObjectHideFlags: 0
@@ -10766,9 +10374,8 @@ GameObject:
   - component: {fileID: 4831522478595666192}
   - component: {fileID: 6253907184122526728}
   - component: {fileID: 3234733697038576469}
-  - component: {fileID: 4507472891937254355}
   m_Layer: 5
-  m_Name: food1 (3)
+  m_Name: food16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10863,36 +10470,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8211291299554920570}
   m_CullTransparentMesh: 1
---- !u!114 &4507472891937254355
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8211291299554920570}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &8317850683490473371
 GameObject:
   m_ObjectHideFlags: 0
@@ -11036,7 +10613,6 @@ GameObject:
   - component: {fileID: 5409605875767159838}
   - component: {fileID: 8801918541540921223}
   - component: {fileID: 4001554814127684949}
-  - component: {fileID: 3615999292013291847}
   m_Layer: 5
   m_Name: food3
   m_TagString: Untagged
@@ -11133,36 +10709,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8502519552082291816}
   m_CullTransparentMesh: 1
---- !u!114 &3615999292013291847
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8502519552082291816}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &8549482466221786146
 GameObject:
   m_ObjectHideFlags: 0
@@ -11250,7 +10796,7 @@ GameObject:
   - component: {fileID: 3814275582084134369}
   - component: {fileID: 3447705006484380841}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11556,7 +11102,6 @@ GameObject:
   - component: {fileID: 8250921335048023343}
   - component: {fileID: 7210513195830086675}
   - component: {fileID: 1011915017997552739}
-  - component: {fileID: 1571507471634285446}
   m_Layer: 5
   m_Name: food4
   m_TagString: Untagged
@@ -11653,33 +11198,3 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9198259933948113623}
   m_CullTransparentMesh: 1
---- !u!114 &1571507471634285446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9198259933948113623}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1

@@ -13,4 +13,5 @@ public class DialogContent
 {
     public string dialogText;
     public bool showCharacter;
+    public int id;
 }
