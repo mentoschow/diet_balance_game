@@ -30,7 +30,7 @@ public class PlayerStatus : MonoBehaviour
     {
         Background = this.gameObject.GetComponent<Image>();
         Random.InitState(System.DateTime.Now.Millisecond);  //時間による乱数初期化
-        pm.hero.statusid = Random.Range(0, 5);              //初日（一日目）のステータス 
+        pm.hero.statusid = 0;//Random.Range(0, 5);              //初日（一日目）のステータス 
 
         Word1.gameObject.SetActive(false);
         Word2.gameObject.SetActive(false);

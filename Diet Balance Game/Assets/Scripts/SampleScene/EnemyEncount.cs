@@ -49,6 +49,12 @@ public class EnemyEncount : MonoBehaviour
     //"enemy encount" text image
     [SerializeField] Image callText;
 
+    //Animation
+    [SerializeField] Animator AnimationLT = null;
+    [SerializeField] Animator AnimationRT = null;
+    [SerializeField] Animator AnimationRD = null;
+    [SerializeField] Animator AnimationLD = null;
+
 
     void transform_FoodParam_to_pentagonParam()
     {
@@ -98,11 +104,6 @@ public class EnemyEncount : MonoBehaviour
         NextButton = childButton.gameObject.GetComponent<Button>();
         ButtonAnime = childButton.gameObject.GetComponent<Animator>();
 
-        //yellow warning image
-        warningLD.gameObject.SetActive(false);
-        warningLT.gameObject.SetActive(false);
-        warningRD.gameObject.SetActive(false);
-        warningRT.gameObject.SetActive(false);
         //text image
         childButton.SetActive(false);
         callText.gameObject.SetActive(false);
@@ -191,26 +192,28 @@ public class EnemyEncount : MonoBehaviour
 
         oparate_warning_time += Time.deltaTime;
         
-        if (oparate_warning_time > 1.5)
+        if (oparate_warning_time > 1.2)
         {
             EndYellowWarning = true;
         }
-        else if (oparate_warning_time > 1.2)
-        {
-            warningLD.gameObject.SetActive(true);
-        }
         else if (oparate_warning_time > 0.9)
         {
-            
-            warningRD.gameObject.SetActive(true);
+            //AnimationLD.SetTrigger("MoveTrigger");
         }
         else if (oparate_warning_time > 0.6)
         {
-            warningRT.gameObject.SetActive(true);
+            //AnimationRD.SetTrigger("MoveTrigger");
         }
         else if (oparate_warning_time > 0.3)
         {
-            warningLT.gameObject.SetActive(true);
+            //AnimationRT.SetTrigger("MoveTrigger");
+        }
+        else
+        {
+            AnimationLT.SetTrigger("MoveTrigger");
+            AnimationRT.SetTrigger("MoveTrigger");
+            AnimationRD.SetTrigger("MoveTrigger");
+            AnimationLD.SetTrigger("MoveTrigger");
         } 
 
         return EndYellowWarning;
@@ -223,10 +226,11 @@ public class EnemyEncount : MonoBehaviour
         oparate_warning_time = 0;
 
         //yellow warning image
-        warningLD.gameObject.SetActive(false);
-        warningLT.gameObject.SetActive(false);
-        warningRD.gameObject.SetActive(false);
-        warningRT.gameObject.SetActive(false);
+        AnimationLT.SetTrigger("WaitTrigger");
+        AnimationLD.SetTrigger("WaitTrigger");
+        AnimationRT.SetTrigger("WaitTrigger");
+        AnimationRD.SetTrigger("WaitTrigger");
+
         //text image
         callText.gameObject.SetActive(false);
         //pentagon
