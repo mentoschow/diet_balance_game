@@ -285,6 +285,105 @@ MonoBehaviour:
     vitamin: 38.606
     mineral: 141.3661
     name_jp: "\u3044\u3061\u3054"
+  - name: atsuage
+    id: 31
+    energy: 300
+    protein: 21.4
+    lipids: 22.6
+    carbohydrates: 1.8
+    vitamin: 2.596
+    mineral: 1145.54
+    name_jp: "\u751F\u63DA\u3052(\u539A\u63DA\u3052)"
+  - name: mabo_tofu
+    id: 32
+    energy: 341
+    protein: 20.03
+    lipids: 23.29
+    carbohydrates: 10.17
+    vitamin: 8.55077
+    mineral: 2538.0986
+    name_jp: "\u9EBB\u5A46\u8C46\u8150"
+  - name: Natto
+    id: 33
+    energy: 100
+    protein: 8.25
+    lipids: 5
+    carbohydrates: 6.05
+    vitamin: 3.4091
+    mineral: 524.0635
+    name_jp: "\u7D0D\u8C46"
+  - name: omlette_rice
+    id: 34
+    energy: 850
+    protein: 28.83
+    lipids: 29.66
+    carbohydrates: 107.74
+    vitamin: 19.47045
+    mineral: 2449.263
+    name_jp: "\u30AA\u30E0\u30E9\u30A4\u30B9"
+  - name: sui_gyoza
+    id: 35
+    energy: 206
+    protein: 9.76
+    lipids: 7.58
+    carbohydrates: 24.18
+    vitamin: 10.30746
+    mineral: 578.9145
+    name_jp: "\u6C34\u9903\u5B50(100g)"
+  - name: sushi
+    id: 36
+    energy: 588
+    protein: 35.48
+    lipids: 9.74
+    carbohydrates: 85.81
+    vitamin: 23.69523
+    mineral: 3246.0537
+    name_jp: "\u5BFF\u53F8"
+  - name: tofu
+    id: 37
+    energy: 216
+    protein: 19.8
+    lipids: 12.6
+    carbohydrates: 4.8
+    vitamin: 1.4964
+    mineral: 1248.246
+    name_jp: "\u6728\u7DBF\u8C46\u8150"
+  - name: water_melon
+    id: 38
+    energy: 83
+    protein: 1.35
+    lipids: 0.23
+    carbohydrates: 21.38
+    vitamin: 24.12403
+    mineral: 324.82224
+    name_jp: "\u30B9\u30A4\u30AB"
+  - name: yakitori
+    id: 39
+    energy: 394
+    protein: 30.1
+    lipids: 25.2
+    carbohydrates: 6.9
+    vitamin: 18.99806
+    mineral: 1689.7382
+    name_jp: "\u713C\u304D\u9CE5"
+  - name: banana
+    id: 40
+    energy: 77
+    protein: 0.99
+    lipids: 0.18
+    carbohydrates: 20.25
+    vitamin: 16.33916
+    mineral: 383.2672
+    name_jp: "\u30D0\u30CA\u30CA"
+  - name: Fried vegetables
+    id: 41
+    energy: 120
+    protein: 2.46
+    lipids: 7.33
+    carbohydrates: 12.57
+    vitamin: 69.3471
+    mineral: 1126.3315
+    name_jp: "\u91CE\u83DC\u7092\u3081"
   - name: none
     id: 0
     energy: 0
@@ -293,7 +392,7 @@ MonoBehaviour:
     carbohydrates: 0
     vitamin: 0
     mineral: 0
-    name_jp: nothing
+    name_jp: none
   dataList:
   - name: crepes
     id: 1
@@ -565,6 +664,105 @@ MonoBehaviour:
     vitamin: 38.606
     mineral: 141.3661
     name_jp: "\u3044\u3061\u3054"
+  - name: atsuage
+    id: 31
+    energy: 300
+    protein: 21.4
+    lipids: 22.6
+    carbohydrates: 1.8
+    vitamin: 2.596
+    mineral: 1145.54
+    name_jp: "\u751F\u63DA\u3052(\u539A\u63DA\u3052)"
+  - name: mabo_tofu
+    id: 32
+    energy: 341
+    protein: 20.03
+    lipids: 23.29
+    carbohydrates: 10.17
+    vitamin: 8.55077
+    mineral: 2538.0986
+    name_jp: "\u9EBB\u5A46\u8C46\u8150"
+  - name: Natto
+    id: 33
+    energy: 100
+    protein: 8.25
+    lipids: 5
+    carbohydrates: 6.05
+    vitamin: 3.4091
+    mineral: 524.0635
+    name_jp: "\u7D0D\u8C46"
+  - name: omlette_rice
+    id: 34
+    energy: 850
+    protein: 28.83
+    lipids: 29.66
+    carbohydrates: 107.74
+    vitamin: 19.47045
+    mineral: 2449.263
+    name_jp: "\u30AA\u30E0\u30E9\u30A4\u30B9"
+  - name: sui_gyoza
+    id: 35
+    energy: 206
+    protein: 9.76
+    lipids: 7.58
+    carbohydrates: 24.18
+    vitamin: 10.30746
+    mineral: 578.9145
+    name_jp: "\u6C34\u9903\u5B50(100g)"
+  - name: sushi
+    id: 36
+    energy: 588
+    protein: 35.48
+    lipids: 9.74
+    carbohydrates: 85.81
+    vitamin: 23.69523
+    mineral: 3246.0537
+    name_jp: "\u5BFF\u53F8"
+  - name: tofu
+    id: 37
+    energy: 216
+    protein: 19.8
+    lipids: 12.6
+    carbohydrates: 4.8
+    vitamin: 1.4964
+    mineral: 1248.246
+    name_jp: "\u6728\u7DBF\u8C46\u8150"
+  - name: water_melon
+    id: 38
+    energy: 83
+    protein: 1.35
+    lipids: 0.23
+    carbohydrates: 21.38
+    vitamin: 24.12403
+    mineral: 324.82224
+    name_jp: "\u30B9\u30A4\u30AB"
+  - name: yakitori
+    id: 39
+    energy: 394
+    protein: 30.1
+    lipids: 25.2
+    carbohydrates: 6.9
+    vitamin: 18.99806
+    mineral: 1689.7382
+    name_jp: "\u713C\u304D\u9CE5"
+  - name: banana
+    id: 40
+    energy: 77
+    protein: 0.99
+    lipids: 0.18
+    carbohydrates: 20.25
+    vitamin: 16.33916
+    mineral: 383.2672
+    name_jp: "\u30D0\u30CA\u30CA"
+  - name: Fried vegetables
+    id: 41
+    energy: 120
+    protein: 2.46
+    lipids: 7.33
+    carbohydrates: 12.57
+    vitamin: 69.3471
+    mineral: 1126.3315
+    name_jp: "\u91CE\u83DC\u7092\u3081"
   - name: none
     id: 0
     energy: 0
@@ -573,4 +771,4 @@ MonoBehaviour:
     carbohydrates: 0
     vitamin: 0
     mineral: 0
-    name_jp: nothing
+    name_jp: none

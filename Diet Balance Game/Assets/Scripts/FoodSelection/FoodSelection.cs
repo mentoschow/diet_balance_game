@@ -256,7 +256,7 @@ public class FoodSelection : MonoBehaviour
                 for (int i = 1; i < 3; i++)
                 {
                     selectedFood[i] = FoodData.dataArray.Length - 1;
-                    comfirmImage[i].sprite = FoodImage.sprites[30];
+                    comfirmImage[i].sprite = FoodImage.sprites[FoodData.dataArray.Length - 1];
                     comfirmImage[i].color = new Color(0, 0, 0, 0);
                 }
                 break;
@@ -275,7 +275,7 @@ public class FoodSelection : MonoBehaviour
                     }
                 }
                 selectedFood[2] = FoodData.dataArray.Length - 1;
-                comfirmImage[2].sprite = FoodImage.sprites[30];
+                comfirmImage[2].sprite = FoodImage.sprites[FoodData.dataArray.Length - 1];
                 comfirmImage[2].color = new Color(0, 0, 0, 0);
                 break;
             case 3:
@@ -340,6 +340,7 @@ public class FoodSelection : MonoBehaviour
                 Initialized();
                 bg.transform.localEulerAngles = new Vector3(0, 0, 0);
                 next = true;
+                first = true;
                 break;
         }
     }
@@ -383,7 +384,7 @@ public class FoodSelection : MonoBehaviour
     {
         for(int i = 0; i < 18; i++)
         {
-            cc: tempNum = Random.Range(0, 30);
+            cc: tempNum = Random.Range(0, FoodData.dataArray.Length - 1);
             //IsRepeat
             for(int j = 0; j < i; j++)
             {
