@@ -384,6 +384,15 @@ MonoBehaviour:
     vitamin: 69.3471
     mineral: 1126.3315
     name_jp: "\u91CE\u83DC\u7092\u3081"
+  - name: Cheese_rice
+    id: 42
+    energy: 591
+    protein: 21.85
+    lipids: 26.95
+    carbohydrates: 60.52
+    vitamin: 11.20712
+    mineral: 2182.9587
+    name_jp: "\u30C9\u30EA\u30A2"
   - name: none
     id: 0
     energy: 0
@@ -763,6 +772,15 @@ MonoBehaviour:
     vitamin: 69.3471
     mineral: 1126.3315
     name_jp: "\u91CE\u83DC\u7092\u3081"
+  - name: Cheese_rice
+    id: 42
+    energy: 591
+    protein: 21.85
+    lipids: 26.95
+    carbohydrates: 60.52
+    vitamin: 11.20712
+    mineral: 2182.9587
+    name_jp: "\u30C9\u30EA\u30A2"
   - name: none
     id: 0
     energy: 0

@@ -384,7 +384,7 @@ public class FoodSelection : MonoBehaviour
     {
         for(int i = 0; i < 18; i++)
         {
-            cc: tempNum = Random.Range(0, FoodData.dataArray.Length - 1);
+            cc: tempNum = Random.Range(0, FoodData.dataArray.Length - 2);
             //IsRepeat
             for(int j = 0; j < i; j++)
             {
