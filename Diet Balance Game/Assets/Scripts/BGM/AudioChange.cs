@@ -7,6 +7,9 @@ public class AudioChange : CanvasManager
     public AudioClip[] clips;
     AudioSource audios;
 
+    public AudioSource button_sound;
+    public AudioSource page_sound;
+
     public Canvas gameover;
 
     bool BGM = false;
@@ -197,5 +200,13 @@ public class AudioChange : CanvasManager
         */
     }
 
+    public void Click()
+    {
+        button_sound.Play();
+    }
 
+    public void Page()
+    {
+        page_sound.Play();
+    }
 }

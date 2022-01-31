@@ -11,7 +11,7 @@ public class FoodSelection : MonoBehaviour
     public AssetConfig character;
     public AssetConfig FoodImage;
     public AssetConfig status_bg_tex;
-    public AssetConfig status_word_tex;
+    //public AssetConfig status_word_tex;
     public AssetConfig comfirm_bg_tex;
     public AssetConfig next_tex;
     public Sheet1 FoodData;
@@ -19,7 +19,7 @@ public class FoodSelection : MonoBehaviour
     public bool next;
     public Image hero;
     public Image status_bg;
-    public List<Image> status_word;
+    //public List<Image> status_word;
     public GameObject comfirm;
     public GameObject filter;
     public GameObject menu1;
@@ -97,7 +97,7 @@ public class FoodSelection : MonoBehaviour
     {
         next = false;
         menuEncount = 1;
-        rotateSpeed = 5f;
+        rotateSpeed = 3f;
         rotateTime = 0;
         comfirm.SetActive(false);
         filter.SetActive(false);
@@ -175,34 +175,34 @@ public class FoodSelection : MonoBehaviour
     void LoadStatusTextures()
     {
         status_bg.sprite = status_bg_tex.sprites[pm.hero.statusid];
-        switch (pm.hero.statusid)
-        {
-            case 0:
-                status_word[0].sprite = status_word_tex.sprites[0];
-                status_word[1].sprite = status_word_tex.sprites[1];
-                status_word[2].color = new Color(0, 0, 0, 0);
-                break;
-            case 1:
-                status_word[0].sprite = status_word_tex.sprites[2];
-                status_word[1].sprite = status_word_tex.sprites[3];
-                status_word[2].color = new Color(0, 0, 0, 0);
-                break;
-            case 2:
-                status_word[0].sprite = status_word_tex.sprites[4];
-                status_word[1].sprite = status_word_tex.sprites[5];
-                status_word[2].sprite = status_word_tex.sprites[6];
-                break;
-            case 3:
-                status_word[0].sprite = status_word_tex.sprites[7];
-                status_word[1].sprite = status_word_tex.sprites[8];
-                status_word[2].color = new Color(0, 0, 0, 0);
-                break;
-            case 4:
-                status_word[0].sprite = status_word_tex.sprites[9];
-                status_word[1].sprite = status_word_tex.sprites[10];
-                status_word[2].sprite = status_word_tex.sprites[11];
-                break;
-        }
+        //switch (pm.hero.statusid)
+        //{
+        //    case 0:
+        //        status_word[0].sprite = status_word_tex.sprites[0];
+        //        status_word[1].sprite = status_word_tex.sprites[1];
+        //        status_word[2].color = new Color(0, 0, 0, 0);
+        //        break;
+        //    case 1:
+        //        status_word[0].sprite = status_word_tex.sprites[2];
+        //        status_word[1].sprite = status_word_tex.sprites[3];
+        //        status_word[2].color = new Color(0, 0, 0, 0);
+        //        break;
+        //    case 2:
+        //        status_word[0].sprite = status_word_tex.sprites[4];
+        //        status_word[1].sprite = status_word_tex.sprites[5];
+        //        status_word[2].sprite = status_word_tex.sprites[6];
+        //        break;
+        //    case 3:
+        //        status_word[0].sprite = status_word_tex.sprites[7];
+        //        status_word[1].sprite = status_word_tex.sprites[8];
+        //        status_word[2].color = new Color(0, 0, 0, 0);
+        //        break;
+        //    case 4:
+        //        status_word[0].sprite = status_word_tex.sprites[9];
+        //        status_word[1].sprite = status_word_tex.sprites[10];
+        //        status_word[2].sprite = status_word_tex.sprites[11];
+        //        break;
+        //}
     }
 
     public void NextMenu()
