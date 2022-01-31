@@ -5250,6 +5250,8 @@ GameObject:
   - component: {fileID: 5708810198999002474}
   - component: {fileID: 5708810198999002475}
   - component: {fileID: 5708810198999002471}
+  - component: {fileID: 8485353734228188018}
+  - component: {fileID: 3078268063543996584}
   m_Layer: 5
   m_Name: FoodSelection
   m_TagString: Untagged
@@ -5359,18 +5361,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pm: {fileID: 0}
-  ee: {fileID: 0}
+  fs: {fileID: 0}
   character: {fileID: 11400000, guid: b6c7ace076637034bb1d8973b7cfdbcc, type: 2}
   FoodImage: {fileID: 0}
   status_bg_tex: {fileID: 0}
-  status_word_tex: {fileID: 0}
   comfirm_bg_tex: {fileID: 0}
   next_tex: {fileID: 0}
   FoodData: {fileID: 0}
   next: 0
   hero: {fileID: 5708810198578941532}
   status_bg: {fileID: 0}
-  status_word: []
   comfirm: {fileID: 5708810200094719731}
   filter: {fileID: 5708810199907929608}
   menu1: {fileID: 5708810200236992819}
@@ -5401,8 +5401,47 @@ MonoBehaviour:
   selectedFood: 
   randomNum: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   time: 0
+  first: 0
   rotateSpeed: 0
   rotateTime: 0
+--- !u!222 &8485353734228188018
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5708810198999002476}
+  m_CullTransparentMesh: 1
+--- !u!114 &3078268063543996584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5708810198999002476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: f333dbe67f50ff242a713b1a1ec5fbb9, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5708810199018283821
 GameObject:
   m_ObjectHideFlags: 0
