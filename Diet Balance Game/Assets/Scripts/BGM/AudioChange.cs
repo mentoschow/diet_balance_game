@@ -42,6 +42,7 @@ public class AudioChange : CanvasManager
             {
                 BGM = true;
                 audios.clip = clips[0];
+                audios.loop = true;
                 audios.Play();
 
             }
@@ -62,6 +63,7 @@ public class AudioChange : CanvasManager
             {
                 encountBGM = true;
                 audios.clip = clips[1];
+                audios.loop = false;
                 audios.Play();
 
                 daydisplay2BGM = false;
@@ -75,6 +77,7 @@ public class AudioChange : CanvasManager
             {
                 encount2BGM = true;
                 audios.clip = clips[2];
+                audios.loop = true;
                 audios.Play();
             }
         }
@@ -84,6 +87,7 @@ public class AudioChange : CanvasManager
             {
                 selectBGM = true;
                 audios.clip = clips[0];
+                audios.loop = true;
                 audios.Play();
             }
         }
@@ -93,6 +97,7 @@ public class AudioChange : CanvasManager
             {
                 battleBGM = true;
                 audios.clip = clips[2];
+                audios.loop = true;
                 audios.Play();
             }
         }
@@ -102,6 +107,7 @@ public class AudioChange : CanvasManager
             {
                 daydisplayBGM = true;
                 audios.clip = clips[4];
+                audios.loop = false;
                 audios.Play();
             }
         }
@@ -114,6 +120,7 @@ public class AudioChange : CanvasManager
                 {
                     winBGM = true;
                     audios.clip = clips[3];
+                    audios.loop = false;
                     audios.Play();
                 }
             }
@@ -123,6 +130,7 @@ public class AudioChange : CanvasManager
                 {
                     loseBGM = true;
                     audios.clip = clips[5];
+                    audios.loop = false;
                     audios.Play();
                 }
                 if (gameover.enabled == true)
@@ -131,6 +139,7 @@ public class AudioChange : CanvasManager
                     {
                         gameoverBGM = true;
                         audios.clip = clips[6];
+                        audios.loop = false;
                         audios.Play();
                         //newgame = true;
                         BGM = false;
@@ -146,6 +155,7 @@ public class AudioChange : CanvasManager
             {
                 daydisplay2BGM = true;
                 audios.clip = clips[4];
+                audios.loop = true;
                 audios.Play();
 
                 encountBGM = false;
