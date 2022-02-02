@@ -225,12 +225,6 @@ public class EnemyEncount : MonoBehaviour
         pentagon_animeFlag = false;
         oparate_warning_time = 0;
 
-        //yellow warning image
-        AnimationLT.SetTrigger("WaitTrigger");
-        AnimationLD.SetTrigger("WaitTrigger");
-        AnimationRT.SetTrigger("WaitTrigger");
-        AnimationRD.SetTrigger("WaitTrigger");
-
         //text image
         callText.gameObject.SetActive(false);
         //pentagon
@@ -239,6 +233,13 @@ public class EnemyEncount : MonoBehaviour
 
         EIM.Initilized_EnemImgMng();
         ESP.InitializedESP();
+
+        //yellow warning image
+        AnimationLT.SetTrigger("WaitTrigger");
+        AnimationLD.SetTrigger("WaitTrigger");
+        AnimationRT.SetTrigger("WaitTrigger");
+        AnimationRD.SetTrigger("WaitTrigger");
+
 
         Debug.Log("EE Initilized");
     }
